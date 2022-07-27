@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java2-4</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Conditionals Java</h1>
+        <article>
+            <div>
+                <h4>Exercise 4</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el Porvenir, requiere de una aplicación que permita registrar el alquiler de las películas que adquieren sus usuarios. Para cada usuario se debe permitir la opción de alquilar película, consultar películas disponibles y recibir película en la video tienda con la opción de realizar anotaciones sobre estas si se llegan a presentar daños u otra novedad sobre la película.</i>
+                </p>
+            </div>
+            <div>
+                <h3>Main</h3>
+                <pre>
+                    package com.Taller2;
+
+                    import com.Ejercicio1.Ejercicio1;
+                    import com.Ejercicio10.Ejercicio10;
+                    import com.Ejercicio2.Ejercicio2;
+                    import com.Ejercicio3.Ejercicio3;
+                    import com.Ejercicio4.Ejercicio4;
+                    import com.Ejercicio5.Ejercicio5;
+                    import com.Ejercicio6.Ejercicio6;
+                    import com.Ejercicio7.Ejercicio7;
+                    import com.Ejercicio8.Ejercicio8;
+                    import com.Ejercicio9.Ejercicio9;
+                    
+                    import java.io.IOException;
+                    import java.util.Scanner;
+                    
+                    public class Main {
+                    
+                        private static boolean flag = true;
+                        private static int option;
+                    
+                        public static void main(String[] args) throws IOException {
+                            do {
+                                clearScreen();
+                                menu();
+                                option = captureOption();
+                                flag = evaluateOption(option);
+                            }while (flag == true);
+                            System.exit(0);
+                        }
+                    
+                        private static void menu() {
+                            System.out.println("Escoja un ejercicio del taller");
+                            System.out.println("1. Ejercicio #1");
+                            System.out.println("2. Ejercicio #2");
+                            System.out.println("3. Ejercicio #3");
+                            System.out.println("4. Ejercicio #4");
+                            System.out.println("5. Ejercicio #5");
+                            System.out.println("6. Ejercicio #6");
+                            System.out.println("7. Ejercicio #7");
+                            System.out.println("8. Ejercicio #8");
+                            System.out.println("9. Ejercicio #9");
+                            System.out.println("10. Ejercicio #10");
+                            System.out.println("0. Salir del taller");
+                        }
+                    
+                        private static int captureOption(){
+                            Scanner input = new Scanner(System.in);
+                            return input.nextInt();
+                        }
+                    
+                        private static boolean evaluateOption(int option) throws IOException {
+                            switch (option){
+                                case 1:
+                                    Ejercicio1 ejercicio1 = new Ejercicio1();
+                                    ejercicio1.Ejercicio1();
+                                    return true;
+                                //break;
+                                case 2:
+                                    Ejercicio2 ejercicio2 = new Ejercicio2();
+                                    ejercicio2.Ejercicio2();
+                                    return true;
+                                //break;
+                                case 3:
+                                    Ejercicio3 ejercicio3 = new Ejercicio3();
+                                    ejercicio3.Ejercicio3();
+                                    return true;
+                                //break;
+                                case 4:
+                                    Ejercicio4 ejercicio4 = new Ejercicio4();
+                                    ejercicio4.Ejercicio4();
+                                    return true;
+                                //break;
+                                case 5:
+                                    Ejercicio5 ejercicio5 = new Ejercicio5();
+                                    ejercicio5.Ejercicio5();
+                                    return true;
+                                //break;
+                                case 6:
+                                    Ejercicio6 ejercicio6 = new Ejercicio6();
+                                    ejercicio6.Ejercicio6();
+                                    return true;
+                                //break;
+                                case 7:
+                                    Ejercicio7 ejercicio7 = new Ejercicio7();
+                                    ejercicio7.Ejercicio7();
+                                    return true;
+                                //break;
+                                case 8:
+                                    Ejercicio8 ejercicio8 = new Ejercicio8();
+                                    ejercicio8.Ejercicio8();
+                                    return true;
+                                //break;
+                                case 9:
+                                    Ejercicio9 ejercicio9 = new Ejercicio9();
+                                    ejercicio9.Ejercicio9();
+                                    return true;
+                                //break;
+                                case 10:
+                                    Ejercicio10 ejercicio10 = new Ejercicio10();
+                                    ejercicio10.Ejercicio10();
+                                    return true;
+                                //break;
+                                case 0:
+                                    return false;
+                                //break;
+                                default:
+                                    System.out.println("Opción incorrecta");
+                                    System.in.read();
+                                    return true;
+                            }
+                    
+                        }
+                    
+                        private static void clearScreen() {
+                            System.out.print("\033[H\033[2J");
+                            System.out.flush();
+                        }
+                    }
+                </pre>
+            </div>
+            <div>
+                <h3>Ejercicio4</h3>
+                <pre>
+                    package com.Ejercicio4;
+
+
+                    import java.io.IOException;
+                    import java.util.Scanner;
+                    
+                    public class Ejercicio4 {
+                    
+                        private Scanner input = new Scanner(System.in);
+                        private String name;
+                       private int option;
+                       private int[] available;
+                       private String[] movie;
+                       private boolean flag = true;
+                       private String[] annotations;
+                    
+                        public void Ejercicio4 () throws IOException {
+                            available = new int[5];
+                            movie = new String[5];
+                            annotations = new String[5];
+                            available[0]=0;
+                            available[1]=0;
+                            available[2]=0;
+                            available[3]=0;
+                            available[4]=0;
+                            movie[0]="Red";
+                            movie[1]="Sonic";
+                            movie[2]="Sing";
+                            movie[3]="Space Jam";
+                            movie[4]="Raya";
+                            System.out.println("APP video tienda alquiler de películas Porvenir");
+                            askName();
+                            name = captureDataString();
+                            System.out.println("Hola "+name+", bienvenido a su video tienda Porvenir");
+                            do {
+                                menu();
+                                option = captureDataInt();
+                                flag = evaluateOption(option);
+                            }while (flag == true);
+                        }
+                    
+                        private void menu(){
+                            System.out.println("Por favor, digite un número de acuerdo a lo que desea hacer");
+                            System.out.println("1. Alquilar película");
+                            System.out.println("2. Consultar películas disponbles");
+                            System.out.println("3. Recibir película en la video tienda");
+                            System.out.println("0. Salir de la App");
+                        }
+                    
+                        private void askName(){
+                            System.out.println("Por favor, digite su nombre de usuario");
+                        }
+                    
+                        private String captureDataString(){
+                            return input.nextLine().replace("\\n", "");
+                        }
+                    
+                        private int captureDataInt(){
+                            return Integer.parseInt(input.nextLine());
+                        }
+                    
+                        private boolean evaluateOption(int option) throws IOException {
+                            switch (option){
+                                case 1:
+                                    listMovies();
+                                    if((available[4]==0) || (available[3]==0) || (available[2]==0) || (available[1]==0) || (available[0]==0)){
+                                        System.out.println("Por favor, digite un número de a acuerdo a la película que deseas alquilar");
+                                        option = captureDataInt();
+                                        rentMovie(option);
+                                    }
+                                    return true;
+                                case 2:
+                                    listMovies();
+                                    if((available[4]==0) || (available[3]==0) || (available[2]==0) || (available[1]==0) || (available[0]==0)){
+                                        System.out.println("Digita, enter para volver al menu principal");
+                                        System.in.read();
+                                    }
+                                    return true;
+                                case 3:
+                                    rentedFilms();
+                                    if((available[4]==1) || (available[3]==1) || (available[2]==1) || (available[1]==1) || (available[0]==1)){
+                                        System.out.println("Por favor, digite un número de a acuerdo a la película que vas a recibir");
+                                        option = captureDataInt();
+                                        returnFilm(option);
+                                    }
+                                    return true;
+                                case 0:
+                                    return false;
+                                //break;
+                                default:
+                                    System.out.println("Opción incorrecta");
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                                    return true;
+                            }
+                        }
+                    
+                        private void listMovies() throws IOException {
+                            if ((available[4]==0) || (available[3]==0) || (available[2]==0) || (available[1]==0) || (available[0]==0)){
+                                System.out.println("Lista de peliculas disponibles");
+                            }
+                            if(available[0]==0){
+                                System.out.println("1. "+movie[0]);
+                            }
+                            if(available[1]==0){
+                                System.out.println("2. "+movie[1]);
+                            }
+                            if(available[2]==0){
+                                System.out.println("3. "+movie[2]);
+                            }
+                            if(available[3]==0){
+                                System.out.println("4. "+movie[3]);
+                            }
+                            if(available[4]==0){
+                                System.out.println("5. "+movie[4]);
+                            }
+                            if ((available[4]==1) && (available[3]==1) && (available[2]==1) && (available[1]==1) && (available[0]==1)){
+                                System.out.println("Lo sentimos, pero en el momento no tenemos peliculas disponibles");
+                                System.out.println("Digita, enter para volver al menu principal");
+                                System.in.read();
+                            }
+                        }
+                    
+                        private void rentMovie(int option) throws IOException {
+                            switch (option){
+                                case 1:
+                                    System.out.println(name+" has alquilado "+movie[0]);
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    available[0]=1;
+                                    System.in.read();
+                                    break;
+                                case 2:
+                                    System.out.println(name+" has alquilado "+movie[1]);
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    available[1]=1;
+                                    System.in.read();
+                                    break;
+                                case 3:
+                                    System.out.println(name+" has alquilado "+movie[2]);
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    available[2]=1;
+                                    System.in.read();
+                                    break;
+                                case 4:
+                                    System.out.println(name+" has alquilado "+movie[3]);
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    available[3]=1;
+                                    System.in.read();
+                                    break;
+                                case 5:
+                                    System.out.println(name+" has alquilado "+movie[4]);
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    available[4]=1;
+                                    System.in.read();
+                                    break;
+                                default:
+                                    System.out.println("Opción incorrecta");
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                            }
+                        }
+                    
+                        private void rentedFilms() throws IOException {
+                            if ((available[4]==1) || (available[3]==1) || (available[2]==1) || (available[1]==1) || (available[0]==1)){
+                                System.out.println("Lista de peliculas pendientes por recibir");
+                            }
+                            if(available[0]==1){
+                                System.out.println("1. "+movie[0]);
+                            }
+                            if(available[1]==1){
+                                System.out.println("2. "+movie[1]);
+                            }
+                            if(available[2]==1){
+                                System.out.println("3. "+movie[2]);
+                            }
+                            if(available[3]==1){
+                                System.out.println("4. "+movie[3]);
+                            }
+                            if(available[4]==1){
+                                System.out.println("5. "+movie[4]);
+                            }
+                            if ((available[4]==0) && (available[3]==0) && (available[2]==0) && (available[1]==0) && (available[0]==0)){
+                                System.out.println("En el momento no hay peliculas pendientes por recibir");
+                                System.out.println("Digita, enter para volver al menu principal");
+                                System.in.read();
+                            }
+                        }
+                    
+                        private void returnFilm(int option) throws IOException {
+                            switch (option){
+                                case 1:
+                                    note();
+                                    option = captureDataInt();
+                                    if(option==1){
+                                        System.out.println("Registra la novedad");
+                                        annotations[0]=captureDataString();
+                                    System.out.println("El usuario "+name+" ha regresado la pelicula "+movie[0]+" con la siguiente novedad: "+annotations[0]);
+                                    }else {
+                                        System.out.println("El usuario "+name+" ha regresado la pelicula "+movie[0]+" sin ninguna novedad");
+                                    }
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    available[0]=0;
+                                    System.in.read();
+                                    break;
+                                case 2:
+                                    note();
+                                    option = captureDataInt();
+                                    if(option==1){
+                                        System.out.println("Registra la novedad");
+                                        annotations[1]=captureDataString();
+                                    System.out.println("El usuario "+name+" ha regresado la pelicula "+movie[1]+" con la siguiente novedad: "+annotations[1]);
+                                    }else {
+                                        System.out.println("El usuario "+name+" ha regresado la pelicula "+movie[1]+" sin ninguna novedad");
+                                    }
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    available[1]=0;
+                                    System.in.read();
+                                    break;
+                                case 3:
+                                    note();
+                                    option = captureDataInt();
+                                    if(option==1){
+                                        System.out.println("Registra la novedad");
+                                        annotations[2]=captureDataString();
+                                    System.out.println("El usuario "+name+" ha regresado la pelicula "+movie[2]+" con la siguiente novedad: "+annotations[2]);
+                                    }else {
+                                        System.out.println("El usuario "+name+" ha regresado la pelicula "+movie[2]+" sin ninguna novedad");
+                                    }
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    available[2]=0;
+                                    System.in.read();
+                                    break;
+                                case 4:
+                                    note();
+                                    option = captureDataInt();
+                                    if(option==1){
+                                        System.out.println("Registra la novedad");
+                                        annotations[3]=captureDataString();
+                                    System.out.println("El usuario "+name+" ha regresado la pelicula "+movie[3]+" con la siguiente novedad: "+annotations[3]);
+                                    }else {
+                                        System.out.println("El usuario "+name+" ha regresado la pelicula "+movie[3]+" sin ninguna novedad");
+                                    }
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    available[3]=0;
+                                    System.in.read();
+                                    break;
+                                case 5:
+                                    note();
+                                    option = captureDataInt();
+                                    if(option==1){
+                                        System.out.println("Registra la novedad");
+                                        annotations[4]=captureDataString();
+                                    System.out.println("El usuario "+name+" ha regresado la pelicula "+movie[4]+" con la siguiente novedad: "+annotations[4]);
+                                    }else {
+                                    System.out.println("El usuario "+name+" ha regresado la pelicula "+movie[4]+" sin ninguna novedad");
+                                    }
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    available[4]=0;
+                                    System.in.read();
+                                    break;
+                                default:
+                                    System.out.println("Opción incorrecta");
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                            }
+                        }
+                        private void note(){
+                            System.out.println("¿La pelicula presenta daños u otra novedad?");
+                            System.out.println("1. Digite 1 para registrar la novedad");
+                            System.out.println("2. Digite un numero diferente a 1 si no hay novedad");
+                        }
+                    }
+                    
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

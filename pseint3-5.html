@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt3-5</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Cycles PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 5</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Utilizando el ciclo que usted desee, crear un menú de ejecución infinita hasta que el usuario desee terminar dicho ciclo.</i><br>
+                    <img src="img/menu.png">
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller3_5
+                    Definir option, select Como Entero;
+                    Definir name, sayHi Como Caracter;
+                    
+                    select<-1;
+                    
+                    Mientras select = 1 Hacer
+                        Escribir "Menú de usuario, ingrese un número segun la opcioón deseada";
+                        Escribir "1. Captura nombre";
+                        Escribir "2. Saludar persona";
+                        Escribir "3. Salir del sistema";
+                        Leer option;
+                        
+                        Segun option Hacer
+                            1:
+                                Escribir "Ingresa su nombre";
+                                Leer name;
+                                Limpiar Pantalla;
+                            2:
+                                Escribir "Saluda";
+                                Leer sayHi;
+                                Limpiar Pantalla;
+                            3:
+                                Escribir "Salir del sistema";
+                                
+                            De Otro Modo:
+                                Escribir "La opción seleccionada no existe";
+                                Escribir "Intentalo de nuevo";
+                        FinSegun
+                        
+                        Escribir "";
+                        Escribir "¿Desea regresar al menú?";
+                        Escribir "1. Ingrese 1 para volver al menú";
+                        Escribir "2. Ingrese un número diferente a 1 para salir del menú";
+                        Leer select;
+                        
+                    FinMientras
+                        
+                FinProceso
+                </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iTOlYAwWZpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-16</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 16</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar todos los puntos del taller de arreglos en modo funciones</i><br><br>
+                    <i>3. Imprimir los números primos del 1 al 1000, el resultado debe ser buscado de forma matemática.<br>
+                </p>
+            </div>
+            <div>
+                <pre>
+
+                    //Imprimir números primos
+                    SubProceso imprimirNumerosPrimos ()
+                        Definir number, divider, counter, quantityNumbers Como Entero;
+                        
+                        quantityNumbers<-0;
+                        Para number<-1 Hasta 1000 Con Paso 1 Hacer
+                            divider<-1;
+                            counter<-0;
+                            Mientras divider<=number Hacer
+                                Si number MOD divider = 0 Entonces
+                                    counter<-counter+1;
+                                FinSi
+                                divider<-divider+1;
+                            FinMientras
+                            
+                            Si counter = 2 Entonces
+                                Escribir "El número ",number," es primo";
+                                quantityNumbers<-quantityNumbers+1;
+                            FinSi
+                            
+                        FinPara
+                        Escribir "";
+                        Escribir "Cantidad de números primos: ", quantityNumbers;
+                    FinSubProceso
+                    
+                    Proceso Taller5_16_3_Funciones_Arreglos
+                        
+                        imprimirNumerosPrimos();
+                    
+                    FinProceso
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

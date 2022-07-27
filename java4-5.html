@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java4-5</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Arrays Java</h1>
+        <article>
+            <div>
+                <h4>Exercise 5</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Se debe de imprimir el siguiente cuadro</i><br><br>
+                    <img src="img/tabla.png"><br><br>
+                    <i>El usuario deberá insertar la fila y columna de la cual desea ver el resultado, el resultado de cada celda debe estar previamente calculado<br>
+                    en una matriz bidimensional la cual cada resultado obedecerá a la fila y columna insertada por el usuario.</i><br>
+                </p>
+            </div>
+            <div>
+                <h3>Main</h3>
+                <pre>
+                    package com.Taller4;
+
+                    import com.Ejercicio1.Ejercicio1;
+                    import com.Ejercicio2.Ejercicio2;
+                    import com.Ejercicio3.Ejercicio3;
+                    import com.Ejercicio4.Ejercicio4;
+                    import com.Ejercicio5.Ejercicio5;
+                    
+                    import java.io.IOException;
+                    import java.util.Scanner;
+                    
+                    public class Main {
+                    
+                        private static boolean flag = true;
+                        private static int option;
+                        private static Scanner input = new Scanner(System.in);
+                    
+                        public static void main(String[] args) throws IOException {
+                            do {
+                                clearScreen();
+                                menu();
+                                option = captureOption();
+                                flag = evaluateOption(option);
+                            }while (flag == true);
+                            System.exit(0);
+                        }
+                    
+                        private static void menu() {
+                            System.out.println("Escoja un ejercicio del taller4");
+                            System.out.println("1. Ejercicio #1");
+                            System.out.println("2. Ejercicio #2");
+                            System.out.println("3. Ejercicio #3");
+                            System.out.println("4. Ejercicio #4");
+                            System.out.println("5. Ejercicio #5");
+                            System.out.println("0. Salir del taller");
+                        }
+                    
+                        private static int captureOption(){
+                            return input.nextInt();
+                        }
+                    
+                        private static boolean evaluateOption(int option) throws IOException {
+                            switch (option){
+                                case 1:
+                                    Ejercicio1 ejercicio1 = new Ejercicio1();
+                                    ejercicio1.Ejercicio1();
+                                    return true;
+                                //break;
+                              case 2:
+                                    Ejercicio2 ejercicio2 = new Ejercicio2();
+                                    ejercicio2.Ejercicio2();
+                                    return true;
+                                //break;
+                                case 3:
+                                    Ejercicio3 ejercicio3 = new Ejercicio3();
+                                    ejercicio3.Ejercicio3();
+                                    return true;
+                            case 4:
+                                    Ejercicio4 ejercicio4 = new Ejercicio4();
+                                    ejercicio4.Ejercicio4();
+                                    return true;
+                                //break;
+                                     case 5:
+                                    Ejercicio5 ejercicio5 = new Ejercicio5();
+                                    ejercicio5.Ejercicio5();
+                                    return true;
+                                //break;
+                                case 0:
+                                    return false;
+                                //break;
+                                default:
+                                    System.out.println("Opción incorrecta");
+                                    System.in.read();
+                                    return true;
+                            }
+                        }
+                        private static void clearScreen() {
+                            System.out.print("\033[H\033[2J");
+                            System.out.flush();
+                        }
+                    }
+                    
+                </pre>
+            </div>
+            <div>
+                <h3>Ejercicio5</h3>
+                <pre>
+                    package com.Ejercicio5;
+
+                    import java.io.IOException;
+                    import java.util.Scanner;
+                    
+                    public class Ejercicio5 {
+                        private Scanner input = new Scanner(System.in);
+                        private int option;
+                        private boolean flag = true;
+                        private int [][] matrix;
+                    
+                        private int i,row,col,product;
+                    
+                        public void Ejercicio5 () throws IOException {
+                            matrix = new int[10][10];
+                            do {
+                                menu();
+                                option = captureDataInt();
+                                input.nextLine(); //Limpiar el buffer de entrada después de leer el número entero
+                                flag = evaluateOption(option);
+                            }while (flag == true);
+                        }
+                    
+                        private void menu(){
+                            System.out.println("1. Tabla y resultados ");
+                            System.out.println("0. Salir de la App");
+                        }
+                    
+                        private int captureDataInt(){
+                            return input.nextInt();
+                        }
+                    
+                        private boolean evaluateOption(int option) throws IOException {
+                            switch (option){
+                                case 1:
+                                    printTable();
+                                    resultsMatrix();
+                                    userData();
+                                    System.out.println("Resultado de la celda ="+matrix[row][col]);
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                                    return true;
+                                case 0:
+                                    return false;
+                                //break;
+                                default:
+                                    System.out.println("Opción incorrecta");
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                                    return true;
+                            }
+                        }
+                    
+                        private void userData(){
+                            System.out.println("Insertar la fila y columna de la celda acorde a la tabla de la cual desea ver el resultado");
+                            do {
+                                System.out.println("Digite el número de la fila (de 0 a 9)");
+                                row=captureDataInt();
+                                if ((row>9)||(row<0)){
+                                    System.out.println("Número fuera de rango, intenta de nuevo");
+                                }
+                            }while ((row>9)||(row<0));
+                    
+                            do {
+                                System.out.println("Digite el número de la columna (de 0 a 9)");
+                                col=captureDataInt();
+                                if ((col>9)||(col<0)){
+                                    System.out.println("Número fuera de rango, intenta de nuevo");
+                                }
+                            }while ((col>9)||(col<0));
+                        }
+                    
+                        private void resultsMatrix(){
+                            for (int col = 0; col < 10; col++) {
+                                for (int row = 0; row <10; row++) {
+                                    product=(row+1)*(col+1);
+                                    matrix[row][col]=product;
+                                }
+                            }
+                        }
+                    
+                        private void printTable(){
+                            System.out.println("--------------------------------------------------------------");
+                            System.out.println("                        C O L U M N A S");
+                            System.out.println("--------------------------------------------------------------");
+                            System.out.print("|   |      ");
+                            for (int i = 0; i <= 9 ; i++) {
+                                System.out.print("  "+i+"  ");
+                            }
+                            System.out.println("");
+                    
+                            System.out.print("|   |   0  ");
+                            for (int i = 1; i <= 10 ; i++) {
+                                System.out.print(" "+i+"X1 ");
+                            }
+                            System.out.println("");
+                    
+                            System.out.print("|   |   1  ");
+                            for (int i = 1; i <= 10 ; i++) {
+                                System.out.print(" "+i+"X2 ");
+                            }
+                            System.out.println("");
+                    
+                            System.out.print("| F |   2  ");
+                            for (int i = 1; i <= 10 ; i++) {
+                                System.out.print(" "+i+"X3 ");
+                            }
+                            System.out.println("");
+                    
+                            System.out.print("| I |   3  ");
+                            for (int i = 1; i <= 10 ; i++) {
+                                System.out.print(" "+i+"X4 ");
+                            }
+                            System.out.println("");
+                    
+                            System.out.print("| L |   4  ");
+                            for (int i = 1; i <= 10 ; i++) {
+                                System.out.print(" "+i+"X5 ");
+                            }
+                            System.out.println("");
+                    
+                            System.out.print("| A |   5  ");
+                            for (int i = 1; i <= 10 ; i++) {
+                                System.out.print(" "+i+"X6 ");
+                            }
+                            System.out.println("");
+                    
+                            System.out.print("| S |   6  ");
+                            for (int i = 1; i <= 10 ; i++) {
+                                System.out.print(" "+i+"X7 ");
+                            }
+                            System.out.println("");
+                    
+                            System.out.print("|   |   7  ");
+                            for (int i = 1; i <= 10 ; i++) {
+                                System.out.print(" "+i+"X8 ");
+                            }
+                            System.out.println("");
+                    
+                            System.out.print("|   |   8  ");
+                            for (int i = 1; i <= 10 ; i++) {
+                                System.out.print(" "+i+"X9 ");
+                            }
+                            System.out.println("");
+                    
+                            System.out.print("|   |   9  ");
+                            for (int i = 1; i <= 10 ; i++) {
+                                System.out.print(" "+i+"X10");
+                            }
+                            System.out.println("");
+                            System.out.println("--------------------------------------------------------------");
+                            System.out.println("");
+                    
+                        }
+                    }
+                    
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

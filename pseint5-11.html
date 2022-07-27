@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-11</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 11</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar los puntos 6, 7 y 8 del taller de ciclos en modo funciones.</i><br><br>
+                    <i>6. Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el sistema debe terminar cuando el usuario así lo indique.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                    //Captura datos de texto
+                    SubProceso datos <- capturaTexto (tex Por Valor)
+                        Definir datos Como Caracter;
+                        Escribir tex;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    //eliminar contacto
+                    SubProceso eliminar (a,b,c,d,e,f)
+                        a<-1;
+                        Mientras a=1 Hacer
+                            Escribir "3. Ingrese un número de acuerdo el contacto que desea eliminar";
+                            Escribir "1. ", b[0];
+                            Escribir "2. ", b[1];
+                            Escribir "3. ", b[2];
+                            Escribir "4. Volver al menú principal";
+                            Leer c;
+                            
+                            Limpiar Pantalla;
+                            
+                            Segun c Hacer
+                                1:
+                                    d[0]<-"Dato eliminado";
+                                    e[0]<-"Dato eliminado";
+                                    f[0]<-"Dato eliminado";
+                                    Escribir b[0];
+                                    Escribir "Nombre completo: ", d[0];
+                                    Escribir "Teléfono: ",e[0];
+                                    Escribir "Organización: ", f[0];
+                                    Escribir "";
+                                2:
+                                    d[1]<-"Dato eliminado";
+                                    e[1]<-"Dato eliminado";
+                                    f[1]<-"Dato eliminado";
+                                    Escribir b[1];
+                                    Escribir "Nombre completo: ", d[1];
+                                    Escribir "Teléfono: ",e[1];
+                                    Escribir "Organización: ", f[1];
+                                    Escribir "";
+                                3:
+                                    d[2]<-"Dato eliminado";
+                                    e[2]<-"Dato eliminado";
+                                    f[2]<-"Dato eliminado";
+                                    Escribir b[2];
+                                    Escribir "Nombre completo: ", d[2];
+                                    Escribir "Teléfono: ",e[2];
+                                    Escribir "Organización: ", f[2];
+                                    Escribir "";
+                                4:
+                                    Escribir "¿Desea volver al menú principal?";
+                                    Escribir "             ó                 ";
+                                De Otro Modo:
+                                    Escribir "La opción seleccionada no existe";
+                                    Escribir "No se eliminó ningún contacto";
+                                    Escribir "";
+                                    
+                            FinSegun
+                            Escribir "¿Desea eliminar la información de otro contacto?";
+                            Escribir "1. Ingrese 1 para eliminar la información de otro contacto";
+                            Escribir "2. Ingrese un número diferente a 1 para volver al menú principal";
+                            Leer a;
+                            Limpiar Pantalla;
+                        FinMientras
+                                    
+                    FinSubProceso
+                    
+                    //Buscar contacto
+                    SubProceso buscar (a,b,c,d Por Referencia)
+                        Escribir "2. Contactos almacenados";
+                        Escribir "";
+                        Escribir a[0];
+                        Escribir "Nombre completo: ", b[0];
+                        Escribir "Teléfono: ",c[0];
+                        Escribir "Organización: ", d[0];
+                        Escribir "";
+                        Escribir a[1];
+                        Escribir "Nombre completo: ", b[1];
+                        Escribir "Teléfono: ",c[1];
+                        Escribir "Organización: ", d[1];
+                        Escribir "";
+                        Escribir a[2];
+                        Escribir "Nombre completo: ", b[2];
+                        Escribir "Teléfono: ",c[2];
+                        Escribir "Organización: ", d[2];
+                        Escribir "";
+                    FinSubProceso
+                    
+                    
+                    //Almacenar contacto
+                    SubProceso almacenar (a,b,c,d,e,f)
+                        a<-1;
+                        Mientras a=1 Hacer
+                            Escribir "1. Ingrese un número de acuerdo al contacto que desea alamacenar sus datos";
+                            Escribir "1. ", b[0];
+                            Escribir "2. ", b[1];
+                            Escribir "3. ", b[2];
+                            Escribir "4. Volver al menú principal";
+                            Leer c;
+                            
+                            Limpiar Pantalla;
+                            
+                            Segun c Hacer
+                                1:
+                                    d[0]<-capturaTexto("Ingrese el nombre completo del usuario");
+                                    e[0]<-capturaTexto("Ingrese el número teléfonico del usuario");
+                                    Si e[0]=e[1] | e[0]=e[2] Entonces
+                                        Repetir
+                                            Escribir "El número que quiere almacenar ya existe";
+                                            Escribir "";
+                                            e[0]<-capturaTexto("Ingrese nuevamente el número telefonico");
+                                        Hasta Que e[0]<>e[1] & e[0]<>e[2]
+                                    FinSi
+                                    Escribir "Ingrese el nombre de la organización";
+                                    Leer f[0];
+                                    
+                                    Limpiar Pantalla;
+                                2:
+                                    d[1]<-capturaTexto("Ingrese el nombre completo del usuario");
+                                    e[1]<-capturaTexto("Ingrese el número teléfonico del usuario");
+                                    Si e[1]=e[0] | e[1]=e[2] Entonces
+                                        Repetir
+                                            Escribir "El número que quiere almacenar ya existe";
+                                            Escribir "";
+                                            e[1]<-capturaTexto("Ingrese nuevamente el número telefonico");
+                                        Hasta Que e[1]<>e[0] & e[1]<>e[2]
+                                    FinSi
+                                    Escribir "Ingrese el nombre de la organización";
+                                    Leer f[1];
+                                    
+                                    Limpiar Pantalla;
+                                3:
+                                    d[2]<-capturaTexto("Ingrese el nombre completo del usuario");
+                                    e[2]<-capturaTexto("Ingrese el número teléfonico del usuario");
+                                    Si e[2]=e[0] | e[2]=e[1] Entonces
+                                        Repetir
+                                            Escribir "El número que quiere almacenar ya existe";
+                                            Escribir "";
+                                            e[2]<-capturaTexto("Ingrese nuevamente el número telefonico");
+                                        Hasta Que e[2]<>e[0] & e[2]<>e[1]
+                                    FinSi
+                                    Escribir "Ingrese el nombre de la organización";
+                                    Leer f[2];
+                                    
+                                    Limpiar Pantalla;
+                                4:
+                                    Escribir "¿Desea volver al menú principal?";
+                                    Escribir "             Ó             ";
+                                De Otro Modo:
+                                    Escribir "La opción seleccionada no existe";
+                                    Escribir "No se guardo ningún contacto";
+                                    Escribir "";
+                                    
+                            FinSegun
+                            Escribir "¿Desea almacenar la información de otro contacto?";
+                            Escribir "1. Ingrese 1 para almacenar la información de otro contacto";
+                            Escribir "2. Ingrese un número diferente a 1 para volver al menú principal";
+                            Leer a;
+                            Limpiar Pantalla;
+                                    FinMientras
+                                    
+                                    
+                    FinSubProceso
+                    
+                    //Menu
+                    SubProceso menu ()
+                        Escribir "Bienvenido a su App para almacenar contactos telefónicos";
+                        Escribir "";
+                        Escribir "Ingrese un número de acuerdo a la acción que desea realizar";
+                        Escribir "1. Almacenar un contacto";
+                        Escribir "2. Buscar contactos almacenados";
+                        Escribir "3. Eliminar contacto";
+                        Escribir "4. Salir de la app";
+                        
+                    FinSubProceso
+                    
+                    
+                    //App para almacenar contactos telefónicos
+                    Proceso Taller5_11_6_Funcion_Ciclos
+                        Definir contacto, number, name, org Como Caracter;
+                        Dimension contacto[3], number[3], name[3], org[3] ;
+                        Definir option, select, counter Como Entero;
+                        
+                        contacto[0]<-"Contacto 1";
+                        contacto[1]<-"Contacto 2";
+                        contacto[2]<-"Contacto 3";
+                        
+                        //SD, sin dato
+                        number[0]<-"SD";
+                        number[1]<-"SD";
+                        number[2]<-"SD";
+                        name[0]<-"SD";
+                        name[1]<-"SD";
+                        name[2]<-"SD";
+                        org[0]<-"SD";
+                        org[1]<-"SD";
+                        org[2]<-"SD";
+                        
+                        select<-1;
+                        counter<-1;
+                        option<-1;
+                        
+                        Mientras select = 1 Hacer
+                            menu();
+                            Leer option;
+                            
+                            Limpiar Pantalla;
+                            
+                            Segun option Hacer
+                                1:
+                                    almacenar(counter,contacto,option,name,number,org);
+                                    
+                                2:
+                                    buscar(contacto,name,number,org);
+                                3:
+                                    eliminar(counter,contacto,option,name,number,org);
+                                4:
+                                    Escribir "¿Esta seguro que desea salir de la app?";
+                                    Escribir "                Ó";
+                                    
+                                De Otro Modo:
+                                    Escribir "La opción seleccionada no existe";
+                                    Escribir "";
+                            FinSegun
+                            Escribir "¿Desea volver al menú principal?";
+                            Escribir "1. Ingrese 1 para volver a menú principal";
+                            Escribir "2. De lo contrario ingrese un número diferente a 1 para salir de la App";
+                            Leer select;
+                            Limpiar Pantalla;
+                                Escribir "Has salido de la app";
+                        FinMientras
+                    FinProceso
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

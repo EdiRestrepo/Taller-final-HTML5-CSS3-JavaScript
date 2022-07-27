@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt3-4</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Cycles PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 4</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Se requiere un programa que pueda crear la tabla de multiplicar del número que el usuario indique<br>
+                    por medio del ciclo Para; esta debe ser impresa del 1 al 10. Ejemplo, si el usuario indica que desea<br>
+                    crear la tabla del 5, entonces el resultado debería ser el siguiente:</i><br>
+                    <img src="img/tabla-multiplicar.png">
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller3_4
+                    Definir i, number Como Entero;
+                    
+                    Escribir "Ingrese el número de la tabla de multiplicar que desea visualizar";
+                    Leer number;
+                    
+                    Limpiar Pantalla;
+                    
+                    Escribir "Tabla de multiplicar del: ", number;
+                    Escribir "";
+                    Para i<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir i," x ", number, " = ", i*number;
+                    FinPara
+                    
+                FinProceso
+                </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iTOlYAwWZpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

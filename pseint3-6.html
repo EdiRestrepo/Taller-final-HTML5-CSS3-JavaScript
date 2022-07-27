@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt3-6</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Cycles PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 6</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el sistema debe terminar cuando el usuario así lo indique</i><br>
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller3_6
+                    Definir number1, number2, number3 Como Caracter;
+                    Definir name1, name2, name3 Como Caracter;
+                    Definir org1, org2, org3 Como Caracter;
+                    Definir c1, c2, c3 Como Caracter;
+                    Definir option, select, counter Como Entero;
+                    
+                    c1<-"Contacto 1";
+                    c2<-"Contacto 2";
+                    c3<-"Contacto 3";
+                    number1<-"SD";
+                    number2<-"SD";
+                    number3<-"SD";
+                    name1<-"SD";
+                    name2<-"SD";
+                    name3<-"SD";
+                    org1<-"SD";
+                    org2<-"SD";
+                    org3<-"SD";
+                    
+                    select<-1;
+                    counter<-1;
+                    
+                    Mientras select = 1 Hacer
+                        Escribir "Bienvenido a su App para almacenar contactos telefónicos";
+                        Escribir "";
+                        Escribir "Ingrese un número de acuerdo a la acción que desea realizar";
+                        Escribir "1. Almacenar un contacto";
+                        Escribir "2. Buscar contactos almacenados";
+                        Escribir "3. Eliminar contacto";
+                        Escribir "4. Salir de la app";
+                        Leer option;
+                        
+                        Limpiar Pantalla;
+                        
+                        Segun option Hacer
+                            1:
+                                counter<-1;
+                                Mientras counter=1 Hacer
+                                    Escribir "1. Ingrese un número de acuerdo al contacto que desea alamacenar sus datos";
+                                    Escribir "1. ", c1;
+                                    Escribir "2. ", c2;
+                                    Escribir "3. ", c3;
+                                    Escribir "4. Volver al menú principal";
+                                    Leer option;
+                                    
+                                    Limpiar Pantalla;
+                                    
+                                    Segun option Hacer
+                                        1:
+                                            Escribir "Ingrese el nombre completo del usuario";
+                                            Leer name1;
+                                            Escribir "Ingrese el número teléfonico del usuario";
+                                            Leer number1;
+                                            Si number1=number2 | number1=number3 Entonces
+                                                Repetir
+                                                    Escribir "El número que quiere almacenar ya existe";
+                                                    Escribir "";
+                                                    Escribir "Ingrese nuevamente el número telefonico";
+                                                    Leer number1;
+                                                Hasta Que number1<>number2 & number1<>number3
+                                            FinSi
+                                            Escribir "Ingrese el nombre de la organización";
+                                            Leer org1;
+                                            
+                                            Limpiar Pantalla;
+                                        2:
+                                            Escribir "Ingrese el nombre completo del usuario";
+                                            Leer name2;
+                                            Escribir "Ingrese el número teléfonico del usuario";
+                                            Leer number2;
+                                            
+                                            Si number2=number1 | number2=number3 Entonces
+                                                Repetir
+                                                    Escribir "El número que quiere almacenar ya existe";
+                                                    Escribir "";
+                                                    Escribir "Ingrese nuevamente el número telefonico";
+                                                    Leer number2;
+                                                Hasta Que number2<>number1 & number2<>number3
+                                                
+                                            FinSi
+                                            
+                                            Escribir "Ingrese el nombre de la organización";
+                                            Leer org2;
+                                            
+                                            Limpiar Pantalla;
+                                        3:
+                                            Escribir "Ingrese el nombre completo del usuario";
+                                            Leer name3;
+                                            Escribir "Ingrese el número teléfonico del usuario";
+                                            Leer number3;
+                                            
+                                            Si number3=number1 | number3=number2 Entonces
+                                                Repetir
+                                                    Escribir "El número que quiere almacenar ya existe";
+                                                    Escribir "";
+                                                    Escribir "Ingrese nuevamente el número telefonico";
+                                                    Leer number3;
+                                                Hasta Que number3<>number1 & number3<>number2
+                                            FinSi
+                                            
+                                            Escribir "Ingrese el nombre de la organización";
+                                            Leer org3;
+                                            
+                                            Limpiar Pantalla;
+                                        4:
+                                            Escribir "¿Desea volver al menú principal?";
+                                            Escribir "             Ó             ";
+                                        De Otro Modo:
+                                            Escribir "La opción seleccionada no existe";
+                                            Escribir "No se guardo ningún contacto";
+                                            Escribir "";
+                                            
+                                    FinSegun
+                                    Escribir "¿Desea almacenar la información de otro contacto?";
+                                    Escribir "1. Ingrese 1 para almacenar la información de otro contacto";
+                                    Escribir "2. Ingrese un número diferente a 1 para volver al menú principal";
+                                    Leer counter;
+                                    Limpiar Pantalla;
+                                FinMientras
+                                
+                                
+                                
+                            2:
+                                Escribir "2. Contactos almacenados";
+                                Escribir "";
+                                Escribir c1;
+                                Escribir "Nombre completo: ", name1;
+                                Escribir "Teléfono: ",number1;
+                                Escribir "Organización: ", org1;
+                                Escribir "";
+                                Escribir c2;
+                                Escribir "Nombre completo: ", name2;
+                                Escribir "Teléfono: ",number2;
+                                Escribir "Organización: ", org2;
+                                Escribir "";
+                                Escribir c3;
+                                Escribir "Nombre completo: ", name3;
+                                Escribir "Teléfono: ",number3;
+                                Escribir "Organización: ", org3;
+                                Escribir "";
+                            3:
+                                counter<-1;
+                                Mientras counter=1 Hacer
+                                    Escribir "3. Ingrese un número de acuerdo el contacto que desea eliminar";
+                                    Escribir "1. ", c1;
+                                    Escribir "2. ", c2;
+                                    Escribir "3. ", c3;
+                                    Escribir "4. Volver al menú principal";
+                                    Leer option;
+                                    
+                                    Limpiar Pantalla;
+                                    
+                                    Segun option Hacer
+                                        1:
+                                            name1<-"Dato eliminado";
+                                            number1<-"Dato eliminado";
+                                            org1<-"Dato eliminado";
+                                            Escribir c1;
+                                            Escribir "Nombre completo: ", name1;
+                                            Escribir "Teléfono: ",number1;
+                                            Escribir "Organización: ", org1;
+                                            Escribir "";
+                                        2:
+                                            name2<-"Dato eliminado";
+                                            number2<-"Dato eliminado";
+                                            org2<-"Dato eliminado";
+                                            Escribir c2;
+                                            Escribir "Nombre completo: ", name2;
+                                            Escribir "Teléfono: ",number2;
+                                            Escribir "Organización: ", org2;
+                                            Escribir "";
+                                        3:
+                                            name3<-"Dato eliminado";
+                                            number3<-"Dato eliminado";
+                                            org3<-"Dato eliminado";
+                                            Escribir c3;
+                                            Escribir "Nombre completo: ", name3;
+                                            Escribir "Teléfono: ",number3;
+                                            Escribir "Organización: ", org3;
+                                            Escribir "";
+                                        4:
+                                            Escribir "¿Desea volver al menú principal?";
+                                            Escribir "             ó                 ";
+                                        De Otro Modo:
+                                            Escribir "La opción seleccionada no existe";
+                                            Escribir "No se eliminó ningún contacto";
+                                            Escribir "";
+                                            
+                                    FinSegun
+                                    Escribir "¿Desea eliminar la información de otro contacto?";
+                                    Escribir "1. Ingrese 1 para eliminar la información de otro contacto";
+                                    Escribir "2. Ingrese un número diferente a 1 para volver al menú principal";
+                                    Leer counter;
+                                    Limpiar Pantalla;
+                                FinMientras
+                                
+                            4:
+                                Escribir "¿Esta seguro que desea salir de la app?";
+                                Escribir "                Ó";
+                                
+                            De Otro Modo:
+                                    Escribir "La opción seleccionada no existe";
+                                    Escribir "";
+                            FinSegun
+                            Escribir "¿Desea volver al menú principal?";
+                            Escribir "1. Ingrese 1 para volver a menú principal";
+                            Escribir "2. De lo contrario ingrese un número diferente a 1 para salir de la App";
+                            Leer select;
+                            Limpiar Pantalla;
+                            Escribir "Has salido de la app";
+                    FinMientras
+                    
+                    
+                FinProceso
+                </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iTOlYAwWZpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

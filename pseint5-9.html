@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-9</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 9</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar todos los puntos del taller de condicionales en modo funciones.</i><br><br>
+                    <i>9. El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de diferentes figuras geométricas, para ello requiere una aplicación que le facilite el ejercicio solicitándole los valores al estudiante. La aplicación debe permitir que el estudiante seleccione si desea calcular el área de un rectángulo, triángulo o trapecio. No olvide solicitar los datos necesarios para realizar cada cálculo y mostrar su respectivo resultado.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                    //Captura datos numericos
+                    SubProceso datos <- capturaNumero (num Por Valor)
+                        Definir datos Como real;
+                        Escribir num;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    //Área Trapecio
+                    // Área de un trapecio = ((base1+base2) * altura)/2.
+                    // A = ((b1+b2)*h)/2 (m^2)
+                    // donde A = área; b1 = base1; b2 = base2; h = altura
+                    SubProceso areaTrapecio (a, b, c, d)
+                        Limpiar Pantalla;
+                        Escribir "Ingresa los siguientes datos para calcular el área de un trapecio";
+                        Escribir "";
+                        b<-capturaNumero("Ingresa la base1 del trapecio en metros");
+                        d<-capturaNumero("Ingresa la base2 del trapecio en metros");
+                        c<-capturaNumero("Ingresa la altura del trapecio en metros");
+                        a<-((b+d)*c)/2;
+                        
+                        Limpiar Pantalla;
+                        
+                        Escribir "El área del trapecio es: ", a," m^2";
+                        
+                    FinSubProceso
+                    
+                    
+                    //Área triángulo
+                    // Área de un triángulo = (base * altura)/2
+                    // A = (b*h)/2 (m^2)
+                    // donde A = área; b = base; h = altura
+                    SubProceso areaTriangulo (a, b, c Por Valor)
+                        Limpiar Pantalla;
+                        Escribir "Ingresa los siguientes datos para calcular el área de un triángulo";
+                        Escribir "";
+                        b<-capturaNumero("Ingresa la base del triángulo en metros");
+                        c<-capturaNumero("Ingresa la altura del triángulo en metros");
+                        a<-(b*c)/2;
+                        Limpiar Pantalla;
+                        
+                        Escribir "El área del triángulo es: ", a," m^2";
+                    FinSubProceso
+                    
+                    //Área rectángulo
+                    // Área de un rectangulo = base * altura
+                    // A = b*h (m^2)
+                    // donde A = área; b = base; h = altura
+                    SubProceso arearectangulo (a, b, c Por Valor)
+                        Limpiar Pantalla;
+                        Escribir "Ingresa los siguientes datos para calcular el área de un rectángulo";
+                        Escribir "";
+                        b<-capturaNumero("Ingresa la base del rectángulo en metros");
+                        c<-capturaNumero("Ingresa la altura del rectángulo en metros");
+                        a<-b*c;
+                        Limpiar Pantalla;
+                        
+                        Escribir "El área del rectángulo es: ", a," m^2";
+                        
+                    FinSubProceso
+                    
+                    //App Geometría
+                    Proceso Taller5_9_Funciones_Condicionales
+                        Definir opcion Como Entero;
+                        Definir area, base, base1, altura Como Real;
+                        
+                        area<-0;
+                        base<-0;
+                        altura<-0;
+                        base1<-0;
+                        Escribir "App Geometría";
+                        Escribir "";
+                        Escribir "Seleccione un número de acuerdo a la figura geométrica de la cual desea calcular su área";
+                        Escribir "";
+                        Escribir "1. Área de un rectángulo";
+                        Escribir "2. Área de un triángulo";
+                        Escribir "3. Área de un trapecio";
+                        Leer opcion;
+                        
+                        Segun opcion Hacer
+                            1:
+                                arearectangulo(area,base,altura);
+                            2:
+                                areaTriangulo(area,base,altura);
+                            3:
+                                areaTrapecio(area,base,altura,base1);
+                            De Otro Modo:
+                                Escribir "La opción seleccionada no existe";
+                                Escribir "Intenta de nuevo";
+                        FinSegun
+                        
+                    FinProceso
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

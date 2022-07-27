@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt2-10</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Conditionals PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 10</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación para llevar las cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos titular y cantidad. Para cada cliente las cuentas permitirán realizar ingresos, retiros o consultas de valor. En los ingresos no se pueden insertar valores negativos y para los retiros el valor no puede ser mayor al valor que tiene en la cuenta.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller2_10
+                    Definir nombretitular Como Caracter;
+                    Definir opcion, cantidad, ingresos, retiros Como Entero;
+                    
+                    cantidad<-5000;
+                    
+                    Escribir "App *Su banco fiel*";
+                    Escribir "";
+                    Escribir "Ingrese el nombre del titular de la cuenta";
+                    Leer nombretitular;
+                    Escribir "Apreciado ", nombretitular," por favor, seleccione un número de acuerdo a la acción que desea realizar";
+                    Escribir "1. Realizar ingreso de dinero (deposito)";
+                    Escribir "2. Realizar retiro de dinero";
+                    Escribir "3. Consulta de valor (saldo)";
+                    Leer opcion;
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1:
+                            Escribir "Hola ", nombretitular," por favor, digita la cantidad de dinero que deseas depositar";
+                            //En los ingresos no se pueden insertar valores negativos
+                            Leer ingresos;
+                            
+                            Limpiar Pantalla;
+                            
+                            Si ingresos < 0 Entonces
+                                Escribir "Lo sentimos pero la cantidad ingresada no es valida";
+                                Escribir "Por favor, vuelve a intentarlo";
+                            SiNo
+                                Escribir "Usted ha depositado $", ingresos;
+                                Escribir "Su saldo actual de dinero en su cuenta es de $",cantidad+ingresos;
+                                Escribir "Hasta pronto";
+                            FinSi
+                            
+                        2:
+                            Escribir "Hola ", nombretitular," por favor, digita la cantidad de dinero que deseas retirar";
+                            //para los retiros el valor no puede ser mayor al valor que tiene en la cuenta.
+                            Leer retiros;
+                            
+                            Limpiar Pantalla;
+                            
+                            Si retiros > cantidad Entonces
+                                Escribir "Lo sentimos pero la cantidad  que desea retirar supera el monto del valor de su cuenta";
+                                Escribir "Por favor, vuelve a intentarlo";
+                            SiNo
+                                Escribir "Usted ha retirado $", retiros;
+                                Escribir "Su saldo actual de dinero en su cuenta es de $",cantidad-retiros;
+                                Escribir "Hasta pronto";
+                            FinSi
+                            
+                        3:
+                            Escribir "Hola ", nombretitular," su saldo actual en la cuenta es de $ ",cantidad;
+                            Escribir "Hasta pronto";
+                            
+                        De Otro Modo:
+                            Escribir "La opción seleccionada no existe";
+                            Escribir "Por favor, intenta de nuevo";
+                    FinSegun
+                    
+                FinProceso
+                    </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gP9ke7IMCH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

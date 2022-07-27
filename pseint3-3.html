@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt3-3</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Cycles PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 3</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Realizar la siguiente figura por medio del ciclo Repetir - Hasta Que:</i><br>
+                    <img src="img/ciclo-hasta-que.png">
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller3_3
+                    Definir i, j, f, na, ne Como Entero;
+                    Definir figura1, figura2 Como Caracter;
+                    
+                    figura1<-"*";
+                    figura2<-" ";
+                    
+                    //número de asteriscos en cada fila
+                    na<-1;
+                    
+                    // número de espacios en cada fila
+                    ne<-20;
+                    
+                    //número de filas del arbol parte superior 
+                    f<-11;
+                    
+                    // Inicio ciclo 1, con este primer ciclo se hace la parte superior (el triangulo) del arbol
+                    i<-1;
+                    Repetir
+                        
+                        // Inicio ciclo 2
+                        j<-1;
+                        Repetir
+                            Escribir figura2 Sin Saltar;
+                            j<-j+1;
+                        Hasta Que j > ne;
+                        
+                        // Inicio ciclo 3
+                        j<-1;
+                        Repetir
+                            Escribir figura1 Sin Saltar;
+                            j<-j+1;
+                        Hasta Que j>na;
+                        
+                        Escribir figura2;
+                        i<-i+1;
+                        na<-na+2;
+                        ne<-ne-1;
+                    Hasta Que i > f;
+                
+                    
+                    // Tronco del arbol primera linea
+                    
+                    ne<-19;
+                    na<-3;
+                    i<-1;
+                    f<-1;
+                    
+                    Repetir
+                        
+                      
+                    j<-1;
+                    Repetir
+                        Escribir figura2 Sin Saltar;
+                        j<-j+1;
+                    Hasta Que j > ne;
+                    
+                    j<-1;
+                    Repetir
+                        Escribir figura1 Sin Saltar;
+                        j<-j+1;
+                    Hasta Que j>na;
+                    
+                    Escribir figura2;
+                    i<-i+1;
+                
+                    Hasta Que i > f;
+                    
+                    // Tronco del arbol siguientes lineas
+                    
+                    ne<-19;
+                    na<-3;
+                    i<-1;
+                    f<-3;
+                    
+                    Repetir
+                        
+                        
+                        j<-1;
+                        Repetir
+                            Escribir figura2 Sin Saltar;
+                            j<-j+1;
+                        Hasta Que j > ne;
+                        
+                        j<-1;
+                        Repetir
+                            Escribir figura1 Sin Saltar;
+                            j<-j+1;
+                        Hasta Que j>na;
+                        
+                        Escribir figura2;
+                        i<-i+1;
+                        na<-na+2;
+                        ne<-ne-1;
+                    Hasta Que i > f;
+                    Escribir "";
+                    
+                FinProceso
+                </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iTOlYAwWZpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

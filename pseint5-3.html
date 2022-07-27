@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-3</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 3</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar todos los puntos del taller de condicionales en modo funciones.</i><br><br>
+                    <i>3. Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es mayor o igual a 18 años, entonce se deberá imprimir en pantalla [Nombre completo] usted es mayor de edad, por lo tanto puede entrar a la fiesta. Si la edad de la persona es menor que 18 años, entonces, deberá imprimirse el siguiente mensaje: [Nombre completo] usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                SubProceso printMessage(a,b,c Por Valor)
+                    Limpiar Pantalla;
+                    Si ConvertirANumero(c)>=18 Entonces
+                        Escribir a," ",b Sin Saltar;
+                        Escribir ", usted es mayor de edad, por lo tanto puede entrar a la fiesta";
+                    SiNo
+                        Escribir a," ",b Sin Saltar;
+                        Escribir ", usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.";
+                    FinSi
+                FinSubProceso
+                
+                //Ingresar información
+                SubProceso data <- capture (message Por Valor)
+                    Definir data Como Caracter;
+                    Escribir message;
+                    Leer data;
+                FinSubProceso
+                
+                Proceso Taller5_3_Funcion_Condicional
+                    Definir name, surname, age  Como Caracter;
+                    
+                    name<-capture("Digite su nombre");
+                    surname<-capture("Digite su apellido");
+                    age<-capture("Digite su edad");
+                    
+                    printMessage(name, surname, age);
+                FinProceso
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

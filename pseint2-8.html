@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt2-8</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Conditionals PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 8</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita registrar los pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas características propias como sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación permita registrar los pedidos, las tortas disponibles y las ventas que se registren diariamente.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller2_8
+                    Definir opcion, cantidadTortasPeque, cantidadTortasMediana, cantidadTortasGrande Como Entero;
+                    Definir tortapeque, tortamediana, tortagrande Como Entero;
+                    Definir cliente, sabor, porciones, decoraciones Como Caracter;
+                    
+                    //Valor tortas 
+                    tortapeque<-10000;
+                    tortamediana<-18000;
+                    tortagrande<-25000;
+                    Escribir "App tortas Don Carlos";
+                    Escribir "";
+                    Escribir "Ingrese un número de acuerdo a la acción que desea realizar";
+                    Escribir "1. Registrar pedido";
+                    Escribir "2. Ver tortas disponibles";
+                    Escribir "3. Registrar ventas del dia";
+                    Leer opcion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1: 
+                            Escribir "Registrar un pedido";
+                            Escribir "";
+                            Escribir "Ingrese el nombre del cliente";
+                            Leer cliente;
+                            Escribir "Ingrese la cantidad de tortas pequeñas, 4 porciones";
+                            Leer cantidadTortasPeque;
+                            Escribir "Ingrese la cantidad de tortas, 8 porciones";
+                            Leer cantidadTortasMediana;
+                            Escribir "Ingrese la cantidad de tortas, 12 porciones";
+                            Leer cantidadTortasGrande;
+                            Escribir "Ingrese el sabor de su torta (Chocolate, Arequipe, Fresa)";
+                            Leer sabor;
+                            Escribir "Ingrese la decoración de la torta (arequipe, fresas, nutela)";
+                            Leer decoraciones;
+                            
+                            Limpiar Pantalla;
+                            
+                            Escribir "Se ha hecho el siguiente pedido a nombre de: ", cliente;
+                            Escribir cantidadTortasPeque," Tortas pequeñas";
+                            Escribir cantidadTortasMediana," Tortas medianas";
+                            Escribir cantidadTortasGrande," Tortas grandes";
+                            Escribir "Sabor: ", sabor;
+                            Escribir "Decoración: ", decoraciones;
+                            
+                            
+                        2:
+                            Escribir "Tortas disponibles";
+                            Escribir "1. Tortas pequeñas, cuatro porciones";
+                            Escribir "2. Tortas medianas, ocho porciones";
+                            Escribir "3. Tortas grandes, doce porciones";
+                            Escribir "Observaciones: 1. El cliente selecciona el sabor, y la decoración de la torta";
+                            Escribir "               2. Para pedidos de tortas mayores a doce porciones, se debe hacer el pedido con tres dias de anticipación";
+                        3:
+                            Escribir "Registrar ventas del dia";
+                            Escribir "";
+                            Escribir "Ingrese la cantidad de tortas pequeñas, 4 porciones";
+                            Leer cantidadTortasPeque;
+                            Escribir "Ingrese la cantidad de tortas, 8 porciones";
+                            Leer cantidadTortasMediana;
+                            Escribir "Ingrese la cantidad de tortas, 12 porciones";
+                            Leer cantidadTortasGrande;
+                            
+                            Limpiar Pantalla;
+                            Escribir "Total ventas del dia";
+                            Escribir cantidadTortasPeque," Tortas pequeñas";
+                            Escribir cantidadTortasMediana," Tortas medianas";
+                            Escribir cantidadTortasGrande," Tortas grandes";
+                            Escribir "";
+                            Escribir "Total $ ", cantidadTortasPeque*tortapeque+cantidadTortasMediana*tortamediana+cantidadTortasGrande*tortagrande;
+                        De Otro Modo:
+                            Escribir "La opción seleccionada no existe";
+                            Escribir "Intenta de nuevo";
+                    FinSegun
+                    
+                FinProceso
+                    </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gP9ke7IMCH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

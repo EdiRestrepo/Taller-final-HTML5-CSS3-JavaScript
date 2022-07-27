@@ -1,0 +1,102 @@
+
+body{
+    background-color: rgb(73, 202, 219);
+    color: black;
+    width: 1024px;
+    margin: 0px auto;
+}
+
+header{
+    background-color: rgb(144, 104, 197);
+    border-radius: 20px;
+}
+
+main{
+    background-color: rgb(104, 166, 207);
+    border-radius: 20px;
+}
+
+a{
+    text-decoration: none; 
+    color: green;
+}
+a:hover{
+    font-size: 140%;
+    color: coral;
+    background: blueviolet;
+    border-radius: 22px;    
+}
+
+a:active {
+    color: red;
+    background: blue;
+}
+
+
+img{
+    border: 10px outset white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px red;
+}
+
+div{
+    border-radius: 22px;
+}
+
+nav{
+    border-radius: 22px;
+    width: 22%;
+    text-align: center;
+}
+
+#tema{
+    font-size: 25px;
+    border-radius: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 23px;
+    left: 530px;
+}
+
+#azul{
+    color: rgb(73, 202, 219);
+}
+
+#rosado{
+    color: pink;
+}
+
+#verde{
+    color: LightGreen;
+}
+
+#experiencia1{
+    display: none;
+}
+
+.experiencia{
+    cursor: pointer;
+}
+#experiencia2{
+    display: none;
+}
+
+#experiencia3{
+    display: none;
+}
+#experiencia4{
+    display: none;
+}
+
+.referencia, .estudio{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    cursor: pointer;
+}
+
+#referencia1, #referencia2, #referencia3, #estudio1, #estudio2, #estudio3, #estudio4 {
+    display: none;
+    text-align: center;
+}

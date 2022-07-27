@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contáctenos</title>
+    <link rel="stylesheet" href="css/contact.css" type="text/css" />
+    <script src="js/contact.js"></script>
+</head>
+
+<body onload="main()">
+    <header></header>
+    <nav></nav>
+        <section>
+            <article>
+                <form id="form" >
+                    <h1>Contáctenos</h1>
+                    <p class="grupo">
+                        <input  type="text" id="nombre" name="nombre" value="" required><span class="barra"></span>
+                        <label for="nombre">Nombre</label>
+                    </p>
+                    <p class="grupo">
+                        <input type="email" id="correo" name="correo"  value="" required><span class="barra"></span>
+                        <label for="correo">Email</label>
+                    </p>
+                    <p class="grupo">
+                        <input  type="text" id="asunto" name="asunto"  value="" required><span class="barra"></span>
+                        <label for="asunto">Asunto</label>
+                    </p>
+                    <p class="grupo">
+                        <textarea  type="text" id="mensaje" name="mensaje"  value=""  required></textarea><span class="barra"></span>
+                        <label for="mensaje">Mensaje del correo</label>
+                    </p>
+                    <p class="center-content">
+                        <button class="button" type="button" onclick="capturaDato()">Enviar formulario</button>
+                        <button class="button" type="reset">Resetear formulario</button>
+                        <!-- <input  class="button" type="button" onclick="capturaDato()"  value="Enviar formulario">
+                        <input class="button" type="reset" value="Resetear formulario"> -->
+                    </p>   
+                </form>
+            </article>
+        </section>
+        <aside></aside>
+        <footer></footer>
+</body>
+</html>

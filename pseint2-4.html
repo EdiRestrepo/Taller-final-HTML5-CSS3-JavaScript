@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt2-4</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Conditionals PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 4</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el Porvenir, requiere de una aplicación que permita registrar el alquiler de las películas que adquieren sus usuarios. Para cada usuario se debe permitir la opción de alquilar película, consultar películas disponibles y recibir película en la video tienda con la opción de realizar anotaciones sobre estas si se llegan a presentar daños u otra novedad sobre la película.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller2_4
+                    Definir usuario, anotaciones Como Caracter;
+                    Definir opcion, edad Como Entero;
+                    
+                    Escribir "APP video tienda alquiler de películas Porvenir";
+                    Escribir  "";
+                    Escribir "Ingrese su nombre de usuario";
+                    Leer usuario;
+                    Escribir "Ingrese su edad";
+                    Leer edad;
+                    
+                    Limpiar Pantalla;
+                    
+                    Si edad >= 14 Entonces
+                        Escribir "Hola ", usuario,", Bienvenido a su video tienda Porvenir";
+                        Escribir "";
+                        Escribir "Ingrese un número del 1 al 4 de acuerdo a lo que desea hacer";
+                        Escribir "";
+                        Escribir "1. Alquilar película";
+                        Escribir "2. Consultar películas disponbles";
+                        Escribir "3. Recibir película en la video tienda";
+                        Escribir "4. Salir de la App";
+                        Leer opcion;
+                        
+                        Limpiar Pantalla;
+                        
+                        Segun opcion Hacer
+                            1:
+                                Escribir "Lista de Películas disponibles";
+                                Escribir "";
+                                Escribir "1. Película 1";
+                                Escribir "2. Película 2";
+                                Escribir "3. Película 3";
+                                Escribir "4. Película 4";
+                                Escribir "5. Película 5";
+                                Escribir "";
+                                Escribir "Ingrese un número, de a acuerdo al nombre de la película que deseas alquilar";
+                            
+                                Leer opcion;
+                                
+                                Limpiar Pantalla;
+                                
+                                Segun opcion Hacer
+                                    1: 
+                                        Escribir "Hola ",usuario," ", "acabas de adquirir la Película 1, esperamos la disfrutes y regreses pronto"; 
+                                    2: 
+                                        Escribir "Hola ",usuario," ", "acabas de adquirir la Película 2, esperamos la disfrutes y regreses pronto";
+                                    3: 
+                                        Escribir "Hola ",usuario," ", "acabas de adquirir la Película 3, esperamos la disfrutes y regreses pronto"; 
+                                    4: 
+                                        Escribir "Hola ",usuario," ", "acabas de adquirir la Película 4, esperamos la disfrutes y regreses pronto"; 
+                                    5: 
+                                        Escribir "Hola ",usuario," ", "acabas de adquirir la Película 5, esperamos la disfrutes y regreses pronto"; 
+                                    De Otro Modo:
+                                        Escribir "La opción elegida no existe";
+                                        Escribir "Intenta de nuevo";
+                                FinSegun
+                            2:
+                                Escribir "Lista de Películas disponibles";
+                                Escribir "";
+                                Escribir "1. Película 1";
+                                Escribir "2. Película 2";
+                                Escribir "3. Película 3";
+                                Escribir "4. Película 4";
+                                Escribir "5. Película 5";
+                                Escribir "";
+                                Escribir "Regresa al menú principal si deseas alquilar alguna de nuestras películas";
+                                
+                            3:
+                                Escribir "¿Alguna novedad al recibir la película (daño u otra novedad)?";
+                                Escribir "";
+                                Escribir "1. Si";
+                                Escribir "2. No";
+                                Escribir "";
+                                Escribir "Digita 1 si hay alguna novedad, de lo contrario digita 2 para salir del sistema";
+                                Leer opcion;
+                                
+                                Limpiar Pantalla;
+                                
+                                Si opcion = 1 Entonces
+                                    Escribir "Digite cual es novedad";
+                                    Leer anotaciones;
+                                    Escribir "Se ha registrado la novedad: ", anotaciones;
+                                    Escribir "Hasta pronto";
+                                SiNo
+                                    Escribir "Se ha guardado la información sin ninguna novedad";
+                                    Escribir "Hasta pronto";
+                                    
+                                FinSi
+                            4:
+                                Escribir "El usuario ",usuario," Ha salido de la App";
+                                
+                            De Otro Modo:
+                                Escribir "La opción elegida no existe";
+                                Escribir "Intenta de nuevo";
+                                
+                        FinSegun
+                        
+                    SiNo
+                        Escribir "Hola ",usuario," ", "lo sentimos, pero no esta disponible el alquiler de peliculas a menores de 14 años de edad";
+                        
+                    FinSi
+                    
+                    
+                FinProceso
+                    </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gP9ke7IMCH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

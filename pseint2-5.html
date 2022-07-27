@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt2-5</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Conditionals PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 5</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder facturar los productos que vende a sus clientes y para ello, los productos tienen unas características que deben indicársele al cliente para que pueda escoger el producto a comprar. Para cada cliente, se tienen las opciones de compra de producto, consulta de precios por producto y devoluciones en caso de que se presenten.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller2_5
+                    Definir cliente, producto1, producto2, producto3, producto4, producto5, devolucion Como Caracter;
+                    Definir opcion, precioProducto1, precioProducto2, precioProducto3, precioProducto4, precioProducto5 Como Entero;
+                    
+                    //Caracteristicas productos
+                    producto1<-"Pañitos humedos para el cuidado de la piel X 100 Unidades";
+                    producto2<-"Acetaminofén de 500mg para el dolor de cabeza, tableta por 10 pastillas";
+                    producto3<-"Aspirina de 100mg para bajar la fiebre y aliviar el dolor leve, tableta por 10 pastillas";
+                    producto4<-"Loperamida para controlar sintomas de diearrea, presentación en solución por 750ml";
+                    producto5<-"Protector solar x 1000ml";
+                    
+                    //Precio Productos en pesos colombianos
+                    precioProducto1<- 5000;
+                    precioProducto2<-2000;
+                    precioProducto3<-1500;
+                    precioProducto4<-3000;
+                    precioProducto5<-4500;
+                    
+                    Escribir "APP Droguería Mi Salud";
+                    Escribir  "";
+                    Escribir "Ingrese su nombre de usuario";
+                    Leer cliente;
+                    
+                    Limpiar Pantalla;
+                    
+                    Escribir "Hola ",cliente,", ","Bienvenido a su Droguería Mi Salud Suba";
+                    Escribir "";
+                    Escribir "¿Que desea hacer? - Ingrese el número según corresponda la opcion";
+                    Escribir " ";
+                    Escribir "1. Ver nuestros productos y sus respectivas caracteristicas";
+                    Escribir "2. Consultar precio por producto";
+                    Escribir "3. Comprar producto";
+                    Escribir "4. Hacer devolución de producto";
+                    Leer opcion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1: 
+                            Escribir "A continuación te presentamos nuetros productos y sus respectivas caracteristicas";
+                            Escribir "";
+                            Escribir "1. ",producto1;
+                            Escribir "2. ",producto2;
+                            Escribir "3. ",producto3;
+                            Escribir "4. ",producto4;
+                            Escribir "5. ",producto5;
+                            Escribir "";
+                            Escribir "A continuación te invitamos a: ";
+                            Escribir "";
+                            Escribir "1. Ver el precio de nuestros productos";
+                            Escribir "2. Comprar producto";
+                            Escribir "3. Salir del menu";
+                            Escribir "";
+                            Escribir "Ingrese el número segun corresponda la opción";
+                            Leer opcion;
+                            
+                            Limpiar Pantalla;
+                            
+                            Segun opcion Hacer
+                                1:
+                                    Escribir "Precio de nuestros productos";
+                                    Escribir "";
+                                    Escribir "1. ",producto1,", $", precioProducto1;
+                                    Escribir "2. ",producto2,", $", precioProducto2;
+                                    Escribir "3. ",producto3,", $", precioProducto3;
+                                    Escribir "4. ",producto4,", $", precioProducto4;
+                                    Escribir "5. ",producto5,", $", precioProducto5;
+                                    Escribir "";
+                                    Escribir "Te gustaria comprar algun producto";
+                                    Escribir "1. Si";
+                                    Escribir "2. No, salir del menu";
+                                    Escribir "";
+                                    Escribir "Ingrese el número segun corresponda la opción";
+                                    Leer opcion;
+                                    
+                                    Limpiar Pantalla;
+                                    
+                                    Si opcion=1 Entonces
+                                        Escribir "Ingrese el número segun corresponda la opción del producto que desea comprar";
+                                        Escribir "";
+                                        Escribir "1. ",producto1;
+                                        Escribir "2. ",producto2;
+                                        Escribir "3. ",producto3;
+                                        Escribir "4. ",producto4;
+                                        Escribir "5. ",producto5;
+                                        Leer opcion;
+                                        
+                                        Limpiar Pantalla;
+                                        
+                                        Segun opcion Hacer
+                                            1:
+                                                Escribir "Valor a pagar: ","$ ",precioProducto1;
+                                                Escribir cliente," Muchas gracias por su compra";
+                                            2:
+                                                Escribir "Valor a pagar: ","$ ",precioProducto2;
+                                                Escribir cliente," Muchas gracias por su compra";
+                                            3:
+                                                Escribir "Valor a pagar: ","$ ",precioProducto3;
+                                                Escribir cliente," Muchas gracias por su compra";
+                                            4: 
+                                                Escribir "Valor a pagar: ","$ ",precioProducto4;
+                                                Escribir cliente," Muchas gracias por su compra";
+                                            5:
+                                                Escribir "Valor a pagar: ","$ ",precioProducto5;
+                                                Escribir cliente," Muchas gracias por su compra";
+                                                
+                                            De Otro Modo:
+                                                Escribir "La opción elegida no existe";
+                                                Escribir "Volver a intentar";
+                                                
+                                        FinSegun
+                                        
+                                    SiNo
+                                        Escribir "Has salido del menu";
+                                        
+                                    FinSi
+                                    
+                                2:
+                                    Escribir "Ingrese el número segun corresponda la opción del producto que desea comprar";
+                                    Escribir "";
+                                    Escribir "1. ",producto1;
+                                    Escribir "2. ",producto2;
+                                    Escribir "3. ",producto3;
+                                    Escribir "4. ",producto4;
+                                    Escribir "5. ",producto5;
+                                    Leer opcion;
+                                    
+                                    Limpiar Pantalla;
+                                    
+                                    Segun opcion Hacer
+                                        1:
+                                            Escribir "Valor a pagar: ","$ ",precioProducto1;
+                                            Escribir cliente," Muchas gracias por su compra";
+                                        2:
+                                            Escribir "Valor a pagar: ","$ ",precioProducto2;
+                                            Escribir cliente," Muchas gracias por su compra";
+                                        3:
+                                            Escribir "Valor a pagar: ","$ ",precioProducto3;
+                                            Escribir cliente," Muchas gracias por su compra";
+                                        4: 
+                                            Escribir "Valor a pagar: ","$ ",precioProducto4;
+                                            Escribir cliente," Muchas gracias por su compra";
+                                        5:
+                                            Escribir "Valor a pagar: ","$ ",precioProducto5;
+                                            Escribir cliente," Muchas gracias por su compra";
+                                            
+                                        De Otro Modo:
+                                            Escribir "La opción elegida no existe";
+                                            Escribir "Volver a intentar";
+                                            
+                                    FinSegun
+                                3:
+                                    Escribir "Has salido del menu";
+                            FinSegun
+                            
+                        2:
+                            Escribir "Precio de nuestros productos";
+                            Escribir "";
+                            Escribir "1. ",producto1,", $", precioProducto1;
+                            Escribir "2. ",producto2,", $", precioProducto2;
+                            Escribir "3. ",producto3,", $", precioProducto3;
+                            Escribir "4. ",producto4,", $", precioProducto4;
+                            Escribir "5. ",producto5,", $", precioProducto5;
+                            Escribir "";
+                            Escribir "Te gustaria comprar algun producto";
+                            Escribir "1. Si";
+                            Escribir "2. No, salir del menu";
+                            Escribir "";
+                            Escribir "Ingrese el número segun corresponda la opción";
+                            Leer opcion;
+                            
+                            Limpiar Pantalla;
+                            
+                            Si opcion=1 Entonces
+                                Escribir "Ingrese el número segun corresponda la opción del producto que desea comprar";
+                                Escribir "";
+                                Escribir "1. ",producto1;
+                                Escribir "2. ",producto2;
+                                Escribir "3. ",producto3;
+                                Escribir "4. ",producto4;
+                                Escribir "5. ",producto5;
+                                Leer opcion;
+                                
+                                Limpiar Pantalla;
+                                
+                                Segun opcion Hacer
+                                    1:
+                                        Escribir "Valor a pagar: ","$ ",precioProducto1;
+                                        Escribir cliente," Muchas gracias por su compra";
+                                    2:
+                                        Escribir "Valor a pagar: ","$ ",precioProducto2;
+                                        Escribir cliente," Muchas gracias por su compra";
+                                    3:
+                                        Escribir "Valor a pagar: ","$ ",precioProducto3;
+                                        Escribir cliente," Muchas gracias por su compra";
+                                    4: 
+                                        Escribir "Valor a pagar: ","$ ",precioProducto4;
+                                        Escribir cliente," Muchas gracias por su compra";
+                                    5:
+                                        Escribir "Valor a pagar: ","$ ",precioProducto5;
+                                        Escribir cliente," Muchas gracias por su compra";
+                                        
+                                    De Otro Modo:
+                                        Escribir "La opción elegida no existe";
+                                        Escribir "Volver a intentar";
+                                        
+                                FinSegun
+                                
+                            SiNo
+                                Escribir "Has salido del menu";
+                                
+                            FinSi
+                            
+                        3:
+                            Escribir "Ingrese el número segun corresponda la opción del producto que desea comprar";
+                            Escribir "";
+                            Escribir "1. ",producto1;
+                            Escribir "2. ",producto2;
+                            Escribir "3. ",producto3;
+                            Escribir "4. ",producto4;
+                            Escribir "5. ",producto5;
+                            Leer opcion;
+                            
+                            Limpiar Pantalla;
+                            
+                            Segun opcion Hacer
+                                1:
+                                    Escribir "Valor a pagar: ","$ ",precioProducto1;
+                                    Escribir cliente," Muchas gracias por su compra";
+                                2:
+                                    Escribir "Valor a pagar: ","$ ",precioProducto2;
+                                    Escribir cliente," Muchas gracias por su compra";
+                                3:
+                                    Escribir "Valor a pagar: ","$ ",precioProducto3;
+                                    Escribir cliente," Muchas gracias por su compra";
+                                4: 
+                                    Escribir "Valor a pagar: ","$ ",precioProducto4;
+                                    Escribir cliente," Muchas gracias por su compra";
+                                5:
+                                    Escribir "Valor a pagar: ","$ ",precioProducto5;
+                                    Escribir cliente," Muchas gracias por su compra";
+                                    
+                                De Otro Modo:
+                                    Escribir "La opción elegida no existe";
+                                    Escribir "Volver a intentar";
+                                    
+                            FinSegun
+                            
+                        4:
+                            Escribir "Ingrese el número segun corresponda la opción del producto que desea devolver";
+                            Escribir "";
+                            Escribir "1. ",producto1;
+                            Escribir "2. ",producto2;
+                            Escribir "3. ",producto3;
+                            Escribir "4. ",producto4;
+                            Escribir "5. ",producto5;
+                            Leer opcion;
+                            
+                            Limpiar Pantalla;
+                            
+                            Segun opcion Hacer
+                                1:
+                                    Escribir "Digite la razón por la cual se devuelve el producto";
+                                    Leer devolucion;
+                                    Escribir "Se ha registrado la devolución del producto por: ", devolucion;
+                                    Escribir "";
+                                    Escribir "Se devuelve al cliente ",cliente," un valor de: ", "$ ",precioProducto1;
+                                    Escribir "Hasta pronto";
+                                2:
+                                    Escribir "Digite la razón por la cual se devuelve el producto";
+                                    Leer devolucion;
+                                    Escribir "Se ha registrado la devolución del producto por: ", devolucion;
+                                    Escribir "";
+                                    Escribir "Se devuelve al cliente ",cliente," un valor de: ", "$ ",precioProducto2;
+                                    Escribir "Hasta pronto";
+                                3:
+                                    Escribir "Digite la razón por la cual se devuelve el producto";
+                                    Leer devolucion;
+                                    Escribir "Se ha registrado la devolución del producto por: ", devolucion;
+                                    Escribir "";
+                                    Escribir "Se devuelve al cliente ",cliente," un valor de: ", "$ ",precioProducto3;
+                                    Escribir "Hasta pronto";
+                                4: 
+                                    Escribir "Digite la razón por la cual se devuelve el producto";
+                                    Leer devolucion;
+                                    Escribir "Se ha registrado la devolución del producto por: ", devolucion;
+                                    Escribir "";
+                                    Escribir "Se devuelve al cliente ",cliente," un valor de: ", "$ ",precioProducto4;
+                                    Escribir "Hasta pronto";
+                                5:
+                                    Escribir "Digite la razón por la cual se devuelve el producto";
+                                    Leer devolucion;
+                                    Escribir "Se ha registrado la devolución del producto por: ", devolucion;
+                                    Escribir "";
+                                    Escribir "Se devuelve al cliente ",cliente,"n valor de: ", "$ ",precioProducto5;
+                                    Escribir "Hasta pronto";
+                                    
+                                De Otro Modo:
+                                    Escribir "La opción elegida no existe";
+                                    Escribir "Volver a intentar";
+                                    
+                            FinSegun
+                            
+                        De Otro Modo:
+                            Escribir "La opción elegida no existe";
+                            Escribir "Volver a intentar";
+                            
+                        
+                    FinSegun
+                
+                
+                FinProceso
+                    </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gP9ke7IMCH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

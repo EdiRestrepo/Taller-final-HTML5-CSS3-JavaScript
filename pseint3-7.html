@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt3-7</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Cycles PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 7</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se sugiere que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del cliente como son nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de ingresar al parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el parqueadero. Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga en presente que el parqueadero solo puede almacenar máximo 5 vehículos.</i><br>
+                
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller3_7
+	
+                    Definir vehicle1, vehicle2, vehicle3, vehicle4, vehicle5 Como Caracter;
+                    Definir plate1, plate2, plate3, plate4, plate5 Como Caracter;
+                    Definir brand1, brand2, brand3, brand4, brand5 Como Caracter;
+                    Definir owner1, owner2, owner3, owner4, owner5 Como Caracter;
+                    Definir phone1, phone2, phone3, phone4, phone5 Como Caracter;
+                    
+                    Definir available1, available2, available3, available4, available5 Como Entero;
+                    Definir option, counter, cell Como Entero;
+                    Definir select, entry, exit, consult Como Entero;
+                    
+                    available1<-0;
+                    available2<-0;
+                    available3<-0;
+                    available4<-0;
+                    available5<-0;
+                    
+                    counter<-1;
+                    
+                    
+                    Repetir
+                        Escribir "***********************************************************";
+                        Escribir "************ App Parqueadero -El Guardián- ****************";
+                        Escribir "***********************************************************";
+                        Escribir "Ingrese un número de acuerdo a la acción que desea realizar";
+                        Escribir "";
+                        Escribir " 1. Ingreso de vehículo                        	          ";
+                        Escribir " 2. Retirar vehículo del parqueadero                       ";
+                        Escribir " 3. Consultar si un vehículo se encuentra en el parqueadero";
+                        Escribir " 4. Salir de la App                                        ";
+                        Escribir "";
+                        Leer option;
+                        
+                        Limpiar Pantalla;
+                        
+                        Segun option Hacer
+                            1:
+                                entry<-1;
+                                Mientras counter<6 & entry=1 Hacer
+                                    Escribir "Ingrese un número de acuerdo a la celda donde va a parquear el vehículo";
+                                    Escribir "";
+                                    Escribir "1. Celda #1";
+                                    Escribir "2. Celda #2";
+                                    Escribir "3. Celda #3";
+                                    Escribir "4. Celda #4";
+                                    Escribir "5. Celda #5";
+                                    Escribir "6. Volver al menú principal";
+                                    Escribir "";
+                                    Leer cell;
+                                    
+                                    Limpiar Pantalla;
+                                    
+                                    Segun cell Hacer
+                                        1:
+                                            Si available1=0 Entonces
+                                                Escribir "Ingrese los siguientes datos para parquear el vehículo en la celda #1";
+                                                Escribir "";
+                                                Escribir "Digite el nombre del propietario del vehículo";
+                                                Leer owner1;
+                                                Escribir "Digite el número teléfonico del propietario";
+                                                Leer phone1;
+                                                Escribir "Digite la marca del vehículo";
+                                                Leer brand1;
+                                                Escribir "Digite la placa del vehículo";
+                                                Leer plate1;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha guardado la información de forma correcta";
+                                                Escribir "       La celda #1 queda ocupada";
+                                                Escribir "";
+                                                available1<-available1+1;
+                                                counter<-counter+1;
+                                            SiNo
+                                                Escribir "La celda #1 se encuentra ocupada";
+                                                Escribir "";
+                                            FinSi
+                                        2:
+                                            Si  available2=0 Entonces
+                                                Escribir "Ingrese los siguientes datos para parquear el vehículo en la celda #2";
+                                                Escribir "";
+                                                Escribir "Digite el nombre del propietario del vehículo";
+                                                Leer owner2;
+                                                Escribir "Digite  el número teléfonico del propietario";
+                                                Leer phone2;
+                                                Escribir "Digite  la marca del vehículo";
+                                                Leer brand2;
+                                                Escribir "Digite  la placa del vehículo";
+                                                Leer plate2;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha guardado la información de forma correcta";
+                                                Escribir "       La celda #2 queda ocupada";
+                                                Escribir "";
+                                                available2<-available2+1;
+                                                counter<-counter+1;
+                                            SiNo
+                                                Escribir "La celda #2 se encuentra ocupada";
+                                                Escribir "";
+                                            FinSi
+                                        3:
+                                            Si available3=0 Entonces
+                                                Escribir "Ingrese los siguientes datos para parquear el vehículo en la celda #3";
+                                                Escribir "";
+                                                Escribir "Digite  el nombre del propietario del vehículo";
+                                                Leer owner3;
+                                                Escribir "Digite  el número teléfonico del propietario";
+                                                Leer phone3;
+                                                Escribir "Digite  la marca del vehículo";
+                                                Leer brand3;
+                                                Escribir "Digite  la placa del vehículo";
+                                                Leer plate3;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha guardado la información de forma correcta";
+                                                Escribir "       La celda #3 queda ocupada";
+                                                Escribir "";
+                                                available3<-available3+1;
+                                                counter<-counter+1;
+                                            SiNo
+                                                Escribir "La celda #3 se encuentra ocupada";
+                                                Escribir "";
+                                            FinSi
+                                            
+                                        4:
+                                            Si available4=0 Entonces
+                                                Escribir "Ingrese los siguientes datos para parquear el vehículo en la celda #4";
+                                                Escribir "";
+                                                Escribir "Digite  el nombre del propietario del vehículo";
+                                                Leer owner4;
+                                                Escribir "Digite  el número teléfonico del propietario";
+                                                Leer phone4;
+                                                Escribir "Digite  la marca del vehículo";
+                                                Leer brand4;
+                                                Escribir "Digite  la placa del vehículo";
+                                                Leer plate4;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha guardado la información de forma correcta";
+                                                Escribir "       La celda #4 queda ocupada";
+                                                Escribir "";
+                                                available4<-available4+1;
+                                                counter<-counter+1;
+                                            SiNo
+                                                Escribir "La celda #4 se encuentra ocupada";
+                                                Escribir "";
+                                            FinSi
+                                        5:
+                                            Si available5=0 Entonces
+                                                Escribir "Ingrese los siguientes datos para parquear el vehículo en la celda #5";
+                                                Escribir "";
+                                                Escribir "Digite  el nombre del propietario del vehículo";
+                                                Leer owner5;
+                                                Escribir "Digite  el número teléfonico del propietario";
+                                                Leer phone5;
+                                                Escribir "Digite  la marca del vehículo";
+                                                Leer brand5;
+                                                Escribir "Digite  la placa del vehículo";
+                                                Leer plate5;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha guardado la información de forma correcta";
+                                                Escribir "       La celda #5 queda ocupada";
+                                                Escribir "";
+                                                available5<-available5+1;
+                                                counter<-counter+1;
+                                                
+                                            SiNo
+                                                Escribir "La celda #5 se encuentra ocupada";
+                                                Escribir "";
+                                            FinSi
+                                        6:
+                                            Escribir "";
+                                            Limpiar Pantalla;
+                                        De Otro Modo:
+                                            Escribir "La celda seleccionada no existe";
+                                            Escribir "";
+                                            
+                                    FinSegun
+                                    Escribir "¿Desea ingresar otro vehículo al parqueadero?";
+                                    Escribir "";
+                                    Escribir "1. Digite  1 para ingresar otro vehículo";
+                                    Escribir "2. Digite  un número diferente de 1 para volver al menú principal";
+                                    Escribir "";
+                                    Leer entry;
+                                    Limpiar Pantalla;
+                                    Si counter>=6 Entonces
+                                        Escribir "El parqueadero esta full";
+                                        Escribir "Se debe esperar a que salga un vehículo para abrir espacio en el parqueadero";
+                                        Escribir "";
+                                        
+                                    FinSi
+                                    
+                                FinMientras
+                                
+                                
+                            2:
+                                exit<-1;
+                                Mientras exit=1 Hacer
+                                    Escribir "Ingrese un número de acuerdo a la celda donde va a salir el vehículo";
+                                    Escribir "";
+                                    Escribir "1. Celda #1";
+                                    Escribir "2. Celda #2";
+                                    Escribir "3. Celda #3";
+                                    Escribir "4. Celda #4";
+                                    Escribir "5. Celda #5";
+                                    Escribir "6. Volver al menú principal";
+                                    Escribir "";
+                                    Leer cell;
+                                    Limpiar Pantalla;
+                                    
+                                    Segun cell Hacer
+                                        1:
+                                            Si available1=1 Entonces
+                                                owner1<-"";
+                                                phone1<-"";
+                                                plate1<-"";
+                                                brand1<-"";
+                                                available1<-0;
+                                                counter<-counter-1;
+                                                Escribir "La celda # 1 queda libre";
+                                                Escribir "";
+                                            SiNo
+                                                Escribir "La celda #1 se encuentra desocupada";
+                                                Escribir "";
+                                            FinSi
+                                            
+                                        2:
+                                            Si available2=1 Entonces
+                                                owner2<-"";
+                                                phone2<-"";
+                                                plate2<-"";
+                                                brand2<-"";
+                                                available2<-0;
+                                                counter<-counter-1;
+                                                Escribir "La celda # 2 queda libre";
+                                                Escribir "";
+                                            SiNo
+                                                Escribir "La celda #2 se encuentra desocupada";
+                                                Escribir "";
+                                            FinSi
+                                        3:
+                                            Si available3=1 Entonces
+                                                owner3<-"";
+                                                phone3<-"";
+                                                plate3<-"";
+                                                brand3<-"";
+                                                available3<-0;
+                                                counter<-counter-1;
+                                                Escribir "La celda # 3 queda libre";
+                                                Escribir "";
+                                            SiNo
+                                                Escribir "La celda #3 se encuentra desocupada";
+                                                Escribir "";
+                                            FinSi
+                                        4:
+                                            Si available4=1 Entonces
+                                                owner4<-"";
+                                                phone4<-"";
+                                                plate4<-"";
+                                                brand4<-"";
+                                                available4<-0;
+                                                counter<-counter-1;
+                                                Escribir "La celda # 4 queda libre";
+                                                Escribir "";
+                                            SiNo
+                                                Escribir "La celda #4 se encuentra desocupada";
+                                                Escribir "";
+                                            FinSi
+                                        5:
+                                            Si available5=1 Entonces
+                                                owner5<-"";
+                                                phone5<-"";
+                                                plate5<-"";
+                                                brand5<-"";
+                                                available5<-0;
+                                                counter<-counter-1;
+                                                Escribir "La celda # 5 queda libre";
+                                                Escribir "";
+                                            SiNo
+                                                Escribir "La celda #5 se encuentra desocupada";
+                                                Escribir "";
+                                            FinSi
+                                        6:
+                                            Escribir "¿Desea regresar al menú principal?";
+                                            Escribir "";
+                                            Escribir "1. Digite  1 para registrar la salida de otro vehículo";
+                                            Escribir "2. Digite  un número diferente de 1 para volver al menú principal";
+                                            Escribir "";
+                                            Leer exit;
+                                            Limpiar Pantalla;
+                                        De Otro Modo:
+                                            Escribir "La celda seleccionada no existe";
+                                            Escribir "";
+                                            Escribir "¿Desea regresar al menú principal?";
+                                            Escribir "";
+                                            Escribir "1. Digite  1 para registrar la salida de otro vehículo";
+                                            Escribir "2. Digite  un número diferente de 1 para volver al menú principal";
+                                            Escribir "";
+                                            Leer exit;
+                                            Limpiar Pantalla;
+                                            
+                                    FinSegun
+                                    Escribir "¿Desea regresar al menú principal?";
+                                    Escribir "";
+                                    Escribir "1. Digite  1 para registrar la salida de otro vehículo";
+                                    Escribir "2. Digite  un número diferente de 1 para volver al menú principal";
+                                    Escribir "";
+                                    Leer exit;
+                                    Limpiar Pantalla;
+                                    
+                                FinMientras
+                            3:
+                                consult<-1;
+                                Mientras consult=1 Hacer
+                                    Escribir "Digite un número de acuerdo a la celda la cual deseas consultar el vehículo parqueado";
+                                    Escribir "";
+                                    Escribir "1. Celda #1";
+                                    Escribir "2. Celda #2";
+                                    Escribir "3. Celda #3";
+                                    Escribir "4. Celda #4";
+                                    Escribir "5. Celda #5";
+                                    Escribir "6. Volver al menú principal";
+                                    Escribir "";
+                                    Leer cell;
+                                    Limpiar Pantalla;
+                                    
+                                    Segun cell Hacer
+                                        1:
+                                            Si available1=1 Entonces
+                                                Escribir "Propietario de vehículo: ", owner1;
+                                                Escribir "Número telefonico del propieario: ", phone1;
+                                                Escribir "Placa del vehículo: ", plate1;
+                                                Escribir "Marca del vehículo: ", brand1;
+                                                Escribir "";
+                                            SiNo
+                                                Escribir "La celda #1 se encuentra disponible";
+                                                Escribir "";
+                                            FinSi
+                                        2:
+                                            Si available2=1 Entonces
+                                                Escribir "Propietario de vehículo: ", owner2;
+                                                Escribir "Número telefonico del propieario: ", phone2;
+                                                Escribir "Placa del vehículo: ", plate2;
+                                                Escribir "Marca del vehículo: ", brand2;
+                                                Escribir "";
+                                            SiNo
+                                                Escribir "La celda #2 se encuentra disponible";
+                                                Escribir "";
+                                            FinSi
+                                        3:
+                                            Si available3=1 Entonces
+                                                Escribir "Propietario de vehículo: ", owner3;
+                                                Escribir "Número telefonico del propieario: ", phone3;
+                                                Escribir "Placa del vehículo: ", plate3;
+                                                Escribir "Marca del vehículo: ", brand3;
+                                                Escribir "";
+                                            SiNo
+                                                Escribir "La celda #3 se encuentra disponible";
+                                                Escribir "";
+                                            FinSi
+                                        4:
+                                            Si available4=1 Entonces
+                                                Escribir "Propietario de vehículo: ", owner4;
+                                                Escribir "Número telefonico del propieario: ", phone4;
+                                                Escribir "Placa del vehículo: ", plate4;
+                                                Escribir "Marca del vehículo: ", brand4;
+                                                Escribir "";
+                                            SiNo
+                                                Escribir "La celda #4 se encuentra disponible";
+                                                Escribir "";
+                                            FinSi
+                                        5:
+                                            Si available5=1 Entonces
+                                                Escribir "Propietario de vehículo: ", owner5;
+                                                Escribir "Número telefonico del propieario: ", phone5;
+                                                Escribir "Placa del vehículo: ", plate5;
+                                                Escribir "Marca del vehículo: ", brand5;
+                                                Escribir "";
+                                            SiNo
+                                                Escribir "La celda #5 se encuentra disponible";
+                                                Escribir "";
+                                            FinSi
+                                        6:
+                                            Escribir "¿Desea regresar al menú principal?";
+                                            Escribir "";
+                                            Escribir "1. Digite  1 para consultar la celda de otro vehículo";
+                                            Escribir "2. Digite  un número diferente de 1 para volver al menú principal";
+                                            Escribir "";
+                                            Leer consult;
+                                            Limpiar Pantalla;
+                                        De Otro Modo:
+                                            Escribir "La celda seleccionada no existe";
+                                            Escribir "";
+                                            Escribir "¿Desea regresar al menú principal?";
+                                            Escribir "";
+                                            Escribir "1. Digite  1 para consultar la celda de otro vehículo";
+                                            Escribir "2. Digite  un número diferente de 1 para volver al menú principal";
+                                            Escribir "";
+                                            Leer consult;
+                                            Limpiar Pantalla;
+                                    FinSegun
+                                    Escribir "¿Desea regresar al menú principal?";
+                                    Escribir "";
+                                    Escribir "1. Digite  1 para consultar la celda de otro vehículo";
+                                    Escribir "2. Digite  un número diferente de 1 para volver al menú principal";
+                                    Escribir "";
+                                    Leer consult;
+                                    Limpiar Pantalla;
+                                FinMientras
+                                
+                            4:
+                                Escribir "";
+                            De Otro Modo:
+                                Escribir "¿Desea regresar al menú principal?";
+                                Escribir "";
+                                Escribir "1. Digite  1 si desea salir de la App";
+                                Escribir "2. Digite  un número diferente de uno para volver al menú principal";
+                                Escribir "";
+                                Leer select;
+                                Limpiar Pantalla;
+                                
+                        FinSegun
+                        Escribir "¿Desea regresar al menú principal?";
+                        Escribir "";
+                        Escribir "1. Digite  1 si desea salir de la App";
+                        Escribir "2. Digite  un número diferente de uno para volver al menú principal";
+                        Escribir "";
+                        Leer select;
+                        Limpiar Pantalla;
+                                
+                    Hasta Que select=1;
+                    
+                    
+                FinProceso
+                
+                </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iTOlYAwWZpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

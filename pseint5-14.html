@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-14</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 14</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar todos los puntos del taller de arreglos en modo funciones</i><br><br>
+                    <i>1. Crear un vector de tipo Entero con 5 posiciones, llenarlo con información solicitada al usuario. Después de recoger<br>
+                        toda la información, se requiere imprimir el índice de cada posición en el arreglo con su valor de la siguiente manera:</i><br>
+                   <p>° [0] = 55</p>
+                   <p>° [1] = 99</p>
+                   <p>° [2] = 11</p>
+                   <p>° [3] = 56</p>
+                   <p>° [4] = 69</p>
+                </p>
+            </div>
+            <div>
+                <pre>
+                    //Captura datos números
+                    SubProceso datos <- capturaNumero ()
+                        Definir datos Como Entero;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    //Imprimir vector
+                    SubProceso imprimirVector (a,b)
+                        Limpiar Pantalla;
+                        Escribir "";
+                        Para a<-0 Hasta 4 Con Paso 1 Hacer
+                            Escribir"[",a,"]"," = ",b[a];
+                        FinPara
+                        Escribir "";
+                    FinSubProceso
+                    
+                    Proceso Taller5_14_1_Funcion_Arreglos
+                        Definir number, index Como Entero;
+                        Dimension number[5];
+                        
+                        Escribir "Digite 5 números enteros que luego van a ser mostrados por patalla con su respectivo indice";
+                        number[0]<-capturaNumero;
+                        number[1]<-capturaNumero;
+                        number[2]<-capturaNumero;
+                        number[3]<-capturaNumero;
+                        number[4]<-capturaNumero;
+                        
+                        index<-0;
+                        imprimirVector(index,number);
+                    FinProceso
+                    
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

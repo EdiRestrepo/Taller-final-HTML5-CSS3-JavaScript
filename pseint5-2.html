@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-2</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 2</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar todos los puntos del taller de condicionales en modo funciones.</i><br><br>
+                    <i>2. Realizar un programa en el cual se solicite la edad de una persona. Si la persona<br>
+                    es menor a 18 años, deberá mostrar en pantalla: Usted aún es un niño(a)</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                SubProceso response <- age (a Por Valor)
+                    Definir response Como Caracter;
+                    Si a>= 18 Entonces
+                        response<-"Usted es mayor de edad";
+                    FinSi
+                    Si a<18 Entonces
+                        response<-"Usted aún es un niño";
+                    FinSi
+                    
+                FinSubProceso
+                
+                Proceso Taller5_2_Funcion_Condicional
+                    Definir b Como Entero;
+                    Definir answer Como Caracter;
+                    Escribir "Ingrese su edad";
+                    Leer b;
+                    answer<-age(b);
+                    Escribir answer;
+                FinProceso
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-12</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 12</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar los puntos 6, 7 y 8 del taller de ciclos en modo funciones.</i><br><br>
+                    <i>7. El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se sugiere que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del cliente como son nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de ingresar al parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el parqueadero. Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga en presente que el parqueadero solo puede almacenar máximo 5 vehículos.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                    //Captura datos de texto
+                    SubProceso datos <- capturaTexto (tex Por Valor)
+                        Definir datos Como Caracter;
+                        Escribir tex;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    //Consultar si un vehículo esta en el parqueadero
+                    SubProceso consultarVehiculo (a,c,d,e,f,g,h Por Referencia)
+                        a<-1;
+                        Mientras a=1 Hacer
+                            Escribir "Digite un número de acuerdo a la celda la cual deseas consultar el vehículo parqueado";
+                            submenu();
+                            Leer c;
+                            Limpiar Pantalla;
+                            
+                            Segun c Hacer
+                                1:
+                                    Si d[0]=1 Entonces
+                                        Escribir "Propietario de vehículo: ", e[0];
+                                        Escribir "Número telefonico del propieario: ", f[0];
+                                        Escribir "Placa del vehículo: ", h[0];
+                                        Escribir "Marca del vehículo: ", g[0];
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "La celda #1 se encuentra disponible";
+                                        Escribir "";
+                                    FinSi
+                                2:
+                                    Si d[1]=1 Entonces
+                                        Escribir "Propietario de vehículo: ", e[1];
+                                        Escribir "Número telefonico del propieario: ", f[1];
+                                        Escribir "Placa del vehículo: ", h[1];
+                                        Escribir "Marca del vehículo: ", g[1];
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "La celda #2 se encuentra disponible";
+                                        Escribir "";
+                                    FinSi
+                                3:
+                                    Si d[2]=1 Entonces
+                                        Escribir "Propietario de vehículo: ", e[2];
+                                        Escribir "Número telefonico del propieario: ", f[2];
+                                        Escribir "Placa del vehículo: ", h[2];
+                                        Escribir "Marca del vehículo: ", g[2];
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "La celda #3 se encuentra disponible";
+                                        Escribir "";
+                                    FinSi
+                                4:
+                                    Si d[3]=1 Entonces
+                                        Escribir "Propietario de vehículo: ", e[3];
+                                        Escribir "Número telefonico del propieario: ", f[3];
+                                        Escribir "Placa del vehículo: ", h[3];
+                                        Escribir "Marca del vehículo: ", g[3];
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "La celda #4 se encuentra disponible";
+                                        Escribir "";
+                                    FinSi
+                                5:
+                                    Si d[4]=1 Entonces
+                                        Escribir "Propietario de vehículo: ", e[4];
+                                        Escribir "Número telefonico del propieario: ", f[4];
+                                        Escribir "Placa del vehículo: ", h[4];
+                                        Escribir "Marca del vehículo: ", g[4];
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "La celda #5 se encuentra disponible";
+                                        Escribir "";
+                                    FinSi
+                                6:
+                                    Escribir "";
+                                De Otro Modo:
+                                    Escribir "La celda seleccionada no existe";
+                                    Escribir "";
+                            FinSegun
+                            Escribir "¿Desea regresar al menú principal?";
+                            Escribir "";
+                            Escribir "1. Digite  1 para consultar la celda de otro vehículo";
+                            Escribir "2. Digite  un número diferente de 1 para volver al menú principal";
+                            Escribir "";
+                            Leer a;
+                            Limpiar Pantalla;
+                        FinMientras
+                    FinSubProceso
+                    
+                    //Salida vehículo
+                    SubProceso retirarVehiculo (a,b,c,d,e,f,g,h)
+                        a<-1;
+                        Mientras a=1 Hacer
+                            Escribir "Ingrese un número de acuerdo a la celda donde va a salir el vehículo";
+                            submenu();
+                            Leer c;
+                            Limpiar Pantalla;
+                            
+                            Segun c Hacer
+                                1:
+                                    Si d[0]=1 Entonces
+                                        e[0]<-"";
+                                        f[0]<-"";
+                                        g[0]<-"";
+                                        h[0]<-"";
+                                        d[0]<-0;
+                                        b[0]<-b[0]-1;
+                                        Escribir "La celda # 1 queda libre";
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "La celda #1 se encuentra desocupada";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                2:
+                                    Si d[1]=1 Entonces
+                                        e[1]<-"";
+                                        f[1]<-"";
+                                        g[1]<-"";
+                                        h[1]<-"";
+                                        d[1]<-0;
+                                        b[0]<-b[0]-1;
+                                        Escribir "La celda # 2 queda libre";
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "La celda #2 se encuentra desocupada";
+                                        Escribir "";
+                                    FinSi
+                                3:
+                                    Si d[2]=1 Entonces
+                                        e[2]<-"";
+                                        f[2]<-"";
+                                        g[2]<-"";
+                                        h[2]<-"";
+                                        d[2]<-0;
+                                        b[0]<-b[0]-1;
+                                        Escribir "La celda # 3 queda libre";
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "La celda #3 se encuentra desocupada";
+                                        Escribir "";
+                                    FinSi
+                                4:
+                                    Si d[3]=1 Entonces
+                                        e[3]<-"";
+                                        f[3]<-"";
+                                        g[3]<-"";
+                                        h[3]<-"";
+                                        d[3]<-0;
+                                        b[0]<-b[0]-1;
+                                        Escribir "La celda # 4 queda libre";
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "La celda #4 se encuentra desocupada";
+                                        Escribir "";
+                                    FinSi
+                                5:
+                                    Si d[4]=1 Entonces
+                                        e[4]<-"";
+                                        f[4]<-"";
+                                        g[4]<-"";
+                                        h[4]<-"";
+                                        d[4]<-0;
+                                        b[0]<-b[0]-1;
+                                        Escribir "La celda # 5 queda libre";
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "La celda #5 se encuentra desocupada";
+                                        Escribir "";
+                                    FinSi
+                                6:
+                                    Escribir "";
+                                De Otro Modo:
+                                    Escribir "La celda seleccionada no existe";
+                                    
+                            FinSegun
+                            Escribir "¿Desea regresar al menú principal?";
+                            Escribir "";
+                            Escribir "1. Digite  1 para registrar la salida de otro vehículo";
+                            Escribir "2. Digite  un número diferente de 1 para volver al menú principal";
+                            Escribir "";
+                            Leer a;
+                            Limpiar Pantalla;
+                            
+                        FinMientras
+                    FinSubProceso
+                    
+                    //Ingreso vehículo
+                    SubProceso ingresoVehiculo (a,b,c,d,e,f,g,h)
+                        a<-1;
+                        Mientras b[0]<6 & a=1 Hacer
+                            Escribir "Ingrese un número de acuerdo a la celda donde va a parquear el vehículo";
+                            submenu();
+                            Leer c;
+                            Limpiar Pantalla;
+                            
+                            Segun c Hacer
+                                1:
+                                    Si d[0]=0 Entonces
+                                        Escribir "Ingrese los siguientes datos para parquear el vehículo en la celda #1";
+                                        Escribir "";
+                                        e[0]<-capturaTexto("Digite el nombre del propietario del vehículo");
+                                        f[0]<-capturaTexto("Digite el número teléfonico del propietario");
+                                        g[0]<-capturaTexto("Digite la marca del vehículo");
+                                        h[0]<-capturaTexto("Digite la placa del vehículo");
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha guardado la información de forma correcta";
+                                        Escribir "       La celda #1 queda ocupada";
+                                        Escribir "";
+                                        d[0]<-d[0]+1;
+                                        b[0]<-b[0]+1;
+                                    SiNo
+                                        Escribir "La celda #1 se encuentra ocupada";
+                                        Escribir "";
+                                    FinSi
+                                2:
+                                    Si  d[1]=0 Entonces
+                                        Escribir "Ingrese los siguientes datos para parquear el vehículo en la celda #2";
+                                        Escribir "";
+                                        e[1]<-capturaTexto("Digite el nombre del propietario del vehículo");
+                                        f[1]<-capturaTexto("Digite el número teléfonico del propietario");
+                                        g[1]<-capturaTexto("Digite la marca del vehículo");
+                                        h[1]<-capturaTexto("Digite la placa del vehículo");
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha guardado la información de forma correcta";
+                                        Escribir "       La celda #2 queda ocupada";
+                                        Escribir "";
+                                        d[1]<-d[1]+1;
+                                        b[0]<-b[0]+1;
+                                    SiNo
+                                        Escribir "La celda #2 se encuentra ocupada";
+                                        Escribir "";
+                                    FinSi
+                                3:
+                                    Si d[2]=0 Entonces
+                                        Escribir "Ingrese los siguientes datos para parquear el vehículo en la celda #3";
+                                        Escribir "";
+                                        e[2]<-capturaTexto("Digite el nombre del propietario del vehículo");
+                                        f[2]<-capturaTexto("Digite el número teléfonico del propietario");
+                                        g[2]<-capturaTexto("Digite la marca del vehículo");
+                                        h[2]<-capturaTexto("Digite la placa del vehículo");
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha guardado la información de forma correcta";
+                                        Escribir "       La celda #3 queda ocupada";
+                                        Escribir "";
+                                        d[2]<-d[2]+1;
+                                        b[0]<-b[0]+1;
+                                    SiNo
+                                        Escribir "La celda #3 se encuentra ocupada";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                4:
+                                    Si d[3]=0 Entonces
+                                        Escribir "Ingrese los siguientes datos para parquear el vehículo en la celda #4";
+                                        Escribir "";
+                                        e[3]<-capturaTexto("Digite el nombre del propietario del vehículo");
+                                        f[3]<-capturaTexto("Digite el número teléfonico del propietario");
+                                        g[3]<-capturaTexto("Digite la marca del vehículo");
+                                        h[3]<-capturaTexto("Digite la placa del vehículo");
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha guardado la información de forma correcta";
+                                        Escribir "       La celda #4 queda ocupada";
+                                        Escribir "";
+                                        d[3]<-d[3]+1;
+                                        b[0]<-b[0]+1;
+                                    SiNo
+                                        Escribir "La celda #4 se encuentra ocupada";
+                                        Escribir "";
+                                    FinSi
+                                5:
+                                    Si d[4]=0 Entonces
+                                        Escribir "Ingrese los siguientes datos para parquear el vehículo en la celda #5";
+                                        Escribir "";
+                                        e[4]<-capturaTexto("Digite el nombre del propietario del vehículo");
+                                        f[4]<-capturaTexto("Digite el número teléfonico del propietario");
+                                        g[4]<-capturaTexto("Digite la marca del vehículo");
+                                        h[4]<-capturaTexto("Digite la placa del vehículo");
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha guardado la información de forma correcta";
+                                        Escribir "       La celda #5 queda ocupada";
+                                        Escribir "";
+                                        d[4]<-d[4]+1;
+                                        b[0]<-b[0]+1;
+                                        
+                                    SiNo
+                                        Escribir "La celda #5 se encuentra ocupada";
+                                        Escribir "";
+                                    FinSi
+                                6:
+                                    Escribir "";
+                                    Limpiar Pantalla;
+                                De Otro Modo:
+                                    Escribir "La celda seleccionada no existe";
+                                    Escribir "";
+                                    
+                            FinSegun
+                            Escribir "¿Desea ingresar otro vehículo al parqueadero?";
+                            Escribir "";
+                            Escribir "1. Digite  1 para ingresar otro vehículo";
+                            Escribir "2. Digite  un número diferente de 1 para volver al menú principal";
+                            Escribir "";
+                            Leer a;
+                            Limpiar Pantalla;
+                            Si b[0]>=6 Entonces
+                                Escribir "El parqueadero esta full";
+                                Escribir "Se debe esperar a que salga un vehículo para abrir espacio en el parqueadero";
+                                Escribir "";
+                                            
+                            FinSi
+                                        
+                        FinMientras
+                    FinSubProceso
+                    
+                    //Submenu1
+                    SubProceso submenu ()
+                        Escribir "";
+                        Escribir "1. Celda #1";
+                        Escribir "2. Celda #2";
+                        Escribir "3. Celda #3";
+                        Escribir "4. Celda #4";
+                        Escribir "5. Celda #5";
+                        Escribir "6. Volver al menú principal";
+                        Escribir "";
+                    FinSubProceso
+                    
+                    //Menu principal
+                    SubProceso menu ()
+                        Escribir "***********************************************************";
+                        Escribir "************ App Parqueadero -El Guardián- ****************";
+                        Escribir "***********************************************************";
+                        Escribir "Ingrese un número de acuerdo a la acción que desea realizar";
+                        Escribir "";
+                        Escribir " 1. Ingreso de vehículo                        	          ";
+                        Escribir " 2. Retirar vehículo del parqueadero                       ";
+                        Escribir " 3. Consultar si un vehículo se encuentra en el parqueadero";
+                        Escribir " 4. Salir de la App                                        ";
+                        Escribir "";
+                    FinSubProceso
+                    
+                    //App Parqueadero 
+                    Proceso Taller5_12_7_Funcion_Ciclos
+                        Definir phone, owner, brand, plate Como Caracter;
+                        Definir available Como Entero;
+                        Dimension available[5], phone[5], owner[5], brand[5], plate[5];
+                        Definir option, counter, cell Como Entero;
+                        Dimension counter[1];
+                        Definir select, entry, exit, consult Como Entero;
+                        
+                        available[0]<-0;
+                        available[1]<-0;
+                        available[2]<-0;
+                        available[3]<-0;
+                        available[4]<-0;
+                        
+                        phone[0]<-"";
+                        phone[1]<-"";
+                        phone[2]<-"";
+                        phone[3]<-"";
+                        phone[4]<-"";
+                        
+                        owner[0]<-"";
+                        owner[1]<-"";
+                        owner[2]<-"";
+                        owner[3]<-"";
+                        owner[4]<-"";
+                        
+                        brand[0]<-"";
+                        brand[1]<-"";
+                        brand[2]<-"";
+                        brand[3]<-"";
+                        brand[4]<-"";
+                        
+                        plate[0]<-"";
+                        plate[1]<-"";
+                        plate[2]<-"";
+                        plate[3]<-"";
+                        plate[4]<-"";
+                        
+                        consult<-1;
+                        exit<-1;
+                        cell<-1;
+                        entry<-1;
+                        counter[0]<-1;
+                        
+                        Repetir
+                            menu;
+                            Leer option;
+                            Limpiar Pantalla;
+                            
+                            Segun option Hacer
+                                1:
+                                    ingresoVehiculo(entry,counter,cell,available,owner,phone,brand,plate);
+                                2:
+                                    retirarVehiculo(exit,counter,cell,available,owner,phone,brand,plate);
+                                3:
+                                    consultarVehiculo(consult,cell,available,owner,phone,brand,plate);
+                                4:
+                                    Escribir "";
+                                De Otro Modo:
+                                    Escribir "La opción seleccionada no existe";
+                                    Escribir "";
+                            FinSegun
+                            Escribir "¿Desea regresar al menú principal?";
+                            Escribir "";
+                            Escribir "1. Digite  1 si desea salir de la App";
+                            Escribir "2. Digite  un número diferente de uno para volver al menú principal";
+                            Escribir "";
+                            Leer select;
+                            Limpiar Pantalla;
+                            
+                        Hasta Que select=1;
+                        Escribir "Has salido de la App - Hasta pronto";
+                        
+                        
+                    FinProceso
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

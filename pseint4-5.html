@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt4-5</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Arrays PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 5</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Se debe de imprimir el siguiente cuadro</i><br><br>
+                    <img src="img/tabla.png"><br><br>
+                    <i>El usuario deberá insertar la fila y columna de la cual desea ver el resultado, el resultado de cada celda debe estar previamente calculado<br>
+                    en una matriz bidimensional la cual cada resultado obedecerá a la fila y columna insertada por el usuario.</i><br>
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller4_5
+
+                    Definir row, col Como Entero;
+                    Definir counter Como Entero;
+                    Definir matrix, matrix1, product Como Entero;
+                    Dimension matrix[11,11], matrix1[10,10];
+                    
+                    counter<-1;
+                    
+                    Mientras counter=1 Hacer
+                
+                    //Impresión de la tabla 
+                    Escribir "--------------------------------------------------------------";
+                    Escribir "                        C O L U M N A S         ";
+                    Escribir "--------------------------------------------------------------";
+                    
+                    Para col<-0 Hasta 9 Con Paso 1 Hacer
+                            matrix[0,col]<-col;
+                    FinPara
+                    Escribir "|   |      " Sin Saltar;
+                    Para col<-0 Hasta 9 Con Paso 1 Hacer
+                        Escribir "  ", matrix[0,col],"  ", Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    
+                    Escribir "|   |   0  " Sin Saltar;
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        matrix[1,col]<-col;
+                    FinPara
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir  " ",matrix[1,col],"X1 " Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    
+                    Escribir "|   |   1  " Sin Saltar;
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        matrix[1,col]<-col;
+                    FinPara
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir  " ",matrix[1,col],"X2 " Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    
+                    Escribir "|   |   2  " Sin Saltar;
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        matrix[1,col]<-col;
+                    FinPara
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir  " ",matrix[1,col],"X3 " Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    
+                    Escribir "| F |   3  " Sin Saltar;
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        matrix[1,col]<-col;
+                    FinPara
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir  " ",matrix[1,col],"X4 " Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    
+                    Escribir "| I |   4  "  Sin Saltar;
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        matrix[1,col]<-col;
+                    FinPara
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir  " ",matrix[1,col],"X5 " Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    
+                    Escribir "| L |   5  "  Sin Saltar;
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        matrix[1,col]<-col;
+                    FinPara
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir  " ",matrix[1,col],"X6 " Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    
+                    Escribir "| A |   6  " Sin Saltar;
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        matrix[1,col]<-col;
+                    FinPara
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir  " ",matrix[1,col],"X7 " Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    
+                    Escribir "| S |   7  " Sin Saltar;
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        matrix[1,col]<-col;
+                    FinPara
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir  " ",matrix[1,col],"X8 " Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    
+                    Escribir "|   |   8  "Sin Saltar;
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        matrix[1,col]<-col;
+                    FinPara
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir " ",matrix[1,col],"X9 " Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    
+                    Escribir "|   |   9   " Sin Saltar;
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        matrix[1,col]<-col;
+                    FinPara
+                    Para col<-1 Hasta 10 Con Paso 1 Hacer
+                        Escribir matrix[1,col],"X10 " Sin Saltar;
+                    FinPara
+                    
+                    Escribir"";
+                    Escribir "--------------------------------------------------------------";
+                    Escribir "";
+                    
+                    //Matriz con los respectivos resultados
+                    Para col<-0 Hasta 9 Con Paso 1 Hacer
+                        Para row<-0 Hasta 9 Con Paso 1 Hacer
+                            product<-(row+1)*(col+1);
+                            matrix1[row,col]<-product;
+                        FinPara
+                    FinPara
+                    
+                    //Datos para que el usuario ingrese la fila y la columna de la respectiva celda que desea ver el resultado
+                    
+                    
+                        Escribir "Si desea ver el resultado de cada una de las celdas de la tabla en cuestión";
+                        Repetir
+                            Escribir "Digite el número de la fila (de 0 a 9)";
+                            Leer row;
+                            Si row>9 | row<0 Entonces
+                                Escribir "Número no valido, intenta de nuevo";
+                            FinSi
+                        Hasta Que row<=9 & row>=0
+                        
+                        Escribir"";
+                        
+                        Repetir
+                            Escribir "Digite el número de la columna (de 0 a 9)";
+                            Leer col;
+                            Limpiar Pantalla;
+                            Si col>9 | col<0 Entonces
+                                Escribir "Número no valido, intenta de nuevo";
+                            FinSi
+                        Hasta Que col<=9 & col>=0
+                        
+                        Escribir"";
+                        
+                        Escribir "Resultado del valor de la celda: ", matrix1[row,col];
+                        Escribir "";
+                        Escribir "¿Desea ver el resultado de otra celda?";
+                        Escribir "1. Digite 1 para ver otro resultado";
+                        Escribir "2. De lo contrario digite un número diferente de 1 para terminar";
+                        Leer counter;
+                        Limpiar Pantalla;
+                    FinMientras
+                
+                FinProceso
+                </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ngYyBItWAkM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

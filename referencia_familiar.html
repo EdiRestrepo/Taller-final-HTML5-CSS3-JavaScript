@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hoja de vida"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referencias familiares</title>
+    <link rel="stylesheet" href="css/taller_css3.css" type="text/css"/>
+    <script src="js/taller_javascript.js"></script>
+</head>
+<body onload="main()" id="body">
+    <header style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; position: absolute; left: 400px; top: 30px;">
+      <h1>Referencias familiares</h1>  
+
+    </header>
+    <nav style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 130%; background: rgb(218, 240, 240); width: 25%; position: absolute; left: 800px;">
+        <ul style="list-style: none;" >
+            <li><a href="index.html">Portafolio</a></li>
+            <li><a href="cv.html">Informacion principal</a></li>
+            <li><a href="experiencia.html">Experiencia laboral</a></li>
+            <li><a href="referencia_personal.html">Referencias personales</a></li>
+            <li><a href="estudios.html">Estudios realizados</a></li>
+            <li><a href="download/Hoja_de_vida_Edison_Restrepo.pdf" target="_blank">Descargar hoja de vida</a></li>
+        </ul>
+    </nav>
+
+    <main style="position: absolute; left: 450px; top: 150px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+        <section>
+            <hr>
+            <h2 class="referencia" onclick="mostrarOcultarReferencia1();">Referencia 1</h2>
+            <article id="referencia1">
+                JHON MARIO RESTREPO OSPINA (hermano)<br>
+                Ingeniero Electromecánico<br>
+                Celular: 311 877 0034
+            </article>
+            <hr>
+            <h2 class="referencia" onclick="mostrarOcultarReferencia2();">Referencia 2</h2>
+            <article id="referencia2">
+                GUILLERMINA OSPINA (tía)  <br>
+                Trabajadora independiente<br>
+                Celular: 311 877 0034
+            </article>
+            <hr>
+            <h2 class="referencia" onclick="mostrarOcultarReferencia3();">Referencia 3</h2>
+            <article id="referencia3">
+                OLGA DOLLY OSPINA (madre) <br>
+                Secretaria<br>
+                Celular: 320 891 4457
+            </article>
+            <hr>
+        </section>
+        <select name="tema" id="tema" onchange="cambiarTema(this)">
+            <option id="azul" value="rgb(73, 202, 219)">Tema azul</option>
+            <option id="rosado" value="pink">Tema Rosado</option>
+            <option id="verde" value="LightGreen">Tema Verde</option>
+        </select> 
+    </main>
+    <!-- <footer></footer> -->
+</body>
+</html>

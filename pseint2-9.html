@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt2-9</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Conditionals PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 9</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de diferentes figuras geométricas,<br>
+                    para ello requiere una aplicación que le facilite el ejercicio solicitándole los valores al estudiante. La aplicación debe permitir<br>
+                    que el estudiante seleccione si desea calcular el área de un rectángulo, triángulo o trapecio. No olvide solicitar los datos<br>
+                    necesarios para realizar cada cálculo y mostrar su respectivo resultado.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller2_9
+                    Definir opcion Como Entero;
+                    Definir area, base, base1, base2, altura Como Real;
+                    
+                    Escribir "App Geometría";
+                    Escribir "";
+                    Escribir "Seleccione un número de acuerdo a la figura geométrica de la cual desea calcular su área";
+                    Escribir "";
+                    Escribir "1. Área de un rectángulo";
+                    Escribir "2. Área de un triángulo";
+                    Escribir "3. Área de un trapecio";
+                    Leer opcion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1:
+                            // Área de un rectangulo = base * altura
+                            // A = b*h (m^2)
+                            // donde A = área; b = base; h = altura
+                            Escribir "Ingresa los siguientes datos para calcular el área de un rectángulo";
+                            Escribir "";
+                            Escribir "Ingresa la base del rectángulo en metros";
+                            Leer base;
+                            Escribir "Ingresa la altura del rectángulo en metros";
+                            Leer altura;
+                            
+                            area<-base*altura;
+                            
+                            Limpiar Pantalla;
+                            
+                            Escribir "El área del rectángulo es: ", area," m^2";
+                        2:
+                            // Área de un triángulo = (base * altura)/2
+                            // A = (b*h)/2 (m^2)
+                            // donde A = área; b = base; h = altura
+                            Escribir "Ingresa los siguientes datos para calcular el área de un triángulo";
+                            Escribir "";
+                            Escribir "Ingresa la base del triángulo en metros";
+                            Leer base;
+                            Escribir "Ingresa la altura del triángulo en metros";
+                            Leer altura;
+                            
+                            area<-(base*altura)/2;
+                            
+                            Limpiar Pantalla;
+                            
+                            Escribir "El área del triángulo es: ", area," m^2";
+                        3:
+                            // Área de un trapecio = ((base1+base2) * altura)/2.
+                            // A = ((b1+b2)*h)/2 (m^2)
+                            // donde A = área; b1 = base1; b2 = base2; h = altura
+                            Escribir "Ingresa los siguientes datos para calcular el área de un trapecio";
+                            Escribir "";
+                            Escribir "Ingresa la base1 del trapecio en metros";
+                            Leer base1;
+                            Escribir "Ingresa la base2 del trapecio en metros";
+                            Leer base2;
+                            Escribir "Ingresa la altura del trapecio en metros";
+                            Leer altura;
+                            
+                            area<-((base1+base2)*altura)/2;
+                            
+                            Limpiar Pantalla;
+                            
+                            Escribir "El área del trapecio es: ", area," m^2";
+                            
+                        De Otro Modo:
+                            Escribir "La opción seleccionada no existe";
+                            Escribir "Intenta de nuevo";
+                            
+                    FinSegun
+                    
+                FinProceso
+                    </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gP9ke7IMCH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

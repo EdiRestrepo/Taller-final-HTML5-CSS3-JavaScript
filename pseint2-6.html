@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt2-6</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Conditionals PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 6</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas revisiones y requiere una aplicación que le permita registrar los servicios generados a sus clientes. Para cada motocicleta se debe tener registro del ingreso al taller y las observaciones por parte del cliente. También debe existir registro de salida del taller con las novedades y otra de arreglos hechos por el mecánico en caso de que se requiera inventariar cambios repuestos en la motocicleta al entregarla.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller2_6
+                    Definir cliente, fechaIngreso, fechaSalida Como Caracter;
+                    Definir marcaMoto, modeloMoto, numeroMatricula, placaMoto Como Caracter;
+                    Definir tipoMantemiento, valorMantemiento Como Caracter;
+                    Definir observacionesCliente, arreglosMecanico Como Caracter;
+                    Definir opcion Como Entero;
+                    
+                    Escribir "App taller de motos *El Maquinista* ";
+                    Escribir "";
+                    Escribir "Ingrese el número de acuerdo a la opción que se desea seleccionar";
+                    Escribir "1. Ingreso motocicleta";
+                    Escribir "2. Salida motocicleta";
+                    Leer opcion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1:
+                            Escribir "Registre los siguientes datos para Ingreso de la motocicleta";
+                            Escribir "";
+                            Escribir "Fecha de ingreso de la motocicleta (dd-mm-aaaa)";
+                            Leer fechaIngreso;
+                            Escribir "Ingrese nombre completo del cliente";
+                            Leer cliente;
+                            Escribir "Ingrese la marca de la moto (Yamaha, honda, kawasaki...)";
+                            Leer marcaMoto;
+                            Escribir "Ingrese el modelo de la moto";
+                            Leer modeloMoto;
+                            Escribir "Ingrese el numero de matricula de la moto";
+                            Leer numeroMatricula;
+                            Escribir "Ingrese la placa de la moto";
+                            Leer placaMoto;
+                            Escribir "Ingrese el tipo de mantemiento a realizar (Preventivo, Correctivo)";
+                            Leer tipoMantemiento;
+                            Escribir "Ingrese las observaciones hechas por el inclente para el ingreso";
+                            Leer observacionesCliente;
+                            
+                            Limpiar Pantalla;
+                            
+                            Escribir "Resumen de Ingreso de la motocicleta";
+                            Escribir "";
+                            Escribir "Fecha de Ingreso de la motocicleta: ", fechaIngreso;
+                            Escribir "Nombre del propietario: ", cliente;
+                            Escribir "Marca de la moto: ", marcaMoto;
+                            Escribir "Modelo de la moto: ", modeloMoto;
+                            Escribir "Numero de matricula de la moto: ", numeroMatricula;
+                            Escribir "Placa de la moto: ", placaMoto;
+                            Escribir "Tipo de mantemiento a realizar: ", tipoMantemiento;
+                            Escribir "Observaciones por el cliente: ", observacionesCliente;
+                            
+                        2:
+                            Escribir "Registre los siguientes datos para Salida de la motocicleta";
+                            Escribir "Fecha de salida de la motocicleta (dd/mm/aa)";
+                            Leer fechaSalida;
+                            Escribir "Ingrese nombre completo del cliente";
+                            Leer cliente;
+                            Escribir "Ingrese la marca de la moto (Yamaha, honda, kawasaki...)";
+                            Leer marcaMoto;
+                            Escribir "Ingrese el modelo de la moto";
+                            Leer modeloMoto;
+                            Escribir "Ingrese el numero de matricula de la moto";
+                            Leer numeroMatricula;
+                            Escribir "Ingrese la placa de la moto";
+                            Leer placaMoto;
+                            Escribir "Ingrese el tipo de mantemiento que se ha realizado (Preventivo, Correctivo)";
+                            Leer tipoMantemiento;
+                            Escribir "Ingrese las observaciones hechas por el mecanico (cambio de piezas, limpieza, reparación)";
+                            Leer arreglosMecanico;
+                            Escribir "Ingrese el valor del costo del mantemiento";
+                            Leer valorMantemiento;
+                            
+                            Limpiar Pantalla;
+                            
+                            Escribir "Resumen de Salida de la motocicleta";
+                            Escribir "";
+                            Escribir "Fecha de Salida de la motocicleta: ", fechaSalida;
+                            Escribir "Nombre del propietario: ", cliente;
+                            Escribir "Marca de la moto: ", marcaMoto;
+                            Escribir "Modelo de la moto: ", modeloMoto;
+                            Escribir "Numero de matricula de la moto: ", numeroMatricula;
+                            Escribir "Placa de la moto: ", placaMoto;
+                            Escribir "Tipo de mantemiento realizado: ", tipoMantemiento;
+                            Escribir "Observaciones por el mecanico: ", arreglosMecanico;
+                            Escribir "Valor del mantemiento: $ ", valorMantemiento;
+                            
+                        De Otro Modo:
+                            Escribir "La opción elegida no existe";
+                            Escribir "Por favor, intentalo de nuevo";
+                            
+                    FinSegun
+                
+                FinProceso
+                    </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gP9ke7IMCH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

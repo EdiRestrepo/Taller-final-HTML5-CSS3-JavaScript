@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-10</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 10</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar todos los puntos del taller de condicionales en modo funciones.</i><br><br>
+                    <i>10. El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación para llevar las cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos titular y cantidad. Para cada cliente las cuentas permitirán realizar ingresos, retiros o consultas de valor. En los ingresos no se pueden insertar valores negativos y para los retiros el valor no puede ser mayor al valor que tiene en la cuenta.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                    //Captura datos texto
+                    SubProceso datos <- capturaTexto (tex Por Valor)
+                        Definir datos Como Caracter;
+                        Escribir tex;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    
+                    //Captura datos numero - cadena de Texto
+                    SubProceso datos <- capturaCadenaTexto (a,b,c Por Valor)
+                        Definir datos Como Entero;
+                        Escribir a,b,c;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    //Consulta Saldo
+                    SubProceso saldo (a,b)
+                        Escribir "Hola ", a," su saldo actual en la cuenta es de $ ",b;
+                        Escribir "Hasta pronto";
+                        
+                    FinSubProceso
+                    
+                    //Retiro Dinero
+                    SubProceso retiroDinero (a,b,c)
+                        //para los retiros el valor no puede ser mayor al valor que tiene en la cuenta.
+                        b<-capturaCadenaTexto("Hola ", a," por favor, digita la cantidad de dinero que deseas retirar");
+                        Limpiar Pantalla;
+                        
+                        Si b > c Entonces
+                            Escribir "Lo sentimos pero la cantidad  que desea retirar supera el monto del valor de su cuenta";
+                            Escribir "Por favor, vuelve a intentarlo";
+                        SiNo
+                            Escribir "Usted ha retirado $", b;
+                            Escribir "Su saldo actual de dinero en su cuenta es de $",c-b;
+                            Escribir "Hasta pronto";
+                        FinSi
+                        
+                    FinSubProceso
+                    
+                    //Ingreso Dinero
+                    SubProceso ingresoDinero (a,b,c)
+                        //En los ingresos no se pueden insertar valores negativos
+                        b<-capturaCadenaTexto("Hola ", a," por favor, digita la cantidad de dinero que deseas depositar");
+                        Limpiar Pantalla;
+                        
+                        Si b < 0 Entonces
+                            Escribir "Lo sentimos pero la cantidad ingresada no es valida";
+                            Escribir "Por favor, vuelve a intentarlo";
+                        SiNo
+                            Escribir "Usted ha depositado $", b;
+                            Escribir "Su saldo actual de dinero en su cuenta es de $",c+b;
+                            Escribir "Hasta pronto";
+                        FinSi
+                        
+                    FinSubProceso
+                    
+                    
+                    //Menu principal
+                    SubProceso menu ( a )
+                        Limpiar Pantalla;
+                        Escribir "Apreciado ",a," por favor, seleccione un número de acuerdo a la acción que desea realizar";
+                        Escribir "1. Realizar ingreso de dinero (deposito)";
+                        Escribir "2. Realizar retiro de dinero";
+                        Escribir "3. Consulta de valor (saldo)";
+                    FinSubProceso
+                    
+                    //App Banco
+                    Proceso Taller5_10_Funcion_Condicional
+                        Definir nombretitular Como Caracter;
+                        Definir opcion, cantidad, ingresos, retiros Como Entero;
+                        
+                        cantidad<-5000;
+                        ingresos<-0;
+                        retiros<-0;
+                        Escribir "App *Su banco fiel*";
+                        Escribir "";
+                        nombretitular<-capturaTexto("Ingrese el nombre del titular de la cuenta");
+                        menu(nombretitular);
+                        Leer opcion;
+                        Limpiar Pantalla;
+                        
+                        Segun opcion Hacer
+                            1:
+                                ingresoDinero(nombretitular,ingresos,cantidad);
+                            2:
+                                retiroDinero(nombretitular,retiros,cantidad);
+                            3:
+                                saldo(nombretitular,cantidad);
+                            De Otro Modo:
+                                Escribir "La opción seleccionada no existe";
+                                Escribir "Por favor, intenta de nuevo";
+                        FinSegun
+                        
+                    FinProceso
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

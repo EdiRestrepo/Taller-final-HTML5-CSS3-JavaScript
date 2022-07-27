@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-8</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 8</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar todos los puntos del taller de condicionales en modo funciones.</i><br><br>
+                    <i>8. El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita registrar los pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas características propias como sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación permita registrar los pedidos, las tortas disponibles y las ventas que se registren diariamente.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                    //Captura datos numericos
+                    SubProceso datos <- capturaNumero (num Por Valor)
+                        Definir datos Como Entero;
+                        Escribir num;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    //Captura datos de texto
+                    SubProceso datos <- capturaTexto (tex Por Valor)
+                        Definir datos Como Caracter;
+                        Escribir tex;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    //Ventas del dia
+                    SubProceso ventas (a,b)
+                        Escribir "Registrar ventas del dia";
+                        Escribir "";
+                        a[0]<-capturaNumero("Ingrese la cantidad de tortas pequeñas, 4 porciones");
+                        a[1]<-capturaNumero("Ingrese la cantidad de tortas, 8 porciones");
+                        a[2]<-capturaNumero("Ingrese la cantidad de tortas, 12 porciones");
+                        
+                        Limpiar Pantalla;
+                        Escribir "Total ventas del dia";
+                        Escribir a[0]," Tortas pequeñas";
+                        Escribir a[1]," Tortas medianas";
+                        Escribir a[2]," Tortas grandes";
+                        Escribir "";
+                        Escribir "Total $ ", a[0]*b[0]+a[1]*b[1]+a[2]*b[2];
+                        
+                    FinSubProceso
+                    
+                    //Tortas disponibles
+                    SubProceso tortasDisponibles ()
+                        Escribir "Tortas disponibles";
+                        Escribir "1. Tortas pequeñas, cuatro porciones";
+                        Escribir "2. Tortas medianas, ocho porciones";
+                        Escribir "3. Tortas grandes, doce porciones";
+                        Escribir "Observaciones: 1. El cliente selecciona el sabor, y la decoración de la torta";
+                        Escribir "               2. Para pedidos de tortas mayores a doce porciones, se debe hacer el pedido con tres dias de anticipación";
+                    FinSubProceso
+                    
+                    //Registrar pedido
+                    SubProceso registrarPedido (a,b,c,d)
+                        Limpiar Pantalla;
+                        Escribir "Registrar un pedido";
+                        Escribir "";
+                        a<-capturaTexto("Ingrese el nombre del cliente");
+                        b[0]<-capturaNumero("Ingrese la cantidad de tortas pequeñas, 4 porciones");
+                        b[1]<-capturaNumero("Ingrese la cantidad de tortas, 8 porciones");
+                        b[2]<-capturaNumero("Ingrese la cantidad de tortas, 12 porciones");
+                        c<-capturaTexto("Ingrese el sabor de su torta (Chocolate, Arequipe, Fresa)");
+                        d<-capturaTexto("Ingrese la decoración de la torta (arequipe, fresas, nutela)");
+                        Limpiar Pantalla;
+                        
+                        Escribir "Se ha hecho el siguiente pedido a nombre de: ", a;
+                        Escribir b[0]," Tortas pequeñas";
+                        Escribir b[1]," Tortas medianas";
+                        Escribir b[2]," Tortas grandes";
+                        Escribir "Sabor: ", c;
+                        Escribir "Decoración: ", d;
+                    FinSubProceso
+                    
+                    
+                    //App pedido tortas
+                    Proceso Taller5_8_Funcion_Condicionales
+                        Definir cliente, sabor, porciones, decoraciones Como Caracter;
+                        Definir opcion Como Entero;
+                        Definir precioTorta, cantidadTortas Como Entero;
+                        Dimension precioTorta[3], cantidadTortas[3];
+                    
+                        //Valor tortas 
+                        precioTorta[0]<-10000;
+                        precioTorta[1]<-18000;
+                        precioTorta[2]<-25000;
+                        
+                        //Cantidad de Tortas
+                        cantidadTortas[0]<-0;
+                        cantidadTortas[1]<-0;
+                        cantidadTortas[2]<-0;
+                        
+                        cliente<-"";
+                        sabor<-"";
+                        decoraciones<-"";
+                        
+                        Escribir "App tortas Don Carlos";
+                        Escribir "";
+                        Escribir "Ingrese un número de acuerdo a la acción que desea realizar";
+                        Escribir "1. Registrar pedido";
+                        Escribir "2. Ver tortas disponibles";
+                        Escribir "3. Registrar ventas del dia";
+                        Leer opcion;
+                        
+                        Segun opcion Hacer
+                            1:
+                                registrarPedido(cliente, cantidadTortas, sabor, decoraciones);
+                            2:
+                                tortasDisponibles;
+                            3:
+                                ventas(cantidadTortas,precioTorta);
+                            De Otro Modo:
+                                Escribir "La opción seleccionada no existe";
+                                Escribir "Intenta de nuevo";
+                        FinSegun
+                    FinProceso
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

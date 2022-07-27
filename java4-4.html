@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java4-4</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Arrays Java</h1>
+        <article>
+            <div>
+                <h4>Exercise 4</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Dada la siguiente matriz bidimensional, el cual debe de quemar en el código</i><br>
+                    <p>° 01 02 03 04 05</p>
+                    <p>° 06 07 08 09 10</p>
+                    <p>° 11 12 13 14 15</p>
+                    <p>° 16 17 18 19 20</p>
+                    <p>° Utilizando el conocimiento adquirido, a excepción de hacerlo de forma manual, imprima la siguiente matriz bidimensional.</p>
+                    <p>° 01 02 03 04 05</p>
+                    <p>° 10 09 08 07 06</p>
+                    <p>° 11 12 13 14 15</p>
+                    <p>° 20 19 18 17 16</p>
+                </p>
+            </div>
+            <div>
+                <h3>Main</h3>
+                <pre>
+                    package com.Taller4;
+
+                    import com.Ejercicio1.Ejercicio1;
+                    import com.Ejercicio2.Ejercicio2;
+                    import com.Ejercicio3.Ejercicio3;
+                    import com.Ejercicio4.Ejercicio4;
+                    import com.Ejercicio5.Ejercicio5;
+                    
+                    import java.io.IOException;
+                    import java.util.Scanner;
+                    
+                    public class Main {
+                    
+                        private static boolean flag = true;
+                        private static int option;
+                        private static Scanner input = new Scanner(System.in);
+                    
+                        public static void main(String[] args) throws IOException {
+                            do {
+                                clearScreen();
+                                menu();
+                                option = captureOption();
+                                flag = evaluateOption(option);
+                            }while (flag == true);
+                            System.exit(0);
+                        }
+                    
+                        private static void menu() {
+                            System.out.println("Escoja un ejercicio del taller4");
+                            System.out.println("1. Ejercicio #1");
+                            System.out.println("2. Ejercicio #2");
+                            System.out.println("3. Ejercicio #3");
+                            System.out.println("4. Ejercicio #4");
+                            System.out.println("5. Ejercicio #5");
+                            System.out.println("0. Salir del taller");
+                        }
+                    
+                        private static int captureOption(){
+                            return input.nextInt();
+                        }
+                    
+                        private static boolean evaluateOption(int option) throws IOException {
+                            switch (option){
+                                case 1:
+                                    Ejercicio1 ejercicio1 = new Ejercicio1();
+                                    ejercicio1.Ejercicio1();
+                                    return true;
+                                //break;
+                              case 2:
+                                    Ejercicio2 ejercicio2 = new Ejercicio2();
+                                    ejercicio2.Ejercicio2();
+                                    return true;
+                                //break;
+                                case 3:
+                                    Ejercicio3 ejercicio3 = new Ejercicio3();
+                                    ejercicio3.Ejercicio3();
+                                    return true;
+                            case 4:
+                                    Ejercicio4 ejercicio4 = new Ejercicio4();
+                                    ejercicio4.Ejercicio4();
+                                    return true;
+                                //break;
+                                     case 5:
+                                    Ejercicio5 ejercicio5 = new Ejercicio5();
+                                    ejercicio5.Ejercicio5();
+                                    return true;
+                                //break;
+                                case 0:
+                                    return false;
+                                //break;
+                                default:
+                                    System.out.println("Opción incorrecta");
+                                    System.in.read();
+                                    return true;
+                            }
+                        }
+                        private static void clearScreen() {
+                            System.out.print("\033[H\033[2J");
+                            System.out.flush();
+                        }
+                    }
+                    
+                </pre>
+            </div>
+            <div>
+                <h3>Ejercicio4</h3>
+                <pre>
+                    package com.Ejercicio4;
+
+                    import java.io.IOException;
+                    import java.util.Scanner;
+                    
+                    public class Ejercicio4 {
+                        private Scanner input = new Scanner(System.in);
+                        private int option;
+                        private boolean flag = true;
+                    
+                        private String [][] matrix;
+                    
+                        private int col;
+                    
+                        public void Ejercicio4 () throws IOException {
+                            matrix = new String[4][5];
+                            do {
+                                menu();
+                                option = captureDataInt();
+                                input.nextLine(); //Limpiar el buffer de entrada después de leer el número entero
+                                flag = evaluateOption(option);
+                            }while (flag == true);
+                        }
+                    
+                        private void menu(){
+                            System.out.println("1. Matriz bidimensional");
+                            System.out.println("0. Salir de la App");
+                        }
+                    
+                        private int captureDataInt(){
+                            return input.nextInt();
+                        }
+                    
+                        private boolean evaluateOption(int option) throws IOException {
+                            switch (option){
+                                case 1:
+                                    printArray();
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                                    return true;
+                                case 0:
+                                    return false;
+                                //break;
+                                default:
+                                    System.out.println("Opción incorrecta");
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                                    return true;
+                            }
+                        }
+                    
+                        private void twoDimensionalArray(){
+                            matrix[0][0]="01";
+                            matrix[0][1]="02";
+                            matrix[0][2]="03";
+                            matrix[0][3]="04";
+                            matrix[0][4]="05";
+                    
+                            matrix[1][0]="06";
+                            matrix[1][1]="07";
+                            matrix[1][2]="08";
+                            matrix[1][3]="09";
+                            matrix[1][4]="10";
+                    
+                            matrix[2][0]="11";
+                            matrix[2][1]="12";
+                            matrix[2][2]="13";
+                            matrix[2][3]="14";
+                            matrix[2][4]="15";
+                    
+                            matrix[3][0]="16";
+                            matrix[3][1]="17";
+                            matrix[3][2]="18";
+                            matrix[3][3]="19";
+                            matrix[3][4]="20";
+                        }
+                    
+                        private void printArray(){
+                            twoDimensionalArray();
+                            for (int col = 0; col <= 4 ; col++) {
+                                System.out.print(matrix[0][col]+" ");
+                            }
+                            System.out.println("");
+                            for (int col = 4; col >= 0 ; col--) {
+                                System.out.print(matrix[1][col]+" ");
+                            }
+                            System.out.println("");
+                            for (int col = 0; col <= 4 ; col++) {
+                                System.out.print(matrix[2][col]+" ");
+                            }
+                            System.out.println("");
+                            for (int col = 4; col >= 0 ; col--) {
+                                System.out.print(matrix[3][col]+" ");
+                            }
+                            System.out.println("");
+                        }
+                    }
+                    
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

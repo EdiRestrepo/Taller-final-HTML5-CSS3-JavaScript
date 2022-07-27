@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt3-2</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Cycles PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 2</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Realizar la siguiente figura por medio del ciclo Mientras - Hacer:</i><br>
+                    <img src="img/ciclo-mientras.png">
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller3_2
+                    Definir ciclo1, ciclo2, decremento Como Entero;
+                    Definir figura1, figura2 Como Caracter;
+                
+                    ciclo1<-1;
+                    decremento<-10;
+                    figura1<-"*";
+                    figura2<-" ";
+                    
+                    Mientras ciclo1 <= 10 Hacer
+                        
+                        ciclo2<-1;
+                        
+                        Mientras ciclo2 <= 10 Hacer
+                            Si ciclo2 = decremento Entonces
+                                Escribir figura1 Sin Saltar;
+                                decremento<-decremento-1;
+                                
+                            SiNo
+                                Si ciclo2 > decremento Entonces
+                                    Escribir figura1 Sin Saltar;
+                                SiNo
+                                    Escribir figura2 Sin Saltar;
+                                FinSi
+                                
+                            FinSi
+                            
+                            ciclo2<-ciclo2+1;
+                        FinMientras
+                        Escribir "";
+                        ciclo1<-ciclo1+1;
+                    FinMientras
+                    
+                FinProceso
+                </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iTOlYAwWZpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

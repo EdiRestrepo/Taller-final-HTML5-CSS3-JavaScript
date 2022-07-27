@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-13</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 13</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar los puntos 6, 7 y 8 del taller de ciclos en modo funciones.</i><br><br>
+                    <i>8. La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en los cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso al curso, consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si fueron aprobados o no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga presente que la escuela tiene capacidad máxima de gestionar 8 usuarios en su totalidad.</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                    //Captura datos de texto
+                    SubProceso datos <- capturaTexto (tex Por Valor)
+                        Definir datos Como Caracter;
+                        Escribir tex;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    //Captura datos números
+                    SubProceso datos <- capturaNumero (num Por Valor)
+                        Definir datos Como Entero;
+                        Escribir num;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    
+                    //Usuarios que hayan presentado el curso 
+                    SubProceso usuarios (a,b,c)
+                        
+                        Si a[0]=1 | a[1]=1 | a[2]=1 | a[3]=1 | a[4]=1 | a[5]=1 | a[6]=1 | a[7]=1 Entonces
+                            Escribir "A continuación se presenta la lista de los alumnos registrados y si han presentado ó no la prueba del curso";
+                            Escribir "Solo apareceran los usuarios registrados";
+                            Escribir "";
+                            Si a[0]=1 &  b[0]=1 Entonces
+                                Escribir "El alumno: ",c[0]," realizo y aprobo el curso";
+                                Escribir "";
+                            FinSi
+                            Si a[0]=1 &  b[0]=2 Entonces
+                                Escribir "El alumno: ",c[0]," no logró aprobar el curso";
+                                Escribir "";
+                            FinSi
+                            Si a[0]=1 &  b[0]=0 Entonces
+                                Escribir "El alumno: ",c[0]," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                Escribir "";
+                            FinSi
+                            Si a[1]=1 &  b[1]=1 Entonces
+                                Escribir "El alumno: ",c[1]," realizo y aprobo el curso";
+                                Escribir "";
+                            FinSi
+                            Si a[1]=1 &  b[1]=2 Entonces
+                                Escribir "El alumno: ",c[1]," no logró aprobar el curso";
+                                Escribir "";
+                            FinSi
+                            Si a[1]=1 &  b[1]=0 Entonces
+                                Escribir "El alumno: ",c[1]," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[2]=1 &  b[2]=1 Entonces
+                                Escribir "El alumno: ",c[2]," realizo y aprobo el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[2]=1 &  b[2]=2 Entonces
+                                Escribir "El alumno: ",c[2]," no logró aprobar el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[2]=1 &  b[2]=0 Entonces
+                                Escribir "El alumno: ",c[2]," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[3]=1 &  b[3]=1 Entonces
+                                Escribir "El alumno: ",c[3]," realizo y aprobo el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[3]=1 &  b[3]=2 Entonces
+                                Escribir "El alumno: ",c[3]," no logró aprobar el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[3]=1 &  b[3]=0 Entonces
+                                Escribir "El alumno: ",c[3]," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[4]=1 &  b[4]=1 Entonces
+                                Escribir "El alumno: ",c[4]," realizo y aprobo el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[4]=1 &   b[4]=2 Entonces
+                                Escribir "El alumno: ",c[4]," no logró aprobar el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[4]=1 &   b[4]=0 Entonces
+                                Escribir "El alumno: ",c[4]," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[5]=1 &   b[5]=1 Entonces
+                                Escribir "El alumno: ",c[5]," realizo y aprobo el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[5]=1 &  b[5]=2 Entonces
+                                Escribir "El alumno: ",c[5]," no logró aprobar el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[5]=1 &  b[5]=0 Entonces
+                                Escribir "El alumno: ",c[5]," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[6]=1 &  b[6]=1 Entonces
+                                Escribir "El alumno: ",c[6]," realizo y aprobo el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[6]=1 &  b[6]=2 Entonces
+                                Escribir "El alumno: ",c[6]," no logró aprobar el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[6]=1 &  b[6]=0 Entonces
+                                Escribir "El alumno: ",c[6]," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[7]=1 &  b[7]=1 Entonces
+                                Escribir "El alumno: ",c[7]," realizo y aprobo el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[7]=1 &  b[7]=2 Entonces
+                                Escribir "El alumno: ",c[7]," no logró aprobar el curso";
+                                Escribir "";
+                            FinSi
+                            
+                            Si a[7]=1 &  b[7]=0 Entonces
+                                Escribir "El alumno: ",c[7]," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                Escribir "";
+                            FinSi
+                            
+                        SiNo
+                            Escribir "*************************************";
+                            Escribir "Al momento no hay alumnos registrados";
+                            Escribir "*************************************";
+                            Escribir "";
+                        FinSi
+                    
+                    FinSubProceso
+                    
+                    //Resultados de la prueba (aprobarón ó no)  
+                    SubProceso resultadoPrueba (a,b,c,d,e)
+                        a[0]<-1;
+                        Mientras a[0]=1 Hacer
+                            Si b[0]=1 | b[1]=1 | b[2]=1 | b[3]=1 | b[4]=1 | b[5]=1 | b[6]=1 | b[7]=1 Entonces
+                                Escribir "Ingrese un número de acuerdo al alumno al cual desea regristar su resultado de la prueba";
+                                Escribir "Solo apareceran los usuarios registrados";
+                                Escribir "";
+                            FinSi
+                            
+                            Si b[0]=1 Entonces
+                                Escribir "1. Nombre del alumno: ", c[0];
+                            FinSi
+                            Si b[1]=1 Entonces
+                                Escribir "2. Nombre del alumno: ", c[1];
+                            FinSi
+                            Si b[2]=1 Entonces
+                                Escribir "3. Nombre del alumno: ", c[2];
+                            FinSi
+                            Si b[3]=1 Entonces
+                                Escribir "4. Nombre del alumno: ", c[3];
+                            FinSi
+                            Si b[4]=1 Entonces
+                                Escribir "5. Nombre del alumno: ", c[4];
+                            FinSi
+                            Si b[5]=1 Entonces
+                                Escribir "6. Nombre del alumno: ", c[5];
+                            FinSi
+                            Si b[6]=1 Entonces
+                                Escribir "7. Nombre del alumno: ", c[6];
+                            FinSi
+                            Si b[7]=1 Entonces
+                                Escribir "8. Nombre del alumno: ", c[7];
+                            FinSi
+                            Si b[0]=0 & b[1]=0 & b[2]=0 & b[3]=0 & b[4]=0 & b[5]=0 & b[6]=0 & b[7]=0 Entonces
+                                Escribir "*************************************";
+                                Escribir "Al momento no hay alumnos registrados";
+                                Escribir "      Regresa al menú principal      ";
+                                Escribir "*************************************";
+                                Escribir "";
+                            SiNo
+                                Escribir "9. Regresar al menú principal";
+                                Escribir "";
+                                Leer d[0];
+                                Limpiar Pantalla;
+                                
+                                Segun d[0] Hacer
+                                    1:
+                                        Escribir "Digite 1 si el alumno: ", c[0]," ha aprobado la prueba";
+                                        Escribir "De lo contrario digite 2";
+                                        Leer e[0];
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha registrado la información de forma correcta";
+                                    2:
+                                        Escribir "Digite 1 si el alumno: ", c[1]," ha aprobado la prueba";
+                                        Escribir "De lo contrario digite 2";
+                                        Leer e[1];
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha registrado la información de forma correcta";
+                                    3:
+                                        Escribir "Digite 1 si el alumno: ", c[2]," ha aprobado la prueba";
+                                        Escribir "De lo contrario digite 2";
+                                        Leer e[2];
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha registrado la información de forma correcta";
+                                    4:
+                                        Escribir "Digite 1 si el alumno: ", c[3]," ha aprobado la prueba";
+                                        Escribir "De lo contrario digite 2";
+                                        Leer e[3];
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha registrado la información de forma correcta";
+                                    5:
+                                        Escribir "Digite 1 si el alumno: ", c[4]," ha aprobado la prueba";
+                                        Escribir "De lo contrario digite 2";
+                                        Leer e[4];
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha registrado la información de forma correcta";
+                                    6:
+                                        Escribir "Digite 1 si el alumno: ", c[5]," ha aprobado la prueba";
+                                        Escribir "De lo contrario digite 2";
+                                        Leer e[5];
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha registrado la información de forma correcta";
+                                    7:
+                                        Escribir "Digite 1 si el alumno: ", c[6]," ha aprobado la prueba";
+                                        Escribir "De lo contrario digite 2";
+                                        Leer e[6];
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha registrado la información de forma correcta";
+                                    8:
+                                        Escribir "Digite 1 si el alumno: ", c[7]," ha aprobado la prueba";
+                                        Escribir "De lo contrario digite 2";
+                                        Leer e[7];
+                                        Limpiar Pantalla;
+                                        Escribir "Se ha registrado la información de forma correcta";
+                                    9:
+                                        Escribir "";
+                                        
+                                    De Otro Modo:
+                                        Escribir "La opción seleccionada no existe";
+                                        Escribir "";
+                                FinSegun
+                            FinSi
+                            
+                            Escribir "¿Desea regresar al menú principal?";
+                            Escribir "1. Digite 1 para registrar la prueba de otro usuario";
+                            Escribir "2. Digite un número diferente de 1 para regresar al menú principal";
+                            Leer a[0];
+                            Limpiar Pantalla;
+                        FinMientras
+                    FinSubProceso
+                    
+                    
+                    //Registro Ingreso Usuario
+                    SubProceso ingresoUsuario (a,b,c,d,e)
+                        a[0]<-1;
+                        Si b[0]=0 Entonces
+                            Escribir "*********Ya no hay cupos disponibles*********";
+                            Escribir "";
+                        FinSi
+                        Mientras b[0]>0 & a[0]=1 Hacer
+                            Escribir "Ingrese un número de acuerdo al usuario que desea regristar";
+                            submenu();
+                            c[0]<-capturaNumero("");
+                            Limpiar Pantalla;
+                            
+                            Segun c[0] Hacer
+                                1:
+                                    Si d[0]=0 Entonces
+                                        e[0]<-capturaTexto("Ingrese el nombre completo del cliente");
+                                        Escribir "";
+                                        b[0]<-b[0]-1;
+                                        d[0]<-1;
+                                    SiNo
+                                        Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                        Escribir "";
+                                    FinSi
+                                2:
+                                    Si d[1]=0 Entonces
+                                        e[1]<-capturaTexto("Ingrese el nombre completo del cliente");
+                                        Escribir "";
+                                        b[0]<-b[0]-1;
+                                        d[1]<-1;
+                                    SiNo
+                                        Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                        Escribir "";
+                                    FinSi
+                                3:
+                                    Si d[2]=0 Entonces
+                                        e[2]<-capturaTexto("Ingrese el nombre completo del cliente");
+                                        Escribir "";
+                                        b[0]<-b[0]-1;
+                                        d[2]<-1;
+                                    SiNo
+                                        Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                        Escribir "";
+                                    FinSi
+                                4:
+                                    Si d[3]=0 Entonces
+                                        e[3]<-capturaTexto("Ingrese el nombre completo del cliente");
+                                        Escribir "";
+                                        b[0]<-b[0]-1;
+                                        d[3]<-1;;
+                                    SiNo
+                                        Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                        Escribir "";
+                                    FinSi
+                                5:
+                                    Si d[4]=0 Entonces
+                                        e[4]<-capturaTexto("Ingrese el nombre completo del cliente");
+                                        Escribir "";
+                                        b[0]<-b[0]-1;
+                                        d[4]<-1;
+                                    SiNo
+                                        Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                        Escribir "";
+                                    FinSi
+                                6:
+                                    Si d[5]=0 Entonces
+                                        e[5]<-capturaTexto("Ingrese el nombre completo del cliente");
+                                        Escribir "";
+                                        b[0]<-b[0]-1;
+                                        d[5]<-1;
+                                    SiNo
+                                        Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                        Escribir "";
+                                    FinSi
+                                7:
+                                    Si d[6]=0 Entonces
+                                        e[6]<-capturaTexto("Ingrese el nombre completo del cliente");
+                                        Escribir "";
+                                        b[0]<-b[0]-1;
+                                        d[6]<-1;
+                                    SiNo
+                                        Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                        Escribir "";
+                                    FinSi
+                                8:
+                                    Si d[7]=0 Entonces
+                                        e[7]<-capturaTexto("Ingrese el nombre completo del cliente");
+                                        Escribir "";
+                                        b[0]<-b[0]-1;
+                                        d[7]<-1;
+                                    SiNo
+                                        Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                        Escribir "";
+                                    FinSi
+                                9:
+                                    Escribir "¿Desea regresar al menú principal?";
+                                    Escribir "            ó                      "; 
+                                De Otro Modo:
+                                    Escribir "La opción seleccionada no existe";
+                                    Escribir "";
+                                    
+                            FinSegun
+                            
+                            Si b[0]=0 Entonces
+                                Escribir "Ya no hay cupos disponibles";
+                                Escribir "";
+                            FinSi
+                            Escribir "¿Desea registrar otro usuario?";
+                            Escribir "";
+                            Escribir "1. Digite 1 para registrar otro usuario";
+                            Escribir "2. Digite un número diferente de 1 para regresar al menú principal";
+                            Leer a[0];
+                            Limpiar Pantalla;
+                            
+                        FinMientras
+                                    
+                    FinSubProceso
+                    
+                    //Submenu
+                    SubProceso submenu()
+                        Escribir "";
+                        Escribir "1. Usuario #1";
+                        Escribir "2. Usuario #2";
+                        Escribir "3. Usuario #3";
+                        Escribir "4. Usuario #4";
+                        Escribir "5. Usuario #5";
+                        Escribir "6. Usuario #6";
+                        Escribir "7. Usuario #7";
+                        Escribir "8. Usuario #8";
+                        Escribir "9. Regresar al menú principal";
+                        Escribir "";
+                    FinSubProceso
+                    
+                    //Menu principal
+                    SubProceso menu (a)
+                        Escribir "***************************************************************************************** ";
+                        Escribir "-----------------------App escuela automovilística *El Maestro*-------------------------- ";
+                        Escribir "****************************************************************************************  ";
+                        Escribir "                                                                                          ";
+                        Escribir "	        Digite un número de acuerdo a la acción que desea realizar                       ";
+                        Escribir "                                                                                          ";
+                        Escribir "	        1. Registrar ingreso de usuario                                                  "; 
+                        Escribir "         Cupos Disponibles: ", a[0],". La capacidad máxima de la escula es de 8 alumnos";
+                        Escribir "	        2. Resultados de la prueba (aprobarón ó no)                                      ";
+                        Escribir "	        3. Usuarios que hayan presentado el curso                                        ";
+                        Escribir "	        4. Salir de la App                                                               ";
+                        Escribir "                                                                                          ";
+                    FinSubProceso
+                    
+                    //Escuela automovilística
+                    Proceso Taller5_13_8_Funcion_Ciclos
+                        Definir client Como Caracter;
+                        Definir registered, approved Como Entero;
+                        Dimension registered[8], approved[8], client[8];
+                        Definir counter, mainCycle, cycle1, cycle2, option, register, result Como Entero;
+                        Dimension counter[1], register[1], cycle1[1],result[1], cycle2[1] ;
+                        
+                        registered[0]<-0;
+                        registered[1]<-0;
+                        registered[2]<-0;
+                        registered[3]<-0;
+                        registered[4]<-0;
+                        registered[5]<-0;
+                        registered[6]<-0;
+                        registered[7]<-0;
+                        
+                        approved[0]<-0;
+                        approved[1]<-0;
+                        approved[2]<-0;
+                        approved[3]<-0;
+                        approved[4]<-0;
+                        approved[5]<-0;
+                        approved[6]<-0;
+                        approved[7]<-0;
+                        
+                        counter[0]<-8;
+                        mainCycle<-1;
+                        cycle1[0]<-1;
+                        register[0]<-1;
+                        result[0]<-1;
+                        
+                        Mientras mainCycle=1 Hacer
+                            menu(counter);
+                            Leer option;
+                            Limpiar Pantalla;
+                            
+                            Segun option Hacer
+                                1:
+                                    ingresoUsuario(cycle1,counter,register,registered,client);
+                                2:
+                                    resultadoPrueba(cycle2,registered,client,result,approved);
+                                3:
+                                    usuarios(registered,approved,client);
+                                4:
+                                    Escribir "";
+                                    
+                                De Otro Modo:
+                                    Escribir "Opción no validad";
+                                    Escribir "";
+                                    
+                            FinSegun
+                            
+                            Escribir "¿Desea volver al menú principal?";
+                            Escribir "";
+                            Escribir "1. Digite 1 para regresar al menú principal";
+                            Escribir "2. Digite un numero diferente a 1 para salir de la App";
+                            Escribir "";
+                            Leer mainCycle;
+                            Limpiar Pantalla;
+                        FinMientras
+                        Escribir "Has salido de la App - Hasta pronto";
+                    FinProceso
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

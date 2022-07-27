@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt2-7</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Conditionals PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 7</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de masa corporal)<br>
+                     y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada adicional a los datos suministrados,<br>
+                     debe mostrar el resultado para cada uno y establecer en qué rango se encuentra (bajo peso, normal, sobrepeso y obeso).</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+                Proceso Taller2_7
+                    Definir IMC, peso, estatura Como Real;
+                    Definir nombrePersonaEncuestada Como Caracter;
+                    
+                    //IMC=Peso(Kg)/Altura^2(m)
+                    //Peso inferior al normal	Menos de 18.5
+                    // Peso Normal	18.5 - 24.9
+                    //Peso superior al normal	25.0 - 29.9
+                    //Obesidad	Más de 30.0
+                    
+                    Escribir "Hola, bienvenido a su App de la Secretaría de Salud Municipal";
+                    Escribir "";
+                    Escribir "Ingrese los siguientes datos para cacular el IMC";
+                    Escribir "(Índice de masa corporal) de las personas que se van a encuestar";
+                    Escribir "";
+                    Escribir "Ingrese el nombre y apellido de la persona encuestada";
+                    Leer nombrePersonaEncuestada;
+                    Escribir "Ingrese el peso de la persona en Kilogramos";
+                    Leer peso;
+                    Escribir "Ingrese la estatura de la persona en metros";
+                    Leer estatura;
+                    
+                    IMC <- peso/(estatura^2);
+                    
+                    Limpiar Pantalla;
+                    
+                    Escribir "El índice de masa corporal de: ",nombrePersonaEncuestada," es de: ", IMC;
+                    Escribir "";
+                    
+                    Si IMC < 18.5  Entonces
+                        Escribir nombrePersonaEncuestada, " se encuentra bajo de peso";
+                    FinSi
+                    
+                    Si (IMC <=24.9 & IMC >= 18.5) Entonces
+                        Escribir nombrePersonaEncuestada, " se encuentra normal de peso";
+                    FinSi
+                    
+                    Si (IMC <=29.9 & IMC >= 25) Entonces
+                        Escribir nombrePersonaEncuestada, " se encuentra en sobrepeso";
+                        
+                    FinSi
+                    
+                    Si IMC >= 30 Entonces
+                        Escribir nombrePersonaEncuestada, " se encuentra obeso";
+                    FinSi
+                    
+                    
+                FinProceso
+                    </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gP9ke7IMCH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt5-7</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Functions PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 7</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>Organizar todos los puntos del taller de condicionales en modo funciones.</i><br><br>
+                    <i>7. La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de masa corporal)<br>
+                    y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada adicional a los datos suministrados,<br>
+                     debe mostrar el resultado para cada uno y establecer en qué rango se encuentra (bajo peso, normal, sobrepeso y obeso).</i>
+                </p>
+            </div>
+            <div>
+                <pre>
+
+                    //Resultado de acuerdo al IMC
+                    SubProceso resultado1 (a,b Por Valor)
+                        Escribir "El índice de masa corporal de: ",a," es de: ", b;
+                        Escribir "";
+                        
+                        Si b < 18.5  Entonces
+                            Escribir a, " se encuentra bajo de peso";
+                        FinSi
+                        
+                        Si (b <=24.9 & b >= 18.5) Entonces
+                            Escribir a, " se encuentra normal de peso";
+                        FinSi
+                        
+                        Si (b <=29.9 & b >= 25) Entonces
+                            Escribir a, " se encuentra en sobrepeso";
+                            
+                        FinSi
+                        
+                        Si b >= 30 Entonces
+                            Escribir a, " se encuentra obeso";
+                        FinSi
+                    FinSubProceso
+                    
+                    //Formula de IMC
+                    //IMC=Peso(Kg)/Altura^2(m)
+                    //Peso inferior al normal	Menos de 18.5
+                    // Peso Normal	18.5 - 24.9
+                    //Peso superior al normal	25.0 - 29.9
+                    //Obesidad	Más de 30.0
+                    SubProceso resultado <- imc (a, b Por Valor)
+                        Limpiar Pantalla;
+                        Definir resultado Como Real;
+                        resultado<- a/(b^2);
+                    FinSubProceso
+                    
+                    
+                    //Ingreso datos numericos
+                    SubProceso datos <- capturaNumero (num Por Valor)
+                        Definir datos Como Real;
+                        Escribir num;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    //Ingreso datos de texto
+                    SubProceso datos <- capturaTexto (tex Por Valor)
+                        Definir datos Como Caracter;
+                        Escribir tex;
+                        Leer datos;
+                    FinSubProceso
+                    
+                    Proceso Taller5_7_Funcion_Condicional
+                        Definir resul, peso, estatura Como Real;
+                        Definir nombrePersonaEncuestada Como Caracter;
+                    
+                        Escribir "Hola, bienvenido a su App de la Secretaría de Salud Municipal";
+                        Escribir "";
+                        Escribir "Ingrese los siguientes datos para cacular el IMC";
+                        Escribir "(Índice de masa corporal) de las personas que se van a encuestar";
+                        Escribir "";
+                        nombrePersonaEncuestada<-capturaTexto("Ingrese el nombre y apellido de la persona encuestada");
+                        peso<-capturaNumero("Ingrese el peso de la persona en Kilogramos");
+                        estatura<-capturaNumero("Ingrese la estatura de la persona en metros");
+                        
+                        resul<-imc(peso,estatura);
+                        resultado1(nombrePersonaEncuestada,resul);
+                            
+                    FinProceso
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java3-8</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Cycles Java</h1>
+        <article>
+            <div>
+                <h4>Exercise 8</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en los cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso al curso, consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si fueron aprobados o no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga presente que la escuela tiene capacidad máxima de gestionar 8 usuarios en su totalidad.</i><br>
+                </p>
+            </div>
+            <div>
+                <h3>Main</h3>
+                <pre>
+                    package com.Taller3;
+
+                    import com.Ejercicio1.Ejercicio1;
+                    import com.Ejercicio2.Ejercicio2;
+                    import com.Ejercicio3.Ejercicio3;
+                    import com.Ejercicio4.Ejercicio4;
+                    import com.Ejercicio5.Ejercicio5;
+                    import com.Ejercicio6.Ejercicio6;
+                    import com.Ejercicio7.Ejercicio7;
+                    import com.Ejercicio8.Ejercicio8;
+                    
+                    import java.io.IOException;
+                    import java.util.Scanner;
+                    
+                    public class Main {
+                    
+                        private static boolean flag = true;
+                        private static int option;
+                        private static Scanner input= new Scanner(System.in);
+                    
+                        public static void main(String[] args) throws IOException {
+                            do {
+                                clearScreen();
+                                menu();
+                                option = captureOption();
+                                input.nextLine(); //Limpiar el buffer de entrada después de leer el número entero
+                                flag = evaluateOption(option);
+                            }while (flag == true);
+                            System.exit(0);
+                        }
+                    
+                        private static void menu() {
+                            System.out.println("Escoja un ejercicio del taller");
+                            System.out.println("1. Ejercicio #1");
+                            System.out.println("2. Ejercicio #2");
+                            System.out.println("3. Ejercicio #3");
+                            System.out.println("4. Ejercicio #4");
+                            System.out.println("5. Ejercicio #5");
+                            System.out.println("6. Ejercicio #6");
+                            System.out.println("7. Ejercicio #7");
+                            System.out.println("8. Ejercicio #8");
+                            System.out.println("0. Salir del taller");
+                        }
+                    
+                        private static int captureOption(){
+                            return input.nextInt();
+                        }
+                    
+                        private static boolean evaluateOption(int option) throws IOException {
+                            switch (option){
+                                case 1:
+                                    Ejercicio1 ejercicio1 = new Ejercicio1();
+                                    ejercicio1.Ejercicio1();
+                                    return true;
+                                //break;
+                              case 2:
+                                    Ejercicio2 ejercicio2 = new Ejercicio2();
+                                    ejercicio2.Ejercicio2();
+                                    return true;
+                                //break;
+                                 case 3:
+                                    Ejercicio3 ejercicio3 = new Ejercicio3();
+                                    ejercicio3.Ejercicio3();
+                                    return true;
+                                case 4:
+                                    Ejercicio4 ejercicio4 = new Ejercicio4();
+                                    ejercicio4.Ejercicio4();
+                                    return true;
+                                //break;
+                                case 5:
+                                    Ejercicio5 ejercicio5 = new Ejercicio5();
+                                    ejercicio5.Ejercicio5();
+                                    return true;
+                                //break;
+                                case 6:
+                                    Ejercicio6 ejercicio6 = new Ejercicio6();
+                                    ejercicio6.Ejercicio6();
+                                    return true;
+                                //break;
+                               case 7:
+                                    Ejercicio7 ejercicio7 = new Ejercicio7();
+                                    ejercicio7.Ejercicio7();
+                                    return true;
+                                //break;
+                                case 8:
+                                    Ejercicio8 ejercicio8 = new Ejercicio8();
+                                    ejercicio8.Ejercicio8();
+                                    return true;
+                                //break;
+                                case 0:
+                                    return false;
+                                //break;
+                                default:
+                                    System.out.println("Opción incorrecta");
+                                    System.in.read();
+                                    return true;
+                            }
+                        }
+                        private static void clearScreen() {
+                            System.out.print("\033[H\033[2J");
+                            System.out.flush();
+                        }
+                    }                                   
+                </pre>
+            </div>
+            <div>
+                <h3>Ejercicio8</h3>
+                <pre>
+                    package com.Ejercicio8;
+
+                    import java.io.IOException;
+                    import java.util.Scanner;
+                    
+                    public class Ejercicio8 {
+                        private Scanner input = new Scanner(System.in);
+                        private int option, counter;
+                        private boolean flag = true;
+                        private boolean[] memorySpace,approve, recordresult;
+                    
+                        private String[] name;
+                    
+                        public void Ejercicio8 () throws IOException {
+                            counter=8;
+                            name = new String[8];
+                            memorySpace = new boolean[8];
+                            approve = new boolean[8];
+                            recordresult = new boolean[8];
+                            memorySpace[0]=false;
+                            memorySpace[1]=false;
+                            memorySpace[2]=false;
+                            memorySpace[3]=false;
+                            memorySpace[4]=false;
+                            memorySpace[5]=false;
+                            memorySpace[6]=false;
+                            memorySpace[7]=false;
+                            recordresult[0]=false;
+                            recordresult[1]=false;
+                            recordresult[2]=false;
+                            recordresult[3]=false;
+                            recordresult[4]=false;
+                            recordresult[5]=false;
+                            recordresult[6]=false;
+                            recordresult[7]=false;
+                            name[0]="Usuario #1";
+                            name[1]="Usuario #2";
+                            name[2]="Usuario #3";
+                            name[3]="Usuario #4";
+                            name[4]="Usuario #5";
+                            name[5]="Usuario #6";
+                            name[6]="Usuario #7";
+                            name[7]="Usuario #8";
+                    
+                            do {
+                                menu();
+                                option = captureDataInt();
+                                input.nextLine(); //Limpiar el buffer de entrada después de leer el número entero
+                                flag = evaluateOption(option);
+                            }while (flag == true);
+                        }
+                    
+                        private void menu(){
+                            System.out.println("App escuela automovilística *El Maestro*");
+                            System.out.println("La capacidad de la escula es de 8 alumnos. Cupos disponibles= "+counter);
+                            System.out.println("Por favor, digite un número de acuerdo a la acción que desea realizar");
+                            System.out.println("1. Registrar ingreso de usuario al curso");
+                            System.out.println("2. Consultar usuarios que hayan presentado el curso");
+                            System.out.println("3. Registrar resultados de la prueba del curso");
+                            System.out.println("4. Consultar resultados de la prueba del curso (si fueron aprobados o no) ");
+                            System.out.println("0. Salir de la App");
+                        }
+                    
+                        private int captureDataInt(){
+                            return input.nextInt();
+                        }
+                        private String captureDataString(){
+                            return input.nextLine();
+                        }
+                    
+                        private boolean captureDataBoolean(){
+                            return input.nextBoolean();
+                        }
+                    
+                        private void askName(){
+                            System.out.println("Digite el nombre completo del cliente quien va a iniciar el curso");
+                        }
+                        private void askResult(){
+                            System.out.println("Digite true si el usuario aprobo el curso de lo contrario digite false");
+                        }
+                        private boolean evaluateOption(int option) throws IOException {
+                            switch (option){
+                                case 1:
+                                    userRegister();
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                                    return true;
+                                case 2:
+                                    consultUsers();
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                                    return true;
+                                case 3:
+                                    recordResult();
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                                    return true;
+                                case 4:
+                                    seeResults();
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                                    return true;
+                                case 0:
+                                    return false;
+                                //break;
+                                default:
+                                    System.out.println("Opción incorrecta");
+                                    System.out.println("Digita, enter para volver al menu principal");
+                                    System.in.read();
+                                    return true;
+                            }
+                        }
+                    
+                        private void usersToSeeResult(){
+                            if((memorySpace[0]==true)&&(recordresult[0]==true)){
+                                System.out.println("1. "+name[0]);
+                            }
+                            if((memorySpace[1]==true)&&(recordresult[1]==true)){
+                                System.out.println("2. "+name[1]);
+                            }
+                            if((memorySpace[2]==true)&&(recordresult[2]==true)){
+                                System.out.println("3. "+name[2]);
+                            }
+                            if((memorySpace[3]==true)&&(recordresult[3]==true)){
+                                System.out.println("4. "+name[3]);
+                            }
+                            if((memorySpace[4]==true)&&(recordresult[4]==true)){
+                                System.out.println("5. "+name[4]);
+                            }
+                            if((memorySpace[5]==true)&&(recordresult[5]==true)){
+                                System.out.println("6. "+name[5]);
+                            }
+                            if((memorySpace[6]==true)&&(recordresult[6]==true)){
+                                System.out.println("7. "+name[6]);
+                            }
+                            if((memorySpace[7]==true)&&(recordresult[7]==true)){
+                                System.out.println("8. "+name[7]);
+                            }
+                        }
+                        private void seeResults() throws IOException {
+                            if ((recordresult[0]==false)&&(recordresult[1]==false)&&(recordresult[2]==false)&&(recordresult[3]
+                            ==false)&&(recordresult[4]==false)&&(recordresult[5]==false)&&(recordresult[6]==false)&&(recordresult[7]==false)){
+                                System.out.println("Al momento no se ha registrado el resultado de algun usuario");
+                            }else {
+                                System.out.println("Seleccione el usuario del cual desea ver su resultado");
+                                usersToSeeResult();
+                                System.out.println("9. Volver al menu principal");
+                                option = captureDataInt();
+                                input.nextLine(); //Limpiar el buffer de entrada después de leer el número entero
+                                switch (option) {
+                                    case 1:
+                                        if ((memorySpace[0]==true)&&(recordresult[0]==true)){
+                                            if (approve[0]==true){
+                                                System.out.println("El usuario "+name[0]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[0]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un resultado registrado en el cupo #1");
+                                        }
+                                        break;
+                                    case 2:
+                                        if ((memorySpace[1]==true)&&(recordresult[1]==true)){
+                                            if (approve[1]==true){
+                                                System.out.println("El usuario "+name[1]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[1]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un resultado registrado en el cupo #2");
+                                        }
+                                        break;
+                                    case 3:
+                                        if ((memorySpace[2]==true)&&(recordresult[2]==true)){
+                                            if (approve[2]==true){
+                                                System.out.println("El usuario "+name[2]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[2]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un resultado registrado en el cupo #3");
+                                        }
+                                        break;
+                                    case 4:
+                                        if ((memorySpace[3]==true)&&(recordresult[3]==true)){
+                                            if (approve[3]==true){
+                                                System.out.println("El usuario "+name[3]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[3]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un resultado registrado en el cupo #4");
+                                        }
+                                        break;
+                                    case 5:
+                                        if ((memorySpace[4]==true)&&(recordresult[4]==true)){
+                                            if (approve[4]==true){
+                                                System.out.println("El usuario "+name[4]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[4]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un resultado registrado en el cupo #5");
+                                        }
+                                        break;
+                                    case 6:
+                                        if ((memorySpace[5]==true)&&(recordresult[5]==true)){
+                                            if (approve[5]==true){
+                                                System.out.println("El usuario "+name[5]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[5]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un resultado registrado en el cupo #6");
+                                        }
+                                        break;
+                                    case 7:
+                                        if ((memorySpace[6]==true)&&(recordresult[6]==true)){
+                                            if (approve[6]==true){
+                                                System.out.println("El usuario "+name[6]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[6]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un resultado registrado en el cupo #7");
+                                        }
+                                        break;
+                                    case 8:
+                                        if ((memorySpace[7]==true)&&(recordresult[7]==true)){
+                                            if (approve[7]==true){
+                                                System.out.println("El usuario "+name[7]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[7]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un resultado registrado en el cupo #8");
+                                        }
+                                        break;
+                                    case 9:
+                                        break;
+                                    default:
+                                        System.out.println("Opción incorrecta");
+                                        System.out.println("Digita, enter para volver al menu principal");
+                                        System.in.read();
+                                }
+                            }
+                        }
+                    
+                        private void usersTakenCourse(){
+                            if(memorySpace[0]==true){
+                                System.out.println("1. "+name[0]);
+                            }
+                            if(memorySpace[1]==true){
+                                System.out.println("2. "+name[1]);
+                            }
+                            if(memorySpace[2]==true){
+                                System.out.println("3. "+name[2]);
+                            }
+                            if(memorySpace[3]==true){
+                                System.out.println("4. "+name[3]);
+                            }
+                            if(memorySpace[4]==true){
+                                System.out.println("5. "+name[4]);
+                            }
+                            if(memorySpace[5]==true){
+                                System.out.println("6. "+name[5]);
+                            }
+                            if(memorySpace[6]==true){
+                                System.out.println("7. "+name[6]);
+                            }
+                            if(memorySpace[7]==true){
+                                System.out.println("8. "+name[7]);
+                            }
+                        }
+                    
+                        private void consultUsers(){
+                            if ((memorySpace[0]==false)&&(memorySpace[1]==false)&&(memorySpace[2]==false)&&(memorySpace[3]
+                            ==false)&&(memorySpace[4]==false)&&(memorySpace[5]==false)&&(memorySpace[6]==false)&&(memorySpace[7]==false)){
+                                System.out.println("Al momento no hay usuarios registrados");
+                            }else {
+                                System.out.println("Lista de ususarios que han presentado el curso");
+                                usersTakenCourse();
+                            }
+                        }
+                    
+                        private void usersToRecordResult(){
+                            if((memorySpace[0]==true)&&(recordresult[0]==false)){
+                                System.out.println("1. "+name[0]);
+                            }
+                            if((memorySpace[1]==true)&&(recordresult[1]==false)){
+                                System.out.println("2. "+name[1]);
+                            }
+                            if((memorySpace[2]==true)&&(recordresult[2]==false)){
+                                System.out.println("3. "+name[2]);
+                            }
+                            if((memorySpace[3]==true)&&(recordresult[3]==false)){
+                                System.out.println("4. "+name[3]);
+                            }
+                            if((memorySpace[4]==true)&&(recordresult[4]==false)){
+                                System.out.println("5. "+name[4]);
+                            }
+                            if((memorySpace[5]==true)&&(recordresult[5]==false)){
+                                System.out.println("6. "+name[5]);
+                            }
+                            if((memorySpace[6]==true)&&(recordresult[6]==false)){
+                                System.out.println("7. "+name[6]);
+                            }
+                            if((memorySpace[7]==true)&&(recordresult[7]==false)){
+                                System.out.println("8. "+name[7]);
+                            }
+                        }
+                    
+                        private void recordResult() throws IOException {
+                            if ((memorySpace[0]==false)&&(memorySpace[1]==false)&&(memorySpace[2]==false)&&(memorySpace[3]
+                            ==false)&&(memorySpace[4]==false)&&(memorySpace[5]==false)&&(memorySpace[6]==false)&&(memorySpace[7]==false)){
+                                System.out.println("Al momento no hay usuarios registrados");
+                            }else {
+                                System.out.println("Lista de usuarios pendiente por registrar su resultado");
+                                usersToRecordResult();
+                                System.out.println("9. Volver al menu principal");
+                                option = captureDataInt();
+                                input.nextLine(); //Limpiar el buffer de entrada después de leer el número entero
+                                switch (option){
+                                    case 1:
+                                        if(memorySpace[0]==true){
+                                            askResult();
+                                            approve[0]=captureDataBoolean();
+                                            recordresult[0]=true;
+                                            if (approve[0]==true){
+                                                System.out.println("El usuario "+name[0]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[0]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un usuario registrado en el cupo #1");
+                                        }
+                                        break;
+                                    case 2:
+                                        if(memorySpace[1]==true){
+                                            askResult();
+                                            approve[1]=captureDataBoolean();
+                                            recordresult[1]=true;
+                                            if (approve[1]==true){
+                                                System.out.println("El usuario "+name[1]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[1]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un usuario registrado en el cupo #2");
+                                        }
+                                        break;
+                                    case 3:
+                                        if(memorySpace[2]==true){
+                                            askResult();
+                                            approve[2]=captureDataBoolean();
+                                            recordresult[2]=true;
+                                            if (approve[2]==true){
+                                                System.out.println("El usuario "+name[2]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[2]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un usuario registrado en el cupo #3");
+                                        }
+                                        break;
+                                    case 4:
+                                        if(memorySpace[3]==true){
+                                            askResult();
+                                            approve[3]=captureDataBoolean();
+                                            recordresult[3]=true;
+                                            if (approve[3]==true){
+                                                System.out.println("El usuario "+name[3]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[3]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un usuario registrado en el cupo #4");
+                                        }
+                                        break;
+                                    case 5:
+                                        if(memorySpace[4]==true){
+                                            askResult();
+                                            approve[4]=captureDataBoolean();
+                                            recordresult[4]=true;
+                                            if (approve[4]==true){
+                                                System.out.println("El usuario "+name[4]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[4]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un usuario registrado en el cupo #5");
+                                        }
+                                        break;
+                                    case 6:
+                                        if(memorySpace[5]==true){
+                                            askResult();
+                                            approve[5]=captureDataBoolean();
+                                            recordresult[5]=true;
+                                            if (approve[5]==true){
+                                                System.out.println("El usuario "+name[5]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[5]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un usuario registrado en el cupo #6");
+                                        }
+                                        break;
+                                    case 7:
+                                        if(memorySpace[6]==true){
+                                            askResult();
+                                            approve[6]=captureDataBoolean();
+                                            recordresult[6]=true;
+                                            if (approve[6]==true){
+                                                System.out.println("El usuario "+name[6]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[6]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un usuario registrado en el cupo #7");
+                                        }
+                                        break;
+                                    case 8:
+                                        if(memorySpace[7]==true){
+                                            askResult();
+                                            approve[7]=captureDataBoolean();
+                                            recordresult[7]=true;
+                                            if (approve[7]==true){
+                                                System.out.println("El usuario "+name[7]+" ha aprobado el curso");
+                                            }else {
+                                                System.out.println("El usuario "+name[7]+" no aprobo el curso");
+                                            }
+                                        }else {
+                                            System.out.println("Al momento no hay un usuario registrado en el cupo #8");
+                                        }
+                                        break;
+                                    case 9:
+                                        break;
+                                    default:
+                                        System.out.println("Opción incorrecta");
+                                        System.out.println("Digita, enter para volver al menu principal");
+                                        System.in.read();
+                                }
+                            }
+                        }
+                    
+                        private void availablePlaces(){
+                            if(memorySpace[0]==false){
+                                System.out.println("1. "+name[0]);
+                            }
+                            if(memorySpace[1]==false){
+                                System.out.println("2. "+name[1]);
+                            }
+                            if(memorySpace[2]==false){
+                                System.out.println("3. "+name[2]);
+                            }
+                            if(memorySpace[3]==false){
+                                System.out.println("4. "+name[3]);
+                            }
+                            if(memorySpace[4]==false){
+                                System.out.println("5. "+name[4]);
+                            }
+                            if(memorySpace[5]==false){
+                                System.out.println("6. "+name[5]);
+                            }
+                            if(memorySpace[6]==false){
+                                System.out.println("7. "+name[6]);
+                            }
+                            if(memorySpace[7]==false){
+                                System.out.println("8. "+name[7]);
+                            }
+                            System.out.println("9. Volver al menu principal");
+                        }
+                    
+                        private void userRegister() throws IOException {
+                            if ((memorySpace[0]==true)&&(memorySpace[1]==true)&&(memorySpace[2]==true)&&(memorySpace[3]
+                            ==true)&&(memorySpace[4]==true)&&(memorySpace[5]==true)&&(memorySpace[6]==true)&&(memorySpace[7]==true)){
+                                System.out.println("Ya no hay cupos disponibles");
+                            }else {
+                                System.out.println("Digite un número de acuerdo al usuario que desea regristar");
+                                availablePlaces();
+                                option = captureDataInt();
+                                input.nextLine(); //Limpiar el buffer de entrada después de leer el número entero
+                                switch (option){
+                                    case 1:
+                                        if(memorySpace[0]==false){
+                                            askName();
+                                            name[0]=captureDataString();
+                                            memorySpace[0]=true;
+                                            counter--;
+                                            System.out.println("Se ha registrado de forma correcta el usuario#1, "+name[0]);
+                                        }else {
+                                            System.out.println("El cupo ya se encuentra ocupado por otro usuario");
+                                        }
+                                        break;
+                                    case 2:
+                                        if(memorySpace[1]==false){
+                                            askName();
+                                            name[1]=captureDataString();
+                                            memorySpace[1]=true;
+                                            counter--;
+                                            System.out.println("Se ha registrado de forma correcta el usuario#2, "+name[1]);
+                                        }else {
+                                            System.out.println("El cupo ya se encuentra ocupado por otro usuario");
+                                        }
+                                        break;
+                                    case 3:
+                                        if(memorySpace[2]==false){
+                                            askName();
+                                            name[2]=captureDataString();
+                                            memorySpace[2]=true;
+                                            counter--;
+                                            System.out.println("Se ha registrado de forma correcta el usuario#3, "+name[2]);
+                                        }else {
+                                            System.out.println("El cupo ya se encuentra ocupado por otro usuario");
+                                        }
+                                        break;
+                                    case 4:
+                                        if(memorySpace[3]==false){
+                                            askName();
+                                            name[3]=captureDataString();
+                                            memorySpace[3]=true;
+                                            counter--;
+                                            System.out.println("Se ha registrado de forma correcta el usuario#4, "+name[3]);
+                                        }else {
+                                            System.out.println("El cupo ya se encuentra ocupado por otro usuario");
+                                        }
+                                        break;
+                                    case 5:
+                                        if(memorySpace[4]==false){
+                                            askName();
+                                            name[4]=captureDataString();
+                                            memorySpace[4]=true;
+                                            counter--;
+                                            System.out.println("Se ha registrado de forma correcta el usuario#5, "+name[4]);
+                                        }else {
+                                            System.out.println("El cupo ya se encuentra ocupado por otro usuario");
+                                        }
+                                        break;
+                                    case 6:
+                                        if(memorySpace[5]==false){
+                                            askName();
+                                            name[5]=captureDataString();
+                                            memorySpace[5]=true;
+                                            counter--;
+                                            System.out.println("Se ha registrado de forma correcta el usuario#6, "+name[5]);
+                                        }else {
+                                            System.out.println("El cupo ya se encuentra ocupado por otro usuario");
+                                        }
+                                        break;
+                                    case 7:
+                                        if(memorySpace[6]==false){
+                                            askName();
+                                            name[6]=captureDataString();
+                                            memorySpace[6]=true;
+                                            counter--;
+                                            System.out.println("Se ha registrado de forma correcta el usuario#7, "+name[6]);
+                                        }else {
+                                            System.out.println("El cupo ya se encuentra ocupado por otro usuario");
+                                        }
+                                        break;
+                                    case 8:
+                                        if(memorySpace[7]==false){
+                                            askName();
+                                            name[7]=captureDataString();
+                                            memorySpace[7]=true;
+                                            counter--;
+                                            System.out.println("Se ha registrado de forma correcta el usuario#8, "+name[7]);
+                                        }else {
+                                            System.out.println("El cupo ya se encuentra ocupado por otro usuario");
+                                        }
+                                        break;
+                                    case 9:
+                                        break;
+                                    default:
+                                        System.out.println("Opción incorrecta");
+                                        System.out.println("Digita, enter para volver al menu principal");
+                                        System.in.read();
+                                }
+                            }
+                        }
+                    }
+                    
+                </pre>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>

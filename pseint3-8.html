@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSeInt3-8</title>
+    <link rel="stylesheet" href="css/pseint.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="main()">
+    <header class="header">
+        <figure class="rounded">
+            <img src="img/koala.jpg">
+        </figure>
+        <nav class="navigator">
+            <ul class="navigator-list">
+                <li class="navigator-item"><a href="cv.html">CV</a></li>
+                <li class="navigator-item"><a href="index.html">Portfolio</a></li>
+                <li class="navigator-item"><a href="java.html">Java</a></li>
+                <li class="navigator-item"><a href="contact.html">Contact</a></li>
+                <li class="navigator-item"><a href="fruit.html">Fruit List</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Cycles PSeInt</h1>
+        <article>
+            <div>
+                <h4>Exercise 8</h4>
+            </div>
+            <div>
+                <p>
+                    <b>Enunciado:</b><br>
+                    <i>La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en los cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso al curso, consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si fueron aprobados o no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga presente que la escuela tiene capacidad máxima de gestionar 8 usuarios en su totalidad.</i><br>
+                </p>
+            </div>
+            <div>
+                <pre>
+                    Proceso Taller3_8
+	
+                    Definir client1, client2, client3, client4, client5, client6, client7, client8 Como Caracter;
+                    Definir approved1, approved2, approved3, approved4, approved5, approved6, approved7, approved8 Como Entero;
+                    Definir registered1, registered2, registered3, registered4, registered5, registered6, registered7, registered8 Como Entero;
+                    Definir counter, mainCycle, cycle1, cycle2, option, register, result Como Entero;
+                    
+                    registered1<-0;
+                    registered2<-0;
+                    registered3<-0;
+                    registered4<-0;
+                    registered5<-0;
+                    registered6<-0;
+                    registered7<-0;
+                    registered8<-0;
+                    
+                    approved1<-0;
+                    approved2<-0;
+                    approved3<-0;
+                    approved4<-0;
+                    approved5<-0;
+                    approved6<-0;
+                    approved7<-0;
+                    approved8<-0;
+                
+                    counter<-8;
+                    mainCycle<-1;
+                    
+                    Mientras mainCycle=1 Hacer
+                        Escribir "***************************************************************************************** ";
+                        Escribir "-----------------------App escuela automovilística *El Maestro*-------------------------- ";
+                        Escribir "****************************************************************************************  ";
+                        Escribir "                                                                                          ";
+                        Escribir "	        Digite un número de acuerdo a la acción que desea realizar                       ";
+                        Escribir "                                                                                          ";
+                        Escribir "	        1. Registrar ingreso de usuario                                                  "; 
+                        Escribir "         Cupos Disponibles: ", counter,". La capacidad máxima de la escula es de 8 alumnos";
+                        Escribir "	        2. Resultados de la prueba (aprobarón ó no)                                      ";
+                        Escribir "	        3. Usuarios que hayan presentado el curso                                        ";
+                        Escribir "	        4. Salir de la App                                                               ";
+                        Escribir "                                                                                          ";
+                        Leer option;
+                        Limpiar Pantalla;
+                        
+                        Segun option Hacer
+                            1:
+                                cycle1<-1;
+                                Si counter=0 Entonces
+                                    Escribir "*********Ya no hay cupos disponibles*********";
+                                    Escribir "";
+                                FinSi
+                                Mientras counter>0 & cycle1=1 Hacer
+                                    Escribir "Ingrese un número de acuerdo al usuario que desea regristar";
+                                    Escribir "";
+                                    Escribir "1. Usuario #1";
+                                    Escribir "2. Usuario #2";
+                                    Escribir "3. Usuario #3";
+                                    Escribir "4. Usuario #4";
+                                    Escribir "5. Usuario #5";
+                                    Escribir "6. Usuario #6";
+                                    Escribir "7. Usuario #7";
+                                    Escribir "8. Usuario #8";
+                                    Escribir "9. Regresar al menú principal";
+                                    Escribir "";
+                                    Leer register;
+                                    Limpiar Pantalla;
+                                    
+                                    Segun register Hacer
+                                        1:
+                                            Si registered1=0 Entonces
+                                                Escribir "Ingrese el nombre completo del cliente";
+                                                Leer client1;
+                                                Escribir "";
+                                                counter<-counter-1;
+                                                registered1<-1;
+                                            SiNo
+                                                Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                                Escribir "";
+                                            FinSi
+                                        2:
+                                            Si registered2=0 Entonces
+                                                Escribir "Ingrese el nombre completo del cliente";
+                                                Leer client2;
+                                                Escribir "";
+                                                counter<-counter-1;
+                                                registered2<-1;
+                                            SiNo
+                                                Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                                Escribir "";
+                                            FinSi
+                                        3:
+                                            Si registered3=0 Entonces
+                                                Escribir "Ingrese el nombre completo del cliente";
+                                                Leer client3;
+                                                Escribir "";
+                                                counter<-counter-1;
+                                                registered3<-1;
+                                            SiNo
+                                                Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                                Escribir "";
+                                            FinSi
+                                        4:
+                                            Si registered4=0 Entonces
+                                                Escribir "Ingrese el nombre completo del cliente";
+                                                Leer client4;
+                                                Escribir "";
+                                                counter<-counter-1;
+                                                registered4<-1;
+                                            SiNo
+                                                Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                                Escribir "";
+                                            FinSi
+                                        5:
+                                            Si registered5=0 Entonces
+                                                Escribir "Ingrese el nombre completo del cliente";
+                                                Leer client5;
+                                                Escribir "";
+                                                counter<-counter-1;
+                                                registered5<-1;
+                                            SiNo
+                                                Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                                Escribir "";
+                                            FinSi
+                                        6:
+                                            Si registered6=0 Entonces
+                                                Escribir "Ingrese el nombre completo del cliente";
+                                                Leer client6;
+                                                Escribir "";
+                                                counter<-counter-1;
+                                                registered6<-1;
+                                            SiNo
+                                                Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                                Escribir "";
+                                            FinSi
+                                        7:
+                                            Si registered7=0 Entonces
+                                                Escribir "Ingrese el nombre completo del cliente";
+                                                Leer client7;
+                                                Escribir "";
+                                                counter<-counter-1;
+                                                registered7<-1;
+                                            SiNo
+                                                Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                                Escribir "";
+                                            FinSi
+                                        8:
+                                            Si registered8=0 Entonces
+                                                Escribir "Ingrese el nombre completo del cliente";
+                                                Leer client8;
+                                                Escribir "";
+                                                counter<-counter-1;
+                                                registered8<-1;
+                                            SiNo
+                                                Escribir "El cupo ya se encuentra ocupado por otro usuario";
+                                                Escribir "";
+                                            FinSi
+                                        9:
+                                            Escribir "¿Desea regresar al menú principal?";
+                                            Escribir "            ó                      "; 
+                                        De Otro Modo:
+                                            Escribir "La opción seleccionada no existe";
+                                            Escribir "";
+                                            
+                                    FinSegun
+                                    
+                                    Si counter=0 Entonces
+                                        Escribir "Ya no hay cupos disponibles";
+                                        Escribir "";
+                                    FinSi
+                                    Escribir "¿Desea registrar otro usuario?";
+                                    Escribir "";
+                                    Escribir "1. Digite 1 para registrar otro usuario";
+                                    Escribir "2. Digite un número diferente de 1 para regresar al menú principal";
+                                    Leer cycle1;
+                                    Limpiar Pantalla;
+                                    
+                                    FinMientras
+                                    
+                            2:
+                                cycle2<-1;
+                                Mientras cycle2=1 Hacer
+                Si registered1=1 | registered2=1 | registered3=1 | registered4=1 | registered5=1 | registered6=1 | registered7=1 | registered8=1 Entonces
+                                        Escribir "Ingrese un número de acuerdo al alumno al cual desea regristar su resultado de la prueba";
+                                        Escribir "Solo apareceran los usuarios registrados";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered1=1 Entonces
+                                        Escribir "1. Nombre del alumno: ", client1;
+                                    FinSi
+                                    Si registered2=1 Entonces
+                                        Escribir "2. Nombre del alumno: ", client2;
+                                    FinSi
+                                    Si registered3=1 Entonces
+                                        Escribir "3. Nombre del alumno: ", client3;
+                                    FinSi
+                                    Si registered4=1 Entonces
+                                        Escribir "4. Nombre del alumno: ", client4;
+                                    FinSi
+                                    Si registered5=1 Entonces
+                                        Escribir "5. Nombre del alumno: ", client5;
+                                    FinSi
+                                    Si registered6=1 Entonces
+                                        Escribir "6. Nombre del alumno: ", client6;
+                                    FinSi
+                                    Si registered7=1 Entonces
+                                        Escribir "7. Nombre del alumno: ", client7;
+                                    FinSi
+                                    Si registered8=1 Entonces
+                                        Escribir "8. Nombre del alumno: ", client8;
+                                    FinSi
+            Si registered1=0 & registered2=0 & registered3=0 & registered4=0 & registered5=0 & registered6=0 & registered7=0 & registered8=0 Entonces
+                                        Escribir "*************************************";
+                                        Escribir "Al momento no hay alumnos registrados";
+                                        Escribir "      Regresa al menú principal      ";
+                                        Escribir "*************************************";
+                                        Escribir "";
+                                    SiNo
+                                        Escribir "9. Regresar al menú principal";
+                                        Escribir "";
+                                        Leer result;
+                                        Limpiar Pantalla;
+                                        
+                                        Segun result Hacer
+                                            1:
+                                                Escribir "Digite 1 si el alumno: ", client1," ha aprobado la prueba";
+                                                Escribir "De lo contrario digite 2";
+                                                Leer approved1;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha registrado la información de forma correcta";
+                                            2:
+                                                Escribir "Digite 1 si el alumno: ", client2," ha aprobado la prueba";
+                                                Escribir "De lo contrario digite 2";
+                                                Leer approved2;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha registrado la información de forma correcta";
+                                            3:
+                                                Escribir "Digite 1 si el alumno: ", client3," ha aprobado la prueba";
+                                                Escribir "De lo contrario digite 2";
+                                                Leer approved3;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha registrado la información de forma correcta";
+                                            4:
+                                                Escribir "Digite 1 si el alumno: ", client4," ha aprobado la prueba";
+                                                Escribir "De lo contrario digite 2";
+                                                Leer approved4;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha registrado la información de forma correcta";
+                                            5:
+                                                Escribir "Digite 1 si el alumno: ", client5," ha aprobado la prueba";
+                                                Escribir "De lo contrario digite 2";
+                                                Leer approved5;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha registrado la información de forma correcta";
+                                            6:
+                                                Escribir "Digite 1 si el alumno: ", client6," ha aprobado la prueba";
+                                                Escribir "De lo contrario digite 2";
+                                                Leer approved6;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha registrado la información de forma correcta";
+                                            7:
+                                                Escribir "Digite 1 si el alumno: ", client7," ha aprobado la prueba";
+                                                Escribir "De lo contrario digite 2";
+                                                Leer approved7;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha registrado la información de forma correcta";
+                                            8:
+                                                Escribir "Digite 1 si el alumno: ", client8," ha aprobado la prueba";
+                                                Escribir "De lo contrario digite 2";
+                                                Leer approved8;
+                                                Limpiar Pantalla;
+                                                Escribir "Se ha registrado la información de forma correcta";
+                                            9:
+                                                Escribir "";
+                                            
+                                            De Otro Modo:
+                                                Escribir "La opción seleccionada no existe";
+                                                Escribir "1. Digite 1 para registrar la prueba de otro usuario";
+                                                Escribir "2. Digite un número diferente de 1 para regresar al menú principal";
+                                                Leer cycle2;
+                                                Limpiar Pantalla;
+                                        FinSegun
+                                    FinSi
+                                    
+                                    Escribir "¿Desea regresar al menú principal?";
+                                    Escribir "1. Digite 1 para registrar la prueba de otro usuario";
+                                    Escribir "2. Digite un número diferente de 1 para regresar al menú principal";
+                                    Leer cycle2;
+                                    Limpiar Pantalla;
+                                FinMientras
+                            3:
+                Si registered1=1 | registered2=1 | registered3=1 | registered4=1 | registered5=1 | registered6=1 | registered7=1 | registered8=1 Entonces
+                                    Escribir "A continuación se presenta la lista de los alumnos registrados y si han presentado ó no la prueba del curso";
+                                    Escribir "Solo apareceran los usuarios registrados";
+                                    Escribir "";
+                                    Si registered1=1 &  approved1=1 Entonces
+                                        Escribir "El alumno: ",client1," realizo y aprobo el curso";
+                                        Escribir "";
+                                    FinSi
+                                    Si registered1=1 &  approved1=2 Entonces
+                                        Escribir "El alumno: ",client1," no logró aprobar el curso";
+                                        Escribir "";
+                                    FinSi
+                                    Si registered1=1 &  approved1=0 Entonces
+                                        Escribir "El alumno: ",client1," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                        Escribir "";
+                                    FinSi
+                                    Si registered2=1 &  approved2=1 Entonces
+                                        Escribir "El alumno: ",client2," realizo y aprobo el curso";
+                                        Escribir "";
+                                    FinSi
+                                    Si registered2=1 &  approved2=2 Entonces
+                                        Escribir "El alumno: ",client2," no logró aprobar el curso";
+                                        Escribir "";
+                                    FinSi
+                                    Si registered2=1 &  approved2=0 Entonces
+                                        Escribir "El alumno: ",client2," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered3=1 &  approved3=1 Entonces
+                                        Escribir "El alumno: ",client3," realizo y aprobo el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered3=1 &  approved3=2 Entonces
+                                        Escribir "El alumno: ",client3," no logró aprobar el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered3=1 &  approved3=0 Entonces
+                                        Escribir "El alumno: ",client3," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered4=1 &  approved4=1 Entonces
+                                        Escribir "El alumno: ",client4," realizo y aprobo el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered4=1 &  approved4=2 Entonces
+                                        Escribir "El alumno: ",client4," no logró aprobar el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered4=1 &  approved4=0 Entonces
+                                        Escribir "El alumno: ",client4," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered5=1 &  approved5=1 Entonces
+                                        Escribir "El alumno: ",client5," realizo y aprobo el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered5=1 &  approved5=2 Entonces
+                                        Escribir "El alumno: ",client5," no logró aprobar el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered5=1 &  approved5=0 Entonces
+                                        Escribir "El alumno: ",client5," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered6=1 &  approved6=1 Entonces
+                                        Escribir "El alumno: ",client6," realizo y aprobo el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered6=1 &  approved6=2 Entonces
+                                        Escribir "El alumno: ",client6," no logró aprobar el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered6=1 &  approved6=0 Entonces
+                                        Escribir "El alumno: ",client6," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered7=1 &  approved7=1 Entonces
+                                        Escribir "El alumno: ",client7," realizo y aprobo el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered7=1 &  approved7=2 Entonces
+                                        Escribir "El alumno: ",client7," no logró aprobar el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered7=1 &  approved7=0 Entonces
+                                        Escribir "El alumno: ",client7," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered8=1 &  approved8=1 Entonces
+                                        Escribir "El alumno: ",client1," realizo y aprobo el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered8=1 &  approved8=2 Entonces
+                                        Escribir "El alumno: ",client1," no logró aprobar el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                    Si registered8=1 &  approved8=0 Entonces
+                                        Escribir "El alumno: ",client8," se encuentra registrado, sin embargo aun no ha presentado la prueba del el curso";
+                                        Escribir "";
+                                    FinSi
+                                    
+                                SiNo
+                                    Escribir "*************************************";
+                                    Escribir "Al momento no hay alumnos registrados";
+                                    Escribir "*************************************";
+                                    Escribir "";
+                                FinSi
+                                
+                            4:
+                                Escribir "";
+                                
+                            De Otro Modo:
+                                Escribir "Opción no validad";
+                                Escribir "";
+                                
+                        FinSegun
+                        
+                        Escribir "¿Desea volver al menú principal?";
+                        Escribir "";
+                        Escribir "1. Digite 1 para regresar al menú principal";
+                        Escribir "2. Digite un numero diferente a 1 para salir de la App";
+                        Escribir "";
+                        Leer mainCycle;
+                        Limpiar Pantalla;
+                        
+                        
+                    FinMientras
+                    
+                FinProceso                
+                </pre>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iTOlYAwWZpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <!-- <aside></aside> -->
+    <!-- <footer class="pseint">
+        <b>Portfolio Edison Restrepo Ospina &copy;</b>
+        <a href="https://www.instagram.com/edisonestival/" target="_blank"><img src="img/instagram.jpg"></a>
+        <a href="https://www.facebook.com/edison.restrepo.10/" target="_blank"><img src="img/facebook.jpg"></a>
+        <a href="https://www.tiktok.com/@edisonrestrepo43?lang=es" target="_blank"><img src="img/tiktok.jpg"></a>
+        <a href="https://twitter.com/Erestrepo8" target="_blank"><img src="img/twiter.png"></a>
+    </footer> -->
+</body>
+
+</html>
